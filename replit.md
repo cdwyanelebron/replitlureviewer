@@ -16,6 +16,29 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
 
+## Artifacts
+
+### LU Reviewer — BSIT 1st Year (`artifacts/lu-reviewer`)
+- **Type**: React + Vite (frontend-only, no backend)
+- **Preview Path**: `/`
+- **Purpose**: W3Schools-style academic reviewer website for 1st-year BSIT students at Laguna University (Philippines)
+- **Features**:
+  - Sticky top nav with subject tabs (GE 1, GE 4, NSTP 1, CC 101, MATH 1)
+  - Collapsible sidebar organized by PRELIM / MIDTERM / FINALS / terms
+  - Per-topic reviewer content with definitions, notes, examples, and tables
+  - Learning objectives per topic
+  - Built-in quiz mode with multiple-choice questions, scoring, and explanations
+  - Dark mode toggle with localStorage persistence
+  - Search/filter topics across the current subject
+  - Mobile-responsive with slide-out sidebar
+  - Previous/Next navigation between topics
+- **Subjects covered**:
+  - GE 1: Understanding the Self (Philosophical, Sociological, Physical, Digital, Political, Spiritual self)
+  - GE 4: Purposive Communication (Communication models, types, academic writing)
+  - NSTP 1: National Service Training Program (RA 9163, Filipino values)
+  - CC 101: Introduction to Computing (Computer history, number systems, programming)
+  - MATH 1: Mathematics in the Modern World (Patterns, Fibonacci, mathematical language)
+
 ## Key Commands
 
 - `pnpm run typecheck` — full typecheck across all packages
