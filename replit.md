@@ -22,22 +22,45 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **Type**: React + Vite (frontend-only, no backend)
 - **Preview Path**: `/`
 - **Purpose**: W3Schools-style academic reviewer website for 1st-year BSIT students at Laguna University (Philippines)
+- **Data files**:
+  - `src/data/types.ts` — Shared TypeScript interfaces
+  - `src/data/subjects-ge.ts` — GE 1–8 (General Education subjects)
+  - `src/data/subjects-cc.ts` — CC 1100, CC 1101, CC 1102, IT 1201
+  - `src/data/subjects-other.ts` — MST 01, MST 02, NSTP 1, NSTP 2, PE 1, PE 2
+  - `src/data/subjects.ts` — Main index combining all subject arrays + helper functions
+
+- **Complete Subjects Covered**:
+  | Code | Title |
+  |------|-------|
+  | GE 1 | Understanding the Self |
+  | GE 2 | Readings in Philippine History |
+  | GE 3 | The Contemporary World |
+  | GE 4 | Purposive Communication |
+  | GE 5 | Art Appreciation |
+  | GE 6 | Science, Technology, and Society |
+  | GE 7 | Ethics |
+  | GE 8 | Filipino sa Piling Larang (Tech/IT) |
+  | CC 1100 | Introduction to Computing |
+  | CC 1101 | Computer Programming 1 |
+  | CC 1102 | Computer Programming 2 |
+  | IT 1201 | IT Infrastructure and Networking |
+  | MST 01 | Mathematics in the Modern World |
+  | MST 02 | Statistics and Probability |
+  | NSTP 1 | National Service Training Program 1 |
+  | NSTP 2 | National Service Training Program 2 |
+  | PE 1 | Physical Education 1 (Movement Enhancement) |
+  | PE 2 | Physical Education 2 (Rhythmic Activities) |
+
 - **Features**:
-  - Sticky top nav with subject tabs (GE 1, GE 4, NSTP 1, CC 101, MATH 1)
-  - Collapsible sidebar organized by PRELIM / MIDTERM / FINALS / terms
-  - Per-topic reviewer content with definitions, notes, examples, and tables
+  - Sticky top nav with all 18 subject tabs
+  - Collapsible sidebar: PRELIM / MIDTERM / FINALS → Module → Topic
+  - Rich content: definitions, notes, examples, tables, bullet lists
   - Learning objectives per topic
-  - Built-in quiz mode with multiple-choice questions, scoring, and explanations
-  - Dark mode toggle with localStorage persistence
-  - Search/filter topics across the current subject
+  - Built-in quiz mode with multiple-choice, scoring, and explanations
+  - Dark mode toggle (localStorage persistent)
+  - Search/filter topics
+  - Previous/Next topic navigation
   - Mobile-responsive with slide-out sidebar
-  - Previous/Next navigation between topics
-- **Subjects covered**:
-  - GE 1: Understanding the Self (Philosophical, Sociological, Physical, Digital, Political, Spiritual self)
-  - GE 4: Purposive Communication (Communication models, types, academic writing)
-  - NSTP 1: National Service Training Program (RA 9163, Filipino values)
-  - CC 101: Introduction to Computing (Computer history, number systems, programming)
-  - MATH 1: Mathematics in the Modern World (Patterns, Fibonacci, mathematical language)
 
 ## Key Commands
 
