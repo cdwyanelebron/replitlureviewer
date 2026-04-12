@@ -27,6 +27,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
   - `src/data/subjects-ge.ts` — GE 1–8 (General Education subjects)
   - `src/data/subjects-cc.ts` — CC 1100, CC 1101, CC 1102, IT 1201
   - `src/data/subjects-other.ts` — MST 01, MST 02, NSTP 1, NSTP 2, PE 1, PE 2
+  - `src/data/midterm-focus.ts` — Expanded attached-module midterm focus overrides for GE 7, MST 02, and PE 2, including detailed subtopic quizzes and comprehensive exams
   - `src/data/subjects.ts` — Main index combining all subject arrays + helper functions
 
 - **Complete Subjects Covered**:
@@ -61,6 +62,12 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
   - Search/filter topics
   - Previous/Next topic navigation
   - Mobile-responsive with slide-out sidebar
+
+- **Current Midterm Focus Update (April 2026)**:
+  - GE 7 now uses the attached Science, Technology and Society midterm modules: Environmental Awareness, Energy Crisis, Information Age, and Gene.
+  - MST 02 now uses the attached Living in the IT Era midterm modules: Networks and Types, Data Security/Data Privacy, and Political/Economic/Societal Impacts of ICT.
+  - PE 2 now uses the attached PATH-FIT 2 midterm modules: Health Appraisal, HIIT, Core Exercises, and Lower Body Exercises.
+  - Each covered subtopic has a quiz, and each focused subject has a final “Midterm Comprehensive Exam” topic at the end of the sidebar.
 
 ## Key Commands
 

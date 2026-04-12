@@ -71,10 +71,12 @@ export default function TopNav({
               onClick={() => onSubjectChange(subject.id)}
               className="px-3 py-1 text-sm font-medium whitespace-nowrap transition-all shrink-0"
               style={{
-                backgroundColor: subject.id === activeSubjectId ? "rgba(255,255,255,0.25)" : "transparent",
+                backgroundColor: subject.id === activeSubjectId ? "#027a4d" : "transparent",
                 color: "white",
-                borderBottom: subject.id === activeSubjectId ? "3px solid white" : "3px solid transparent",
-                lineHeight: "44px",
+                border: subject.id === activeSubjectId ? "1px solid rgba(255,255,255,0.65)" : "1px solid transparent",
+                borderRadius: subject.id === activeSubjectId ? "999px" : "0",
+                lineHeight: "28px",
+                marginInline: "2px",
               }}
             >
               {subject.shortTitle}
