@@ -58,6 +58,9 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
   },
+  optimizeDeps: {
+    include: ["JSCPP"],
+  },
   server: {
     port,
     host: "0.0.0.0",
