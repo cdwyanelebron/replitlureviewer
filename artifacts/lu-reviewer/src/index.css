@@ -274,28 +274,12 @@
   transition: background-color 0.15s ease;
 }
 
-.lu-subject-tab::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 16px;
-  width: 28px;
-  height: 4px;
-  transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.82);
-}
-
 .lu-subject-tab:hover {
   background: rgba(255, 255, 255, 0.08);
 }
 
 .lu-subject-tab.active {
   background: #04AA6D;
-}
-
-.lu-subject-tab.active::after {
-  background: #ffffff;
-  height: 4px;
 }
 
 .lu-topnav-actions {
