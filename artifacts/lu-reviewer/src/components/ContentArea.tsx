@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Topic, Subject, ContentSection, QuizQuestion } from "../data/subjects";
-import { ChevronLeft, ChevronRight, CheckSquare, BookOpen, RotateCcw } from "lucide-react";
+import { ChevronLeft, ChevronRight, CheckSquare, BookOpen, RotateCcw, Play, Copy, Check, Terminal } from "lucide-react";
 
 interface ContentAreaProps {
   topic: Topic;
@@ -133,6 +133,8 @@ function ReviewContent({ sections }: { sections: ContentSection[] }) {
                 <div className="text-sm whitespace-pre-line">{section.content}</div>
               </div>
             );
+          case "code":
+            return <CodeBlock key={i} code={section.content} language={section.language ?? "c"} codeInput={section.codeInput} />;
           case "list":
             return (
               <div key={i} className="my-3">
@@ -173,6 +175,89 @@ function ReviewContent({ sections }: { sections: ContentSection[] }) {
             return null;
         }
       })}
+    </div>
+  );
+}
+
+function CodeBlock({ code, language, codeInput }: { code: string; language: string; codeInput?: string }) {
+  const [output, setOutput] = useState<string | null>(null);
+  const [running, setRunning] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [error, setError] = useState(false);
+
+  const runCode = async () => {
+    setRunning(true);
+    setOutput(null);
+    setError(false);
+    try {
+      const res = await fetch("https://emkc.org/api/v2/piston/execute", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          language,
+          version: "*",
+          files: [{ content: code }],
+          ...(codeInput ? { stdin: codeInput } : {}),
+        }),
+      });
+      if (!res.ok) throw new Error("API error");
+      const data = await res.json();
+      const result = (data.run?.stdout || "") + (data.run?.stderr || "");
+      setOutput(result.trim() || "(no output)");
+      if (data.run?.stderr) setError(true);
+    } catch {
+      setOutput("Could not connect to the compiler. Check your internet connection.");
+      setError(true);
+    }
+    setRunning(false);
+  };
+
+  const copyCode = () => {
+    navigator.clipboard.writeText(code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="my-4 rounded-lg border border-border overflow-hidden text-sm">
+      <div className="flex items-center justify-between px-3 py-1.5 bg-muted/50 border-b border-border">
+        <div className="flex items-center gap-1.5 text-xs font-mono text-muted-foreground">
+          <Terminal size={12} />
+          <span>{language.toUpperCase()} Program</span>
+          {codeInput && <span className="text-xs text-muted-foreground ml-2">(sample input provided)</span>}
+        </div>
+        <div className="flex gap-1.5">
+          <button
+            onClick={copyCode}
+            className="flex items-center gap-1 text-xs px-2 py-1 rounded border border-border bg-background hover:bg-muted transition-colors"
+          >
+            {copied ? <Check size={11} className="text-green-500" /> : <Copy size={11} />}
+            {copied ? "Copied!" : "Copy"}
+          </button>
+          <button
+            onClick={runCode}
+            disabled={running}
+            className="flex items-center gap-1 text-xs px-2 py-1 rounded bg-green-600 text-white hover:bg-green-700 transition-colors disabled:opacity-60"
+          >
+            <Play size={11} />
+            {running ? "Running…" : "Run"}
+          </button>
+        </div>
+      </div>
+      <pre className="bg-gray-950 text-green-300 p-4 overflow-x-auto text-xs leading-5 font-mono m-0">
+        <code>{code}</code>
+      </pre>
+      {output !== null && (
+        <div className="border-t border-border">
+          <div className="px-3 py-1.5 bg-muted/30 border-b border-border text-xs font-mono text-muted-foreground flex items-center gap-1.5">
+            <Terminal size={11} />
+            Output:
+          </div>
+          <pre className={`p-3 text-xs font-mono whitespace-pre-wrap m-0 ${error ? "bg-red-950 text-red-300" : "bg-gray-900 text-white"}`}>
+            {output}
+          </pre>
+        </div>
+      )}
     </div>
   );
 }

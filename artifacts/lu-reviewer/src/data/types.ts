@@ -6,11 +6,13 @@ export interface QuizQuestion {
 }
 
 export interface ContentSection {
-  type: "text" | "definition" | "note" | "example" | "list" | "table" | "h2" | "h3";
+  type: "text" | "definition" | "note" | "example" | "list" | "table" | "h2" | "h3" | "code";
   content: string;
   items?: string[];
   headers?: string[];
   rows?: string[][];
+  language?: string;
+  codeInput?: string;
 }
 
 export interface TopicContent {
