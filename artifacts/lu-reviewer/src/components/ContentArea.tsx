@@ -271,8 +271,8 @@ function CodeBlock({ code: initialCode, language, codeInput }: { code: string; l
       <textarea
         value={code}
         onChange={e => setCode(e.target.value)}
-        className="w-full bg-gray-950 text-green-300 p-4 font-mono text-xs leading-5 outline-none resize-none border-none"
-        rows={Math.max(lineCount, 4)}
+        className="w-full bg-gray-950 text-green-300 p-4 font-mono text-xs leading-5 outline-none resize-y border-none"
+        rows={Math.max(lineCount, 10)}
         spellCheck={false}
         autoComplete="off"
         autoCorrect="off"
@@ -288,7 +288,7 @@ function CodeBlock({ code: initialCode, language, codeInput }: { code: string; l
             value={stdinVal}
             onChange={e => setStdinVal(e.target.value)}
             className="w-full bg-gray-900 text-yellow-200 p-3 font-mono text-xs leading-5 outline-none resize-y border-none"
-            rows={3}
+            rows={5}
             placeholder={"e.g.\n10\n20\n30"}
             spellCheck={false}
           />

@@ -25,7 +25,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **Data files**:
   - `src/data/types.ts` — Shared TypeScript interfaces
   - `src/data/subjects-ge.ts` — GE 1–8 (General Education subjects)
-  - `src/data/subjects-cc.ts` — CC 1100, CC 1101, CC 1102, IT 1201
+  - `src/data/subjects-cc.ts` — CC 1100, CC 1101, CC 1202 (Intermediate C Programming), IT 1201 (Discrete Math)
   - `src/data/subjects-other.ts` — MST 01, MST 02, NSTP 1, NSTP 2, PE 1, PE 2
   - `src/data/midterm-focus.ts` — Expanded attached-module midterm focus overrides for GE 7, MST 02, and PE 2, including detailed subtopic quizzes and comprehensive exams
   - `src/data/subjects.ts` — Main index combining all subject arrays + helper functions
@@ -64,12 +64,11 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
   - Mobile-responsive with slide-out sidebar
 
 - **Current Midterm Focus Update (April 2026)**:
-  - GE 7 now uses the attached Science, Technology and Society midterm modules: Environmental Awareness, Energy Crisis, Information Age, and Gene.
-  - MST 02 now uses the attached Living in the IT Era midterm modules: Networks and Types, Data Security/Data Privacy, and Political/Economic/Societal Impacts of ICT.
-  - PE 2 now uses the attached PATH-FIT 2 midterm modules: Health Appraisal, HIIT, Core Exercises, and Lower Body Exercises.
-  - Each covered subtopic has a quiz, and each focused subject has a final “Midterm Comprehensive Exam” topic at the end of the sidebar with 50 questions.
-  - Each focused lesson includes module-objective exam focus notes and additional lesson-level quiz items to keep review questions aligned with the attached module coverage.
-  - Top navigation uses a W3Schools-like dark header in both light and dark modes, with a green rectangular active subject tab and white underline indicators.
+  - GE 7, MST 02, PE 2: attached module midterm content with lesson quizzes and comprehensive exams (in midterm-focus.ts).
+  - CC 1202 (Intermediate C Programming): MIDTERM ONLY. Modules 5-7 restructured with lesson-numbered topics from PDF TOC. Module 5: 9 lessons + Assessment Task. Module 6: 2 lessons + Assessment Task. Module 7: Lessons 1-4 + Lessons 5.1-5.6 string library functions + Assessment Task. W3Schools-style chunked C code examples.
+  - IT 1201 (Discrete Mathematics): MIDTERM ONLY. Modules 5-7 with lesson-numbered topics. Module 5 Counting (L1-2 + Assessment Task), Module 6 Pigeonhole (L1-2 + Assessment Task), Module 7 Permutations/Combinations (L1-3 + Assessment Task).
+  - All Assessment Task topics have 10-20 comprehensive exam questions per module.
+  - Code textarea: minimum 10 rows (resize-y). Stdin textarea: 5 rows.
 
 ## Key Commands
 
