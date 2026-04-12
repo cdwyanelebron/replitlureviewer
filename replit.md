@@ -27,7 +27,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
   - `src/data/subjects-ge.ts` — GE 1–8 (General Education subjects)
   - `src/data/subjects-cc.ts` — CC 1100, CC 1101, CC 1202 (Intermediate C Programming), IT 1201 (Discrete Math)
   - `src/data/subjects-other.ts` — MST 01, MST 02, NSTP 1, NSTP 2, PE 1, PE 2
-  - `src/data/midterm-focus.ts` — Expanded attached-module midterm focus overrides for GE 7, MST 02, and PE 2, including detailed subtopic quizzes and comprehensive exams
+  - `src/data/midterm-focus.ts` — Expanded attached-module midterm focus overrides for GE 6, GE 7, GE 8, MST 02, NSTP 2, and PE 2, including detailed subtopic quizzes and comprehensive exams
   - `src/data/subjects.ts` — Main index combining all subject arrays + helper functions
 
 - **Complete Subjects Covered**:
@@ -37,10 +37,10 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
   | GE 2 | Readings in Philippine History |
   | GE 3 | The Contemporary World |
   | GE 4 | Purposive Communication |
-  | GE 5 | Art Appreciation |
-  | GE 6 | Science, Technology, and Society |
-  | GE 7 | Ethics |
-  | GE 8 | Filipino sa Piling Larang (Tech/IT) |
+  | GE 5 | Arts |
+  | GE 6 | Art Appreciation |
+  | GE 7 | Science, Technology & Society |
+  | GE 8 | Ethics |
   | CC 1100 | Introduction to Computing |
   | CC 1101 | Computer Programming 1 |
   | CC 1102 | Computer Programming 2 |
@@ -64,7 +64,8 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
   - Mobile-responsive with slide-out sidebar
 
 - **Current Midterm Focus Update (April 2026)**:
-  - GE 7, MST 02, PE 2: attached module midterm content with lesson quizzes and comprehensive exams (in midterm-focus.ts).
+  - GE 6: attached Art Appreciation midterm content (Modules 4–5) added as a focused midterm override with subject/form/content lessons, artists vs. artisans, art market/careers, complete National Artists review tables, complete GAMABA review table, lesson quizzes, and a 50-item comprehensive exam.
+  - GE 7, GE 8, MST 02, NSTP 2, PE 2: attached module midterm content with lesson quizzes and comprehensive exams (in midterm-focus.ts).
   - CC 1202 (Intermediate C Programming): MIDTERM ONLY. Modules 5-7 restructured with lesson-numbered topics from PDF TOC. Module 5: 9 lessons + Assessment Task. Module 6: 2 lessons + Assessment Task. Module 7: Lessons 1-4 + Lessons 5.1-5.6 string library functions + Assessment Task. W3Schools-style chunked C code examples.
   - IT 1201 (Discrete Mathematics): MIDTERM ONLY. Modules 5-7 with lesson-numbered topics. Module 5 Counting (L1-2 + Assessment Task), Module 6 Pigeonhole (L1-2 + Assessment Task), Module 7 Permutations/Combinations (L1-3 + Assessment Task).
   - All Assessment Task topics have 10-20 comprehensive exam questions per module.
