@@ -1,4 +1,4 @@
-import { QuizQuestion, Subject, Topic } from "./types";
+import { ContentSection, QuizQuestion, Subject, Topic } from "./types";
 
 const makeExamSections = (subject: string, coverage: string[]) => [
   { type: "h2" as const, content: `${subject} Midterm Comprehensive Exam` },
@@ -845,3 +845,315 @@ export const MIDTERM_FOCUS_SUBJECTS: Subject[] = [
     ],
   },
 ];
+
+type ModuleObjectiveSupport = {
+  sections: ContentSection[];
+  quiz: QuizQuestion[];
+};
+
+const MODULE_OBJECTIVE_SUPPORT: Record<string, ModuleObjectiveSupport> = {
+  "ge7-mid-m5-l1": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Environmentalism" },
+      { type: "list", content: "Must-know points from the module:", items: ["Environmentalism is an advocacy/social movement, not the same as environmental science", "Environmental awareness means recognizing that behavior and lifestyle affect the environment", "Environmental scientists produce evidence; environmentalists may use evidence for public action", "The module connects awareness with altruism because environmental harm affects other people"] },
+      { type: "note", content: "For exam answers, focus on definitions and distinctions: environmentalism vs environmental science, environmentally aware behavior, and why awareness should lead to action." },
+    ],
+    quiz: [
+      { question: "A person can be an environmentalist even without:", options: ["A formal environmental science degree", "Concern for nature", "Any action or advocacy", "Awareness of environmental issues"], answer: 0, explanation: "The module states environmentalism does not require formal scientific training." },
+      { question: "Environmental science is useful to environmentalism because it:", options: ["Provides evidence for understanding and solving environmental problems", "Replaces all public action", "Ignores data", "Studies only politics"], answer: 0, explanation: "Environmental science provides research and evidence that can support environmental advocacy." },
+      { question: "Which is the best example of environmental awareness?", options: ["Changing waste and consumption habits after recognizing their environmental impact", "Knowing pollution exists but doing nothing", "Throwing garbage into canals", "Believing individual actions never matter"], answer: 0, explanation: "Awareness includes recognizing impact and making better choices." },
+    ],
+  },
+  "ge7-mid-m5-l2": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Weather, Climate, and Climate Change" },
+      { type: "list", content: "Must-know points from the module:", items: ["Weather changes hour to hour or day to day", "Climate is based on long-term weather patterns in a region, commonly around 30 years", "Natural climate influences include volcanoes, ocean currents, orbital changes, solar variation, and internal variability", "Current rapid climate change is strongly linked with human greenhouse gas emissions"] },
+      { type: "table", content: "Common Exam Confusion", headers: ["If the question says...", "Think..."], rows: [["Rain today, hot afternoon, cloudy morning", "Weather"], ["Long-term pattern of rainy and dry seasons", "Climate"], ["CO2 from fossil fuels and deforestation", "Human-driven warming"], ["Volcano ash blocking sunlight temporarily", "Natural short-term cooling influence"]] },
+    ],
+    quiz: [
+      { question: "A statement like 'It rained this afternoon' refers to:", options: ["Weather", "Climate", "Heredity", "Energy crisis"], answer: 0, explanation: "Short-term atmospheric condition is weather." },
+      { question: "Which is NOT listed as a natural influence on climate?", options: ["Social media comments", "Ocean currents", "Volcanic eruptions", "Earth's orbital changes"], answer: 0, explanation: "Social media is not a natural climate driver." },
+      { question: "Climate change becomes alarming when:", options: ["Changes are rapid and intensified by human activities", "Weather changes daily", "The word climate is used", "People study science"], answer: 0, explanation: "Natural changes can occur slowly, but present warming is rapid and human-amplified." },
+    ],
+  },
+  "ge7-mid-m5-l3": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Climate Justice" },
+      { type: "list", content: "Objective-oriented points:", items: ["Explain why not all people experience climate change equally", "Connect poverty, location, livelihood, and access to resources with vulnerability", "Use the terms exposure, sensitivity, and adaptive capacity correctly", "Explain why fair climate action prioritizes those most at risk"] },
+    ],
+    quiz: [
+      { question: "Which group usually has the lowest adaptive capacity?", options: ["Low-income communities with unsafe housing and few savings", "Families with insurance, savings, and safe housing", "Communities with strong infrastructure", "People with many relocation options"], answer: 0, explanation: "Lower income and fewer resources reduce capacity to prepare and recover." },
+      { question: "Exposure in climate risk means:", options: ["Being located where hazards can affect you", "Having a strong password", "Knowing all network types", "Having flexible muscles"], answer: 0, explanation: "Exposure refers to being in places affected by hazards such as floods or storm surges." },
+      { question: "Climate justice asks society to consider:", options: ["Fairness in responsibility, vulnerability, and protection", "Only daily temperature", "Only laboratory equipment", "Only private profit"], answer: 0, explanation: "Climate justice frames climate change as an issue of fairness and inequality." },
+    ],
+  },
+  "ge7-mid-m5-l4": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Filipino Context" },
+      { type: "list", content: "When answering, connect climate change to Filipino realities:", items: ["Typhoons, floods, storm surges, sea-level rise, and heat affect communities", "Food, water, health, housing, education, and livelihood are connected to climate risk", "The Philippines' archipelagic geography increases exposure", "Practical responses include preparedness, conservation, waste management, and credible information use"] },
+    ],
+    quiz: [
+      { question: "Which Philippine feature increases vulnerability to storm surges?", options: ["Many coastal and low-lying communities", "No coastline", "Permanent snow cover", "No typhoons"], answer: 0, explanation: "Coastal and low-lying communities face storm surge and sea-level rise risks." },
+      { question: "Climate-related class suspensions show impact on:", options: ["Education", "Only genetics", "Only e-commerce", "Only stretching"], answer: 0, explanation: "Strong typhoons and floods interrupt schooling." },
+      { question: "Which is a credible student response to climate risk?", options: ["Know evacuation plans and verify warnings", "Ignore official advisories", "Share panic posts without checking", "Block disaster information"], answer: 0, explanation: "Preparedness and credible information use are practical adaptation actions." },
+    ],
+  },
+  "ge7-mid-m6-l1": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Energy Crisis Definition" },
+      { type: "list", content: "Remember these keywords:", items: ["Insufficient supply", "Unaffordable or unstable prices", "Unreliable electricity or fuel access", "Energy security means reliable, affordable, and sustainable energy access"] },
+    ],
+    quiz: [
+      { question: "High electricity prices are part of energy crisis when they affect:", options: ["Affordability and access", "Only spelling", "Only climate vocabulary", "Only browser speed"], answer: 0, explanation: "Energy crisis includes price and access problems, not only physical shortage." },
+      { question: "Energy security is important because modern society depends on energy for:", options: ["Homes, schools, hospitals, communication, transport, and industry", "Only entertainment", "Only genetics", "Only clothing color"], answer: 0, explanation: "Energy supports major services and economic activity." },
+    ],
+  },
+  "ge7-mid-m6-l2": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Causes of Energy Crisis" },
+      { type: "list", content: "Module-aligned causes:", items: ["Overconsumption and growing demand", "Dependence on fossil fuels and imports", "Limited supply and depletion of non-renewable resources", "Poor infrastructure, conflict, disasters, and weak planning"] },
+    ],
+    quiz: [
+      { question: "A non-renewable source can contribute to energy crisis because it is:", options: ["Limited and depletable", "Automatically unlimited", "Always free", "Not used by society"], answer: 0, explanation: "Non-renewable fuels can be depleted and affected by supply constraints." },
+      { question: "Which situation can worsen energy supply problems?", options: ["Damaged power infrastructure after a disaster", "Efficient appliances", "Conservation", "Renewable diversification"], answer: 0, explanation: "Damaged infrastructure can cause brownouts and supply interruptions." },
+    ],
+  },
+  "ge7-mid-m6-l3": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Energy Solutions" },
+      { type: "list", content: "Objective-oriented answer pattern:", items: ["Define the problem first: demand, supply, price, reliability, or pollution", "Match solution to problem: conservation, efficiency, renewables, grid improvement, public transport", "Explain both economic and environmental benefit", "Avoid one-solution answers; energy crisis usually needs combined strategies"] },
+    ],
+    quiz: [
+      { question: "Which solution directly lowers wasted energy?", options: ["Energy efficiency", "Leaving appliances on", "Ignoring maintenance", "Using inefficient bulbs"], answer: 0, explanation: "Efficiency reduces waste while maintaining useful output." },
+      { question: "Why are renewables part of energy-crisis solutions?", options: ["They reduce dependence on finite fossil fuels", "They increase oil imports", "They always cause shortage", "They eliminate the need for planning"], answer: 0, explanation: "Renewables diversify supply and reduce dependence on finite fuel sources." },
+    ],
+  },
+  "ge7-mid-m7-l1": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Information Age" },
+      { type: "list", content: "Must-know development logic:", items: ["Society moved from manual/print information to electronic and digital systems", "Computers and networks made information faster to store, process, and share", "Information became a major resource in education, science, business, politics, and daily life"] },
+    ],
+    quiz: [
+      { question: "The Information Age made information:", options: ["A central resource in society", "Completely useless", "Impossible to share", "Only available in libraries"], answer: 0, explanation: "Information became central to modern systems and decisions." },
+      { question: "Which technology best represents the digital spread of information?", options: ["Internet", "Stone tools only", "Manual abacus only", "Handwritten scroll only"], answer: 0, explanation: "The internet allows rapid global information sharing." },
+    ],
+  },
+  "ge7-mid-m7-l2": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Pandemic Technology" },
+      { type: "list", content: "Expect questions on:", items: ["Digital dashboards and data monitoring", "Contact tracing and privacy", "Telemedicine and remote service access", "Online research sharing and genomic surveillance", "Online learning and digital divide"] },
+    ],
+    quiz: [
+      { question: "Telemedicine became useful during the pandemic because it:", options: ["Allowed health consultation while reducing exposure risk", "Stopped all healthcare", "Removed the need for doctors", "Was only entertainment"], answer: 0, explanation: "Telemedicine supported safer access to healthcare during restrictions." },
+      { question: "Digital dashboards are valuable because they:", options: ["Summarize data for monitoring and decision-making", "Hide all public information", "Replace evidence", "Prevent analysis"], answer: 0, explanation: "Dashboards organize data such as cases, trends, and capacity." },
+    ],
+  },
+  "ge7-mid-m7-l3": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Life During Pandemic" },
+      { type: "list", content: "Connect benefits and problems:", items: ["Benefits: continuity of classes, work, communication, services", "Problems: connectivity, devices, privacy, misinformation, screen fatigue", "The digital divide explains why technology does not help everyone equally"] },
+    ],
+    quiz: [
+      { question: "Which is an example of digital divide during online classes?", options: ["A student cannot attend due to no reliable internet or device", "A student has a stable connection and laptop", "A teacher posts learning materials", "A class uses video meetings"], answer: 0, explanation: "Digital divide is unequal access to technology and connectivity." },
+      { question: "Screen fatigue is a concern because it can affect:", options: ["Well-being, focus, and learning", "Only router names", "Only climate justice", "Only gene expression"], answer: 0, explanation: "Long screen exposure can affect physical and mental well-being." },
+    ],
+  },
+  "ge7-mid-m7-l4": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Social Impact of Technology" },
+      { type: "list", content: "Use a balanced answer:", items: ["Technology can improve access, communication, research, and disaster response", "Technology can also cause misinformation, cybercrime, privacy loss, addiction, and inequality", "The exam may ask for both positive and negative impacts"] },
+    ],
+    quiz: [
+      { question: "A balanced view of technology says it is:", options: ["Helpful or harmful depending on use, access, design, and ethics", "Always perfect", "Always useless", "Never social"], answer: 0, explanation: "Technology has mixed impacts that depend on context and responsibility." },
+      { question: "Which issue is linked to social media algorithms?", options: ["Echo chambers or filter bubbles", "Muscle soreness", "Volcanic ash", "Lower body alignment"], answer: 0, explanation: "Algorithms can repeatedly show similar content, creating echo chambers." },
+    ],
+  },
+  "ge7-mid-m8-l1": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Gene Module" },
+      { type: "list", content: "Must-know points:", items: ["Gene: DNA segment carrying hereditary instructions", "Heredity: passing traits from parents to offspring", "Gene therapy targets faulty genes; stem cell therapy uses cells for repair/regeneration", "Genes interact with environment; traits are not always genes alone", "GMOs have possible agricultural benefits and ethical/environmental concerns"] },
+      { type: "table", content: "Common Exam Pairings", headers: ["Pair", "Difference"], rows: [["Gene therapy vs Stem cell therapy", "Gene therapy changes genetic instructions; stem cell therapy uses cells"], ["Gene vs Heredity", "Gene is unit/instruction; heredity is transmission of traits"], ["GMO benefit vs concern", "Higher yield/pest resistance vs biodiversity, labeling, and control issues"]] },
+    ],
+    quiz: [
+      { question: "Heredity refers to:", options: ["Passing traits from parents to offspring", "Daily weather changes", "Router configuration", "Exercise hydration"], answer: 0, explanation: "Heredity is trait transmission through genetic information." },
+      { question: "Which is the clearest stem cell therapy idea?", options: ["Using cells that can develop or repair tissues", "Changing a URL", "Reducing typhoons", "Increasing coal use"], answer: 0, explanation: "Stem cell therapy focuses on cells with regenerative or developmental potential." },
+      { question: "A fair GMO answer should mention:", options: ["Both possible benefits and possible risks/concerns", "Only benefits always", "Only fear without evidence", "No relation to society"], answer: 0, explanation: "The module presents GMO as a science-society issue with benefits and concerns." },
+    ],
+  },
+  "mst02-mid-m5-l1": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Network Basics" },
+      { type: "list", content: "Must-know points:", items: ["Network means two or more connected devices/nodes", "Networks share data, hardware, software, and communication services", "Early networks used physical workstations and cabling; modern networks can be wired, wireless, local, or global", "Topologies describe how devices are arranged"] },
+    ],
+    quiz: [
+      { question: "Which is required for a network?", options: ["Connection and communication between at least two devices", "Only a single disconnected device", "No data exchange", "No hardware"], answer: 0, explanation: "A network requires connected devices that can communicate." },
+      { question: "Which is shared through a network?", options: ["Printers, files, applications, and messages", "Only shoes", "Only exercise mats", "Only climate data"], answer: 0, explanation: "Networks support resource and information sharing." },
+    ],
+  },
+  "mst02-mid-m5-l2": {
+    sections: [
+      { type: "h2", content: "Exam Focus: LAN, MAN, WAN, VPN" },
+      { type: "list", content: "Memorize by coverage:", items: ["LAN: limited area like home, lab, office, building", "MAN: metropolitan/city coverage", "WAN: large geographic area; connects distant networks", "VPN: private encrypted connection over a public network"] },
+    ],
+    quiz: [
+      { question: "A network connecting computers inside one laboratory is usually:", options: ["LAN", "WAN", "MAN", "VPN only"], answer: 0, explanation: "A laboratory network is a Local Area Network." },
+      { question: "A network connecting branches across regions is usually:", options: ["WAN", "LAN only", "A single NIC", "A keyboard"], answer: 0, explanation: "WAN covers wide geographic areas." },
+    ],
+  },
+  "mst02-mid-m5-l3": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Network Devices" },
+      { type: "list", content: "Device roles to memorize:", items: ["NIC connects a device to a network", "Hub broadcasts to all ports", "Switch forwards within a LAN more intelligently", "Router connects different networks", "Modem connects to ISP services", "Cables/connectors or wireless signals carry data"] },
+    ],
+    quiz: [
+      { question: "The component that lets a computer connect to a network is:", options: ["NIC", "Speaker", "Chair", "Projector"], answer: 0, explanation: "NIC means Network Interface Card." },
+      { question: "Compared with a hub, a switch is:", options: ["More efficient in forwarding local network traffic", "Only a display device", "Not used in networking", "Always slower by definition"], answer: 0, explanation: "Switches reduce unnecessary broadcasts." },
+    ],
+  },
+  "mst02-mid-m5-l4": {
+    sections: [
+      { type: "h2", content: "Exam Focus: E-Commerce" },
+      { type: "list", content: "Objective-oriented points:", items: ["Define e-commerce as online/electronic transaction activity", "Know advantages: convenience, wider reach, 24/7 access", "Know risks: fraud, privacy, delivery problems, inability to inspect items", "Connect safe practices with secure transactions"] },
+    ],
+    quiz: [
+      { question: "Which is a risk specific to online transactions?", options: ["Fake sellers or phishing payment pages", "Ability to compare products", "24/7 browsing", "Wider reach"], answer: 0, explanation: "Fraud and phishing are major e-commerce risks." },
+      { question: "A buyer protects themselves online by:", options: ["Checking seller credibility and using secure payment", "Sending passwords", "Ignoring suspicious URLs", "Sharing OTP codes"], answer: 0, explanation: "Credibility checks and secure payment reduce transaction risk." },
+    ],
+  },
+  "mst02-mid-m5-l5": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Internet Terms" },
+      { type: "list", content: "Do not mix these up:", items: ["Internet: global network infrastructure", "Browser: software for viewing web pages", "URL: address of a web resource", "IP address: numeric network identifier", "Protocol: rules for communication", "ISP: provider of internet access"] },
+    ],
+    quiz: [
+      { question: "Which one is software?", options: ["Browser", "Ethernet cable", "RJ45 connector", "Power outlet"], answer: 0, explanation: "A browser is an application/software." },
+      { question: "Rules like HTTP/HTTPS and TCP/IP are examples of:", options: ["Protocols", "Blisters", "Core exercises", "Genes"], answer: 0, explanation: "Protocols are communication rules." },
+    ],
+  },
+  "mst02-mid-m5-l8": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Netiquette and Internet Issues" },
+      { type: "list", content: "Likely exam targets:", items: ["Define netiquette as proper online behavior", "Identify cyberbullying, misinformation, malware, phishing, addiction, and privacy risks", "Explain why verifying information matters", "Respect privacy, consent, and intellectual property"] },
+    ],
+    quiz: [
+      { question: "Sharing screenshots of private messages without consent violates:", options: ["Privacy and netiquette", "Dynamic stretching", "Energy security", "Heredity"], answer: 0, explanation: "Respecting privacy is part of responsible online behavior." },
+      { question: "Before sharing alarming news online, you should:", options: ["Verify it through credible sources", "Forward it immediately", "Add unverified claims", "Remove context"], answer: 0, explanation: "Verification helps prevent misinformation." },
+    ],
+  },
+  "mst02-mid-m6": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Data Security and Privacy" },
+      { type: "list", content: "Must-know points:", items: ["Security protects data/systems from unauthorized access, damage, or disruption", "Privacy governs proper use of personal data", "RA 10173 is the Data Privacy Act", "Remember transparency, legitimate purpose, and proportionality", "Examples include data breach, identity theft, oversharing, weak passwords, and unauthorized disclosure"] },
+    ],
+    quiz: [
+      { question: "Which principle requires informing people how their data will be used?", options: ["Transparency", "Overcollection", "Secrecy", "Random posting"], answer: 0, explanation: "Transparency is a key privacy principle." },
+      { question: "Which is a security control?", options: ["Strong passwords and access control", "Sharing OTP codes", "Posting private records", "Ignoring updates"], answer: 0, explanation: "Passwords and access controls help protect systems and data." },
+      { question: "Data privacy is violated when:", options: ["Personal data is used without proper basis or consent", "Data is protected lawfully", "A user reads a privacy notice", "A system limits access"], answer: 0, explanation: "Improper collection/use/disclosure violates privacy principles." },
+    ],
+  },
+  "mst02-mid-m7": {
+    sections: [
+      { type: "h2", content: "Exam Focus: ICT Impacts" },
+      { type: "list", content: "Use the three-impact framework:", items: ["Economic: jobs, e-commerce, productivity, automation, digital entrepreneurship", "Political: e-governance, participation, campaigns, disinformation, surveillance", "Social: communication, learning, culture, relationships, cyberbullying, screen fatigue, digital divide"] },
+    ],
+    quiz: [
+      { question: "Automation belongs mainly to which ICT impact area?", options: ["Economic", "Lower body", "Gene therapy", "Weather"], answer: 0, explanation: "Automation affects jobs, productivity, and industries." },
+      { question: "Online petitions and government portals show ICT's:", options: ["Political impact", "Muscle soreness impact", "GMO impact", "Hydration impact"], answer: 0, explanation: "They involve citizen participation and government services." },
+      { question: "Cyberbullying belongs mainly to which ICT impact area?", options: ["Social impact", "Energy crisis", "Climate adaptation", "Stem cell therapy"], answer: 0, explanation: "Cyberbullying affects social behavior and well-being." },
+    ],
+  },
+  "pe2-mid-m4": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Health Appraisal and Safety" },
+      { type: "list", content: "Must-know points:", items: ["Health appraisal identifies risks before, during, and after activity", "Safety variables include health status, fitness level, warm-up/cool-down, equipment, form, and environment", "Proper clothing and footwear reduce discomfort and injury", "Fluid intake prevents dehydration, especially during long or hot activity", "Blisters and muscle soreness require prevention, monitoring, and proper care"] },
+    ],
+    quiz: [
+      { question: "Health appraisal is done before activity mainly to:", options: ["Identify risks and guide safe participation", "Choose a random song", "Avoid all movement forever", "Test internet speed"], answer: 0, explanation: "Health appraisal supports safe exercise decisions." },
+      { question: "Which is part of exercise safety?", options: ["Proper equipment inspection", "Using broken equipment", "Skipping warm-up always", "Ignoring pain"], answer: 0, explanation: "Safe equipment reduces accident and injury risk." },
+      { question: "Sports drinks may be considered when activity lasts:", options: ["More than about 60–90 minutes", "Only 2 seconds", "Never under any condition", "Only while sleeping"], answer: 0, explanation: "Longer activity may require electrolytes/carbohydrates depending on intensity and conditions." },
+    ],
+  },
+  "pe2-mid-m5-l1": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Dynamic Stretching" },
+      { type: "list", content: "Must-know points:", items: ["Dynamic stretching is active and controlled", "It is usually used before exercise", "It prepares muscles, joints, heart rate, and nervous system", "It is different from static stretching, which holds positions"] },
+    ],
+    quiz: [
+      { question: "Dynamic stretching prepares the body by:", options: ["Using controlled movement through range of motion", "Holding still for a long time only", "Stopping circulation", "Replacing the workout"], answer: 0, explanation: "Dynamic stretching uses movement to prepare for activity." },
+      { question: "Which is best before HIIT?", options: ["Dynamic warm-up", "No warm-up", "Only long static holds", "Immediate maximum effort"], answer: 0, explanation: "A dynamic warm-up prepares the body for intense movement." },
+    ],
+  },
+  "pe2-mid-m5-l2": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Proper Execution" },
+      { type: "list", content: "Objective-oriented points:", items: ["Correct form reduces injury risk", "Alignment matters: knees, spine, shoulders, hips, and landing mechanics", "Quality is more important than speed", "Pain, dizziness, and loss of form mean intensity should be reduced or stopped"] },
+    ],
+    quiz: [
+      { question: "If form breaks during HIIT, the best action is to:", options: ["Slow down, modify, or rest", "Move faster", "Ignore technique", "Hold breath"], answer: 0, explanation: "Maintaining form is essential for safety." },
+      { question: "Proper landing during jumps should be:", options: ["Soft and controlled", "Stiff and painful", "Random and twisted", "Ignored"], answer: 0, explanation: "Soft landing reduces stress on joints." },
+    ],
+  },
+  "pe2-mid-m5-l3": {
+    sections: [
+      { type: "h2", content: "Exam Focus: HIIT Terms" },
+      { type: "list", content: "Do not confuse:", items: ["Workout: the whole session", "Work interval: high-effort active segment", "Recovery interval: rest or lower-intensity segment", "Round: one work-rest cycle", "Intensity must match fitness level"] },
+    ],
+    quiz: [
+      { question: "In a 30 seconds exercise + 30 seconds rest setup, the 30 seconds exercise part is the:", options: ["Work interval", "Cool-down only", "Whole semester", "Health appraisal"], answer: 0, explanation: "The active high-effort period is the work interval." },
+      { question: "Recovery interval is included to:", options: ["Manage fatigue and support safe repeated effort", "Make the workout dangerous", "Remove all rest", "Stop adaptation"], answer: 0, explanation: "Recovery makes interval training safer and more sustainable." },
+    ],
+  },
+  "pe2-mid-m5-l4": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Fitness Program" },
+      { type: "list", content: "Must-know planning tools:", items: ["SMART goals define clear targets", "FITT controls exercise variables", "Progression should be gradual", "Programs must include warm-up, workout, cool-down, and recovery", "Monitor progress and adjust based on response"] },
+    ],
+    quiz: [
+      { question: "Which FITT variable tells how often exercise is done?", options: ["Frequency", "Intensity", "Time", "Type"], answer: 0, explanation: "Frequency means how often." },
+      { question: "A program that becomes harder slowly over time uses:", options: ["Progression", "Overexertion", "Neglect", "Randomization only"], answer: 0, explanation: "Progression gradually increases demand." },
+    ],
+  },
+  "pe2-mid-m6-l1": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Core Exercises" },
+      { type: "list", content: "Must-know points:", items: ["Core supports posture, stability, balance, and movement control", "Core exercises include plank, side plank, bird dog, dead bug, crunches, and mountain climbers", "Neutral spine and controlled movement are safety priorities", "Core strength supports lower body and whole-body exercise"] },
+    ],
+    quiz: [
+      { question: "Which cue is correct for plank?", options: ["Brace core and keep neutral spine", "Let hips sag", "Hold breath always", "Twist the neck"], answer: 0, explanation: "Neutral spine and core bracing improve plank safety." },
+      { question: "Bird dog trains:", options: ["Core control and coordination", "Only calves", "Only biceps", "Only hydration"], answer: 0, explanation: "Bird dog challenges stability while limbs move." },
+    ],
+  },
+  "pe2-mid-m6-l2": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Lower Body Exercises" },
+      { type: "list", content: "Must-know points:", items: ["Lower body exercises train quadriceps, hamstrings, glutes, calves, and hip stabilizers", "Examples: squat, lunge, step-up, glute bridge, calf raise", "Safety cues: warm up, align knees with toes, land softly, control range of motion", "Progress from bodyweight to harder variations"] },
+    ],
+    quiz: [
+      { question: "Which muscle group is strongly used in glute bridges?", options: ["Glutes", "Forearms only", "Neck only", "Fingers only"], answer: 0, explanation: "Glute bridges focus on hip extension and glute activation." },
+      { question: "Before adding jumps or weights, a student should first:", options: ["Master controlled bodyweight form", "Skip basics", "Ignore pain", "Use maximum load immediately"], answer: 0, explanation: "Progression starts with safe movement quality." },
+    ],
+  },
+};
+
+function applyModuleObjectiveSupport(subjects: Subject[]) {
+  for (const subject of subjects) {
+    for (const term of subject.terms) {
+      for (const mod of term.modules) {
+        for (const topic of mod.topics) {
+          const support = MODULE_OBJECTIVE_SUPPORT[topic.id];
+          if (!support) continue;
+          topic.content.sections = [
+            ...topic.content.sections,
+            ...support.sections,
+          ];
+          topic.content.quiz = [
+            ...(topic.content.quiz ?? []),
+            ...support.quiz,
+          ];
+        }
+      }
+    }
+  }
+}
+
+applyModuleObjectiveSupport(MIDTERM_FOCUS_SUBJECTS);
