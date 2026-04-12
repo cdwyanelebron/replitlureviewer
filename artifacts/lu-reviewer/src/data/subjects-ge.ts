@@ -506,7 +506,7 @@ export const GE_SUBJECTS: Subject[] = [
   // ─── GE 5: THE CONTEMPORARY WORLD ──────────────────────────────────────────
     {
       id: "ge5", code: "GE 5", title: "The Contemporary World", shortTitle: "GE 5", units: 3,
-      description: "Reviewer based on the updated class coverage: Module 1 and Module 2 for Prelim; Module 3 and Module 4 for Midterm. GE5NOTES are used as supporting explanations from class discussion.",
+      description: "Reviewer based on corrected class coverage. Priority source is sir's verbal/class notes (GE5NOTES); the course guide is used to support module objectives and coverage. Prelim: Modules 1–2. Midterm: Modules 3–4.",
       terms: [
         {
           id: "prelim", label: "PRELIM",
@@ -518,10 +518,13 @@ export const GE_SUBJECTS: Subject[] = [
                   id: "ge5-m1t1", title: "Nature and Definitions of Globalization",
                   content: {
                     heading: "Nature and Definitions of Globalization", term: "PRELIM", module: "Module 1: Introduction to Globalization",
-                    objectives: ["Explain the nature of globalization", "Compare scholarly definitions of globalization", "Remember Steger's best scholarly description"],
+                    objectives: ["Differentiate competing conceptions of globalization", "Identify the underlying philosophies of the different definitions", "Agree on a working definition of globalization for the course", "Explain the nature of globalization using the module and class discussion"],
                     sections: [
+                      { type: "note", content: "Source priority for GE5: (1) GE5NOTES / verbal discussion ni sir, (2) PPT/module files given to the class, (3) course guide objectives only as support. If a topic is not connected to sir's notes or the class modules, it is not included as main review content." },
                       { type: "h2", content: "Nature of Globalization" },
-                      { type: "text", content: "Globalization is the primary driving force of the contemporary world. It is complex and multifaceted: it happens at multiple levels and affects people differently." },
+                      { type: "text", content: "Globalization is the primary driving force of the contemporary world. The module begins with the idea that people often say, 'the world is getting smaller,' because places, markets, cultures, technologies, and political ideas are more connected than before." },
+                      { type: "text", content: "It is complex and multifaceted: it happens at multiple levels and affects people differently. It can be economic, political, cultural, technological, and social at the same time." },
+                      { type: "table", content: "How to Read Globalization Definitions", headers: ["Angle", "What It Emphasizes", "Related Definitions"], rows: [["Border / territory angle", "Borders become less limiting; relations become superterritorial or de-territorialized.", "Ohmae; Scholte"], ["Social relations angle", "Distant local happenings affect one another; consciousness becomes global.", "Giddens; Robertson; Steger"], ["Economic angle", "Markets, production, trade, services, capital, and technology become interdependent.", "OECD; Nikitin and Elliott"], ["Political angle", "State sovereignty and state structures may weaken or be challenged.", "Beck"], ["Cultural angle", "Cross-cultural interaction, exchange, and transformation happen.", "Cooppan"]] },
                       { type: "note", content: "Memory clue: 'The world is getting smaller' because people, objects, information, markets, cultures, and political ideas move across borders faster and more widely." },
                       { type: "table", content: "Definitions from Module 1", headers: ["Source", "Key Idea"], rows: [
                         ["Ohmae (1992)", "Globalization means the onset of the borderless world."],
@@ -562,6 +565,7 @@ export const GE_SUBJECTS: Subject[] = [
                         ["Ideoscape", "Movement of political ideas", "Personal views posted publicly; ideologies and political messages moving across borders."],
                       ]},
                       { type: "note", content: "Exam clue: people = ethnoscape; media/culture = mediascape; technology/software = technoscape; money/stock markets = financescape; political ideas/views = ideoscape." },
+                      { type: "table", content: "Practice Identification from the PPT", headers: ["Situation", "Scape", "Why"], rows: [["Tourism puts people from developed parts of the world in contact with people in the developing world.", "Ethnoscape", "It is about movement/contact of people."], ["Brazilian telenovelas, Bollywood films, World Cup, and Olympics are watched across countries.", "Mediascape", "It is about media and cultural flow."], ["Apple's iPhone affects day-to-day life across the commodity chain.", "Technoscape", "It is about technology moving across borders."], ["NYSE, Nikkei, and other finance hubs affect economies quickly.", "Financescape", "It is about money and financial flows."], ["A person posts political views on Facebook for public consumption.", "Ideoscape", "It is about ideas/opinions moving publicly and globally."]] },
                     ],
                     quiz: [
                       { question: "Which scape refers to the global movement of people?", options: ["Ethnoscape", "Technoscape", "Financescape", "Ideoscape"], answer: 0, explanation: "Ethnoscape refers to the global movement of people." },
@@ -591,6 +595,8 @@ export const GE_SUBJECTS: Subject[] = [
                         ["Cultural Hybridization / Glocalization", "Global and local cultures blend.", "Shaka Shaka Chicken, Shrimp Beef Burger, Dosa Masala Burger, Cheesy Eggdesal; global products adapted to local tastes."],
                       ]},
                       { type: "note", content: "Supporting class note: Neoliberalism promotes free markets, free trade, privatization, and less government regulation, but it can create inequality because richer countries and corporations often benefit more." },
+                      { type: "table", content: "Homogeneity vs. Heterogeneity", headers: ["Theory", "Meaning", "Reviewer Clue"], rows: [["Homogeneity", "Globalization can make societies/cultures look more similar.", "Same products, media, fast-food systems, or consumer habits appearing in many places."], ["Heterogeneity", "Globalization does not erase difference; cultures respond differently.", "Local identities, resistance, and different adaptations remain."], ["Hybridization", "Global and local elements combine into something mixed.", "Glocalized food examples such as Shaka Shaka Chicken, Shrimp Beef Burger, Dosa Masala Burger, Cheesy Eggdesal."]] },
+                      { type: "list", content: "PPT examples to remember:", items: ["Culture of imperialism: Vigan Heritage Village reflects European architectural influence.", "Media imperialism: platforms like Netflix can shape cultural consumption and the image of exclusivity.", "Neoliberalism: wealth concentration and inequality are concerns.", "McDonaldization: fast-food logic saves time, emphasizes convenience, and creates business opportunities."] },
                     ],
                     quiz: [
                       { question: "Cultural hybridization means:", options: ["Global and local cultures blend", "All cultures disappear", "Only one culture remains", "No cultural exchange happens"], answer: 0, explanation: "Hybridization or glocalization occurs when global and local cultures mix." },
@@ -610,8 +616,9 @@ export const GE_SUBJECTS: Subject[] = [
                   id: "ge5-m2t1", title: "Mercantilism and Open-Trade System",
                   content: {
                     heading: "Globalization of the World Economy", term: "PRELIM", module: "Module 2: Globalization of World Economy",
-                    objectives: ["Explain mercantilism", "Explain the open-trade system and gold standard", "Connect economic globalization with trade systems"],
+                    objectives: ["Define economic globalization", "Identify actors that facilitate economic globalization", "Define the modern world system", "Articulate a stance on global economic integration", "Explain mercantilism and the open-trade system from the PPT"],
                     sections: [
+                      { type: "note", content: "Course guide support: Module II Global Economy expects students to define economic globalization, identify actors that facilitate it, define the modern world system, and articulate a stance on global economic integration. Sir's notes/PPT still decide which details are prioritized." },
                       { type: "h2", content: "Mercantilism" },
                       { type: "definition", content: "Mercantilism — an economic system dominant from the 16th to 18th century in which countries, primarily in Europe, competed to sell more goods as a way to boost national income or monetary reserves." },
                       { type: "list", content: "Key ideas from the Module 2 PPT:", items: ["16th–18th century", "Countries competed with one another, especially in Europe", "Selling more goods was a way to increase the country's income", "This income was later referred to as monetary reserves"] },
@@ -622,6 +629,7 @@ export const GE_SUBJECTS: Subject[] = [
                         ["Open-Trade System", "Adopted the gold standard at an international monetary conference in Paris.", "Created to prevent isolationism of the mercantilist era."],
                       ]},
                       { type: "note", content: "Supporting class note: Mercantilism is connected to strong government control of trade and the idea that wealth is measured through reserves such as gold and silver." },
+                      { type: "table", content: "Economic Timeline for Prelim", headers: ["Period / Event", "What Happened", "Why It Matters"], rows: [["16th–18th century", "Mercantilism dominated; European countries competed to sell more goods.", "Shows early economic globalization through state-controlled trade and accumulation of reserves."], ["Mercantilist era", "Countries wanted exports to exceed imports and measured wealth using reserves such as gold and silver.", "Connects sir's notes to the PPT's monetary reserves."], ["Paris monetary conference", "Open-trade system adopted the gold standard.", "Aimed to prevent isolationism associated with mercantilism."], ["Modern era", "Global trade continues under neoliberal ideas.", "Free markets/free trade can increase exchange but also inequality."], ["2008 Global Financial Crisis", "Housing loans and MBS collapsed when borrowers could not pay.", "Sir's bottle analogy explains how investors lose when mortgage payments stop."], ["Present", "Digital currencies and AI change production and finance.", "Bitcoin is decentralized; AI can increase productivity but reduce manpower needs."]] },
                     ],
                     quiz: [
                       { question: "Mercantilism was dominant during which period?", options: ["16th–18th century", "20th–21st century only", "Ancient period only", "After 2008 only"], answer: 0, explanation: "The Module 2 PPT states that mercantilism occurred in the 16th–18th century." },
@@ -639,12 +647,16 @@ export const GE_SUBJECTS: Subject[] = [
                     objectives: ["Use class notes to understand economic globalization", "Explain the 2008 crisis and monetary policy response", "Identify modern economic changes such as digital currency and AI"],
                     sections: [
                       { type: "note", content: "This topic uses GE5NOTES as supporting material because these are the verbal explanations/class notes from sir." },
+                      { type: "h2", content: "Economic Globalization in Sir's Class Notes" },
+                      { type: "text", content: "Sir's discussion connects world economic globalization to crises, policy responses, neoliberalism, digital currencies, and AI. The point is not only to memorize events but to see how one country's financial system can affect wider global systems." },
                       { type: "h2", content: "2008 Global Financial Crisis" },
                       { type: "list", content: "Causes explained in class notes:", items: ["Banks and financial institutions lost billions due to the collapse of the housing market", "Many banks gave housing loans or mortgages", "Interest rates were very low, so many people borrowed money to buy houses", "High demand increased real estate prices quickly, creating a housing bubble"] },
                       { type: "definition", content: "Mortgage-Backed Securities (MBS) — investment products created when banks combined many housing loans and sold them like stocks to investors." },
                       { type: "example", content: "Bottle analogy: 'The bottle is the stock.' The bottle represents the investment fund or MBS. The money inside comes from mortgage payments. If people stop paying their loans, the bottle becomes empty and investors lose money." },
+                      { type: "table", content: "Step-by-Step Crisis Flow", headers: ["Step", "Explanation"], rows: [["1. Low interest rates", "Borrowing became easier, so more people took housing loans."], ["2. Housing demand increased", "More people buying houses caused real estate prices to rise quickly."], ["3. Housing bubble formed", "Prices rose beyond stable value."], ["4. Banks bundled mortgages into MBS", "Loans were pinagsama-sama and sold to investors like stocks."], ["5. Borrowers failed to pay", "Mortgage payments stopped or declined."], ["6. MBS value collapsed", "Investors lost money because the expected payments disappeared."]] },
                       { type: "h2", content: "Government Response: Monetary Policy" },
                       { type: "list", content: "The Federal Reserve System tried to recover the economy by:", items: ["Lowering interest rates", "Increasing the money supply", "Encouraging borrowing and spending"] },
+                      { type: "note", content: "Monetary policy memory clue: lower interest rates + more money supply + encouraged borrowing/spending = attempt to stimulate economic recovery." },
                       { type: "h2", content: "Modern Economic Changes" },
                       { type: "table", content: "Modern Changes from Class Notes", headers: ["Topic", "Main Idea"], rows: [
                         ["Digital currencies", "Bitcoin and similar currencies are digital, decentralized, and not controlled by a central bank."],
@@ -666,7 +678,7 @@ export const GE_SUBJECTS: Subject[] = [
                   content: {
                     heading: "GE5 Prelim Comprehensive Exam", term: "PRELIM", module: "Modules 1–2",
                     objectives: ["Review Module 1 and Module 2 coverage", "Practice definitions, scapes, cultural flows, and economic globalization"],
-                    sections: [{ type: "note", content: "Coverage: Module 1 Introduction to Globalization and Module 2 Globalization of World Economy, with GE5NOTES as supporting explanations." }],
+                    sections: [{ type: "note", content: "Coverage: Module 1 Introduction to Globalization and Module 2 Globalization of World Economy, with GE5NOTES as supporting explanations and the course guide as objectives reference." }, { type: "table", content: "Prelim Source Priority", headers: ["Priority", "Use"], rows: [["1. GE5NOTES / sir's discussion", "Main reviewer explanations: 2008 crisis, MBS, monetary policy, neoliberalism, Bitcoin, AI."], ["2. PPT/module files", "Globalization definitions, scapes, cultural flows, mercantilism, open-trade system."], ["3. Course guide", "Objectives: define economic globalization, identify actors, modern world system, stance on integration."]] }],
                     quiz: [
                       { question: "1. The phrase 'the world is getting smaller' refers to the effect of:", options: ["Globalization", "Mercantilism only", "Isolationism", "Cominform"], answer: 0, explanation: "Globalization makes distant places and people more connected." },
                       { question: "2. Steger describes globalization as expansion and intensification of social relations and consciousness across:", options: ["World-time and world-space", "Only local time", "Only national law", "Gold reserves only"], answer: 0, explanation: "This is the module's best scholarly description." },
@@ -710,9 +722,10 @@ export const GE_SUBJECTS: Subject[] = [
                   id: "ge5-m3t1", title: "Power, Politics, State, and International Order",
                   content: {
                     heading: "Global Politics: Creating an International Order", term: "MIDTERM", module: "Module 3: A History of Global Politics",
-                    objectives: ["Define power and politics", "Identify the elements of a state", "Explain basic government types in the Philippines"],
+                    objectives: ["Explain the effects of political globalization on governments", "Identify institutions that govern international relations", "Differentiate internationalism from globalism using class discussion", "Identify the relevance of the state amid globalization", "Define power, politics, and the elements of a state"],
                     sections: [
-                      { type: "note", content: "GE5NOTES are used here as supporting notes from sir's verbal explanations for Module 3." },
+                      { type: "note", content: "GE5NOTES are the priority here because these are the verbal explanations from sir. Course guide support: the module should explain effects of globalization on governments, institutions in international relations, internationalism, global governance, and relevance of the state." },
+                    { type: "table", content: "Sir's Core Flow for Global Politics", headers: ["Concept", "Simple Meaning", "Why It Matters"], rows: [["Power", "Ability to influence or persuade others to achieve a goal.", "Politics starts with power."], ["Politics", "Using power and influence to decide, achieve goals, and manage relationships.", "Connects states, societies, and international relations."], ["State / Estado", "A political unit with population, territory, government, and sovereignty.", "The state remains important even with globalization."], ["Sovereignty", "Ability to govern independently.", "Westphalia and non-interference are based on this."], ["Internationalism", "Countries cooperate to maintain peace and solve problems.", "Leads to organizations like League of Nations and UN."]] },
                       { type: "definition", content: "Power — the ability to influence or persuade others to achieve a goal." },
                       { type: "table", content: "Types of Power", headers: ["Type", "Meaning"], rows: [["Persuasion", "Based on trust and influence."], ["Control", "Based on authority or sometimes fear."]] },
                       { type: "definition", content: "Politics — the process of using power and influence to make decisions, achieve goals, and manage relationships between states and societies." },
@@ -750,10 +763,16 @@ export const GE_SUBJECTS: Subject[] = [
                         ["Karl Marx", "Supported international worker cooperation and opposed nationalism because it divided workers."],
                       ]},
                       { type: "definition", content: "Westphalian System (1648) — the Peace of Westphalia ended the Thirty Years' War and established sovereignty, independent states, and non-interference in internal affairs." },
-                      { type: "table", content: "Historical Timeline", headers: ["Topic", "Key Points"], rows: [
-                        ["Napoleonic Wars", "Led by Napoleon Bonaparte; spread ideas of equality and reform; challenged monarchy; ended in 1815."],
-                        ["Concert of Europe", "Major European powers cooperated after the Napoleonic Wars to maintain balance of power and prevent major wars until World War I."],
-                        ["Great Powers", "Historical: Austria, Russia, Prussia, United Kingdom. Modern examples: United Kingdom, Russia, United States, China."],
+                      { type: "table", content: "Global Politics Timeline from Sir's Notes", headers: ["Time / Event", "Key Points", "Reviewer Meaning"], rows: [
+                      ["Europe before the modern system", "Dominated by monarchies; power centralized in kings and queens; people had limited participation.", "This is the old order before modern state and democratic ideas expanded."],
+                      ["1648 — Peace of Westphalia", "Ended the Thirty Years' War; established sovereignty, independent states, and non-interference.", "Foundation of the modern state system."],
+                      ["Napoleonic Wars", "Napoleon spread ideas of equality and reform and challenged monarchies.", "Shows challenge to old monarchical order."],
+                      ["1815 — End of Napoleonic Wars", "Napoleon was defeated.", "Led to postwar European cooperation."],
+                      ["1815–World War I — Concert of Europe", "Major powers cooperated to maintain balance of power and prevent major wars.", "Example of great-power cooperation before WWI."],
+                      ["After World War I", "Monarchies weakened or collapsed; Russian Revolution ended the Tsar system.", "Communism rose as an alternative to monarchy and capitalism."],
+                        ["1945 — United Nations", "Created after World War II to prevent future wars and maintain global peace/security.", "Replaced the failed League of Nations."],
+                      ["1947 — Cominform", "Replaced Comintern to coordinate communist parties and guide communist countries/movements.", "Shows how socialist/communist internationalism continued after WWII."] ,
+                      ["Great Powers", "Historical: Austria, Russia, Prussia, United Kingdom. Modern examples: United Kingdom, Russia, United States, China.", "Great powers shape international order because of military, economic, and political influence."]
                       ]},
                     ],
                     quiz: [
@@ -775,13 +794,15 @@ export const GE_SUBJECTS: Subject[] = [
                       { type: "definition", content: "Ultra-nationalism — extreme loyalty to one's country, sometimes leading to aggression toward other nations." },
                       { type: "list", content: "Examples of ultra-nationalism from notes:", items: ["Japan sought to expand its empire and influence other Asian countries", "Adolf Hitler and Germany promoted extreme nationalism and expansionism"] },
                       { type: "definition", content: "Socialist Internationalism — an idea associated with Karl Marx focusing on workers across countries, opposition to capitalism, equality, fair distribution of wealth, and worldwide unity of workers." },
+                    { type: "table", content: "Liberal vs. Socialist Internationalism", headers: ["Type", "Focus", "Class Notes Clue"], rows: [["Liberal Internationalism", "Cooperation, peace, and international organizations.", "Connected to thinkers like Kant, Bentham, Mazzini, and Wilson; countries cooperate to avoid war."], ["Socialist Internationalism", "Workers' unity across countries and equality.", "Connected to Karl Marx; opposes capitalism because it exploits/divides workers."]] },
                       { type: "table", content: "Socialist Ideas and Effects", headers: ["Topic", "Explanation"], rows: [
                         ["Why socialist movements exist", "Some people believe capitalism creates inequality, unfair distribution of wealth, and exploitation of workers."],
                         ["Labor reforms", "Reduced working hours from 16 to 8 hours, better working conditions, workers' rights and protection."],
                         ["Capitalists", "Owners of businesses and companies who control production and capital."],
                         ["Meritocracy", "People gain power or position based on skills, ability, and talent, not wealth, family, or status."],
                       ]},
-                      { type: "table", content: "Communism and Related Ideas", headers: ["Topic", "Meaning"], rows: [
+                      { type: "table", content: "Socialism vs. Communism vs. Radical Movements", headers: ["Concept", "Meaning from GE5NOTES"], rows: [["Socialism", "Promotes human rights, humane treatment of workers, government involvement in the economy, and can exist with some democracy."], ["Communism", "More extreme form aiming for classless society, no private ownership, and often strong centralized control."], ["Radical movement", "Pushes for extreme or rapid change; may involve violence or revolution, such as the Russian Revolution."]] },
+                    { type: "table", content: "Communism and Related Ideas", headers: ["Topic", "Meaning"], rows: [
                         ["Communism", "Property is owned collectively; classless society; wealth shared equally; workers control production."],
                         ["Capitalism to Communism", "According to Marx: capitalism creates exploitation, workers become aware, revolution may happen, socialism transitions to communism."],
                         ["Vladimir Lenin", "Led the Russian Revolution, ended the Tsar monarchy, established a communist government and the first socialist state/Soviet Union."],
@@ -813,6 +834,7 @@ export const GE_SUBJECTS: Subject[] = [
                       { type: "definition", content: "League of Nations — created after World War I to promote peace and cooperation among countries." },
                       { type: "list", content: "League of Nations principles:", items: ["Respect for sovereignty", "Peaceful resolution of conflicts", "International cooperation", "It eventually failed to prevent another global conflict"] },
                       { type: "definition", content: "United Nations — an international organization established in 1945 after World War II to maintain peace, security, and cooperation among nations." },
+                    { type: "table", content: "League of Nations vs. United Nations", headers: ["Organization", "Created After", "Purpose", "Important Result"], rows: [["League of Nations", "World War I", "Promote peace and cooperation; respect sovereignty; resolve conflicts peacefully.", "Failed to prevent another global conflict / World War II."], ["United Nations", "World War II", "Prevent future wars, promote cooperation, protect human rights, maintain peace and security.", "Replaced the League of Nations and became the main global organization for peace/security."]] },
                       { type: "list", content: "Goals of the United Nations:", items: ["Prevent future wars", "Promote international cooperation", "Protect human rights", "Maintain global peace and security"] },
                       { type: "note", content: "The UN replaced the League of Nations because the League failed to stop World War II." },
                     ],
@@ -831,7 +853,8 @@ export const GE_SUBJECTS: Subject[] = [
                     heading: "United Nations — 5 Organs/Bodies", term: "MIDTERM", module: "Module 4: UN and Contemporary Global Governance",
                     objectives: ["Identify the five UN organs", "Explain the main function of each organ", "Remember P5 and veto power"],
                     sections: [
-                      { type: "table", content: "Five Main UN Organs from Class Notes", headers: ["Organ", "Composition / Leadership", "Main Functions"], rows: [
+                      { type: "note", content: "Course guide support: this module asks students to identify the roles and functions of the United Nations and challenges of global governance in the 21st century. Sir's notes prioritize the five organs, P5 veto, cooperation, and military intervention." },
+                    { type: "table", content: "Five Main UN Organs from Class Notes", headers: ["Organ", "Composition / Leadership", "Main Functions"], rows: [
                         ["General Assembly (GA)", "193 member states; 1 country = 1 vote; elects a President every year", "Main decision-making and discussion body; discusses peace, security, international concerns; handles admission of new members and budget approval; important decisions need 2/3 majority."],
                         ["Security Council (SC)", "15 members: 10 non-permanent members elected for 2-year terms and 5 permanent members/P5", "Maintains global peace and security; determines threats to peace or acts of aggression; may impose sanctions, peacekeeping missions, or military intervention."],
                         ["Economic and Social Council (ECOSOC)", "54 members elected by the GA for 3-year terms", "Coordinates economic, social, and environmental issues; focuses on policy-making, development programs, and SDGs."],
@@ -841,6 +864,7 @@ export const GE_SUBJECTS: Subject[] = [
                       { type: "table", content: "P5 Permanent Members", headers: ["P5 Member"], rows: [["United States"], ["United Kingdom"], ["France"], ["Russia"], ["China"]] },
                       { type: "note", content: "Veto power: if any one P5 member disagrees, the decision will not pass — 'baliwala na ang lahat' kahit marami ang agree." },
                       { type: "note", content: "Class note: Carlos P. Romulo became General Assembly President in 1989." },
+                    { type: "table", content: "Fast Memorization Table", headers: ["Clue", "Answer"], rows: [["193 member states; 1 country = 1 vote", "General Assembly"], ["15 members; P5; sanctions/peacekeeping/military intervention", "Security Council"], ["54 members; SDGs; economic/social/environmental issues", "ECOSOC"], ["15 judges; 9-year terms; disputes between states", "ICJ"], ["Day-to-day operations; Secretary-General", "Secretariat"], ["Any one permanent member can block a decision", "P5 veto power"]] },
                     ],
                     quiz: [
                       { question: "The General Assembly has how many member states?", options: ["193", "54", "15", "5"], answer: 0, explanation: "The notes state that the GA has 193 member states." },
@@ -862,7 +886,8 @@ export const GE_SUBJECTS: Subject[] = [
                       { type: "h2", content: "Importance of Cooperation" },
                       { type: "text", content: "The UN can function effectively only if there is cooperation among nations. Countries like the Philippines join the UN to participate in global decision-making and help solve global issues." },
                       { type: "list", content: "The UN helps organize responses to problems such as:", items: ["Global warming", "Conflicts", "Economic issues"] },
-                      { type: "table", content: "Challenges of the UN", headers: ["Challenge", "Explanation"], rows: [
+                      { type: "table", content: "How Global Governance Works in This Lesson", headers: ["Idea", "Explanation"], rows: [["Global governance", "Countries and international organizations coordinate responses to problems that cannot be solved by one country alone."], ["Why cooperation matters", "The UN can only act effectively if states are willing to work together."], ["Philippines and the UN", "Countries like the Philippines join to participate in global decision-making and help solve global issues."], ["Limits of global governance", "Powerful states, veto power, and political interests can block or weaken decisions."]] },
+                    { type: "table", content: "Challenges of the UN", headers: ["Challenge", "Explanation"], rows: [
                         ["Cooperation", "The UN depends on countries working together; lack of cooperation weakens effectiveness."],
                         ["P5 Veto Power", "One powerful country can block decisions, preventing action even if most countries agree."],
                         ["Military Intervention", "It is difficult to decide when and how to intervene; decisions may be influenced by political interests."],
@@ -883,7 +908,7 @@ export const GE_SUBJECTS: Subject[] = [
                   content: {
                     heading: "GE5 Midterm Comprehensive Exam", term: "MIDTERM", module: "Modules 3–4",
                     objectives: ["Review Module 3 and Module 4 coverage", "Practice global politics, internationalism, communism, UN organs, and UN challenges"],
-                    sections: [{ type: "note", content: "Coverage: Module 3 A History of Global Politics and Module 4 UN and Contemporary Global Governance, with GE5NOTES as supporting class explanations." }],
+                    sections: [{ type: "note", content: "Coverage: Module 3 A History of Global Politics and Module 4 UN and Contemporary Global Governance, with GE5NOTES as the priority source and the course guide as objectives reference." }, { type: "table", content: "Midterm Big Timeline", headers: ["Order", "Event / Concept", "Key Point"], rows: [["1", "Europe before modern state system", "Monarchies dominated; limited political participation."], ["2", "1648 Westphalia", "Sovereignty, independent states, non-interference."], ["3", "Napoleonic Wars", "Equality/reform ideas challenged monarchy; ended 1815."], ["4", "Concert of Europe", "Balance of power and cooperation among great powers."], ["5", "World War I aftermath", "League of Nations created; monarchies weakened; communism rose in Russia."], ["6", "Lenin / Comintern", "Spread communism and unite workers/communist parties worldwide."], ["7", "World War II aftermath", "UN created in 1945; League replaced."], ["8", "UN organs and challenges", "GA, SC, ECOSOC, ICJ, Secretariat; P5 veto and cooperation problems."]] }],
                     quiz: [
                       { question: "1. Power is the ability to influence or persuade others to:", options: ["Achieve a goal", "Stop all laws", "Remove sovereignty", "Create only markets"], answer: 0, explanation: "Power is defined as influence or persuasion to achieve a goal." },
                       { question: "2. Persuasion is power based on:", options: ["Trust and influence", "Fear only", "Gold reserves", "Military occupation only"], answer: 0, explanation: "Persuasion is based on trust and influence." },

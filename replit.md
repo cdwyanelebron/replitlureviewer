@@ -64,7 +64,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
   - Mobile-responsive with slide-out sidebar
 
 - **Current Midterm Focus Update (April 2026)**:
-  - GE 5: updated coverage follows sir's corrected format: Module 1–2 for Prelim, Module 3–4 for Midterm; GE5NOTES are treated as supporting/verbal class explanations. Old broad/generic GE5 coverage removed.
+  - GE 5: updated coverage follows sir's corrected format: Module 1–2 for Prelim, Module 3–4 for Midterm. Priority source is GE5NOTES / sir's verbal explanations; PPT/modules provide main topics; the course guide supports objectives and module outcomes. Added detailed timelines, source priority notes, deeper economic globalization, global politics, and UN governance review tables.
   - GE 6: attached Art Appreciation midterm content (Modules 4–5) added as a focused midterm override with subject/form/content lessons, artists vs. artisans, art market/careers, complete National Artists review tables, complete GAMABA review table, lesson quizzes, and a 50-item comprehensive exam.
   - GE 7, GE 8, MST 02, NSTP 2, PE 2: attached module midterm content with lesson quizzes and comprehensive exams (in midterm-focus.ts).
   - CC 1202 (Intermediate C Programming): MIDTERM ONLY. Modules 5-7 restructured with lesson-numbered topics from PDF TOC. Module 5: 9 lessons + Assessment Task. Module 6: 2 lessons + Assessment Task. Module 7: Lessons 1-4 + Lessons 5.1-5.6 string library functions + Assessment Task. W3Schools-style chunked C code examples.
