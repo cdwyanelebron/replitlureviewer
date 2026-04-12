@@ -39,20 +39,19 @@ export default function TopNav({
   }, [activeSubjectId]);
 
   return (
-    <nav className="lu-topnav" style={{ backgroundColor: "#04AA6D" }}>
+    <nav className="lu-topnav">
       {/* Logo */}
-      <div className="flex items-center gap-2 px-3 shrink-0">
+      <div className="lu-topnav-brand">
         <button
-          className="md:hidden text-white p-1"
+          className="lu-topnav-icon-button"
           onClick={onMenuToggle}
           data-testid="btn-menu-toggle"
           aria-label="Toggle sidebar"
         >
-          <Menu size={20} />
+          <Menu size={25} />
         </button>
-        <div className="flex items-center gap-1.5 text-white">
-          <BookOpen size={20} />
-          <span className="font-bold text-sm whitespace-nowrap hidden sm:block">LU Reviewer</span>
+        <div className="lu-topnav-logo" aria-label="LU Reviewer">
+          <BookOpen size={24} />
         </div>
       </div>
 
@@ -60,7 +59,7 @@ export default function TopNav({
       {!searchOpen && (
         <div
           ref={tabsRef}
-          className="flex items-center overflow-x-auto flex-1 mx-1"
+          className="lu-subject-tabs"
           style={{ scrollbarWidth: "none" }}
         >
           {subjects.map(subject => (
@@ -69,15 +68,7 @@ export default function TopNav({
               data-active={subject.id === activeSubjectId}
               data-testid={`tab-subject-${subject.id}`}
               onClick={() => onSubjectChange(subject.id)}
-              className="px-3 py-1 text-sm font-medium whitespace-nowrap transition-all shrink-0"
-              style={{
-                backgroundColor: subject.id === activeSubjectId ? "#027a4d" : "transparent",
-                color: "white",
-                border: subject.id === activeSubjectId ? "1px solid rgba(255,255,255,0.65)" : "1px solid transparent",
-                borderRadius: "0",
-                lineHeight: "44px",
-                marginInline: "0",
-              }}
+              className={`lu-subject-tab ${subject.id === activeSubjectId ? "active" : ""}`}
             >
               {subject.shortTitle}
             </button>
@@ -94,29 +85,29 @@ export default function TopNav({
             placeholder="Search topics..."
             value={searchQuery}
             onChange={e => onSearchChange(e.target.value)}
-            className="w-full px-3 py-1.5 rounded text-sm bg-white/20 text-white placeholder-white/70 border border-white/30 outline-none focus:bg-white/30"
+            className="w-full px-3 py-2 text-sm bg-white/15 text-white placeholder-white/70 border border-white/20 outline-none focus:bg-white/25"
             data-testid="input-search"
           />
         </div>
       )}
 
       {/* Right Actions */}
-      <div className="flex items-center gap-1 px-2 shrink-0">
+      <div className="lu-topnav-actions">
         <button
           onClick={() => { setSearchOpen(o => !o); if (searchOpen) onSearchChange(""); }}
-          className="text-white p-1.5 rounded hover:bg-white/15 transition"
+          className="lu-topnav-icon-button"
           data-testid="btn-search-toggle"
           aria-label="Search"
         >
-          {searchOpen ? <X size={18} /> : <Search size={18} />}
+          {searchOpen ? <X size={24} /> : <Search size={24} />}
         </button>
         <button
           onClick={onToggleDark}
-          className="text-white p-1.5 rounded hover:bg-white/15 transition"
+          className="lu-topnav-icon-button"
           data-testid="btn-dark-mode"
           aria-label="Toggle dark mode"
         >
-          {darkMode ? <Sun size={18} /> : <Moon size={18} />}
+          {darkMode ? <Sun size={24} /> : <Moon size={24} />}
         </button>
       </div>
     </nav>

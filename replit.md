@@ -69,6 +69,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
   - PE 2 now uses the attached PATH-FIT 2 midterm modules: Health Appraisal, HIIT, Core Exercises, and Lower Body Exercises.
   - Each covered subtopic has a quiz, and each focused subject has a final “Midterm Comprehensive Exam” topic at the end of the sidebar with 50 questions.
   - Each focused lesson includes module-objective exam focus notes and additional lesson-level quiz items to keep review questions aligned with the attached module coverage.
+  - Top navigation uses a W3Schools-like dark header in both light and dark modes, with a green rectangular active subject tab and white underline indicators.
 
 ## Key Commands
 
