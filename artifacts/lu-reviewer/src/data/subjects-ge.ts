@@ -1478,106 +1478,18 @@ export const GE_SUBJECTS: Subject[] = [
   },
 
   // ─── GE 6: ART APPRECIATION ─────────────────────────────────────────────────
-  {
-    id: "ge6", code: "GE 6", title: "Art Appreciation", shortTitle: "GE 6", units: 3,
-    description: "Develops appreciation of the arts through understanding the nature, elements, and principles of art, and exploring Philippine and world artistic traditions.",
-    terms: [
-      {
-        id: "prelim", label: "PRELIM",
-        modules: [
-          {
-            id: "ge6-m1", title: "Module 1: Nature and Scope of Art",
-            topics: [
-              {
-                id: "ge6-m1t1", title: "Definition and Functions of Art",
-                content: {
-                  heading: "Definition and Functions of Art", term: "PRELIM", module: "Module 1: Nature and Scope of Art",
-                  objectives: ["Define art and distinguish it from non-art", "Identify the functions of art in society", "Differentiate fine arts, applied arts, and performing arts"],
-                  sections: [
-                    { type: "h2", content: "What is Art?" },
-                    { type: "definition", content: "Art — Human activity and its product which involves technical and creative skill, imagination, or expression. It communicates ideas, emotions, or a worldview through an aesthetic medium." },
-                    { type: "table", content: "Functions of Art", headers: ["Function", "Description", "Example"], rows: [["Personal", "Expression of inner feelings", "A painter expressing grief"], ["Social", "Reflects and shapes cultural values", "Rizal's novels as social commentary"], ["Physical", "Serves a practical purpose", "Architecture, furniture design"], ["Political", "Challenges power or promotes change", "Protest murals, political cartoons"], ["Spiritual", "Serves religious purposes", "Church art, sacred music"]] },
-                    { type: "list", content: "Major Art Classifications", items: ["Fine Arts — Primarily aesthetic: painting, sculpture, drawing, printmaking", "Applied Arts — Functional purpose: architecture, industrial design, fashion, ceramics", "Performing Arts — Time-based: music, theater, dance, film", "Literary Arts — Written expression: poetry, fiction, drama"] },
-                  ],
-                  quiz: [
-                    { question: "Which is an example of APPLIED arts?", options: ["Portrait painting", "Symphony music", "Ballet performance", "Furniture design"], answer: 3, explanation: "Applied arts have a functional purpose beyond aesthetics. Furniture design serves both practical and aesthetic functions." },
-                  ],
-                },
-              },
-              {
-                id: "ge6-m1t2", title: "Elements and Principles of Art",
-                content: {
-                  heading: "Elements and Principles of Art", term: "PRELIM", module: "Module 1: Nature and Scope of Art",
-                  objectives: ["Identify the elements of art", "Describe the principles of design"],
-                  sections: [
-                    { type: "h2", content: "Elements of Art" },
-                    { type: "table", content: "Elements of Art", headers: ["Element", "Definition"], rows: [["Line", "A continuous mark; conveys direction, emotion, movement"], ["Shape", "2D area defined by boundaries; geometric or organic"], ["Form", "3D quality of an object; sculpture, architecture"], ["Space", "Area around or between objects; positive and negative space"], ["Color", "Visual quality of light reflected; hue, value, intensity"], ["Texture", "Surface quality (rough, smooth, soft); actual or implied"], ["Value", "Lightness or darkness of a color or shade"]] },
-                    { type: "list", content: "Principles of Design", items: ["Balance — Visual weight distribution (symmetrical, asymmetrical, radial)", "Emphasis — Area attracting most attention", "Movement — Visual flow guiding the viewer's eye", "Pattern — Repetition of elements for visual rhythm", "Unity/Harmony — All elements working coherently together", "Contrast — Difference between elements for visual interest", "Proportion — Relationship of sizes between parts"] },
-                  ],
-                  quiz: [
-                    { question: "Which element of art refers to the lightness or darkness of a color?", options: ["Hue", "Intensity", "Value", "Texture"], answer: 2, explanation: "Value refers to lightness or darkness. High value = light; low value = dark." },
-                  ],
-                },
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: "midterm", label: "MIDTERM",
-        modules: [
-          {
-            id: "ge6-m2", title: "Module 2: Philippine Visual Arts",
-            topics: [
-              {
-                id: "ge6-m2t1", title: "Philippine Visual Arts History",
-                content: {
-                  heading: "Philippine Visual Arts", term: "MIDTERM", module: "Module 2: Philippine Visual Arts",
-                  objectives: ["Identify major periods in Philippine art history", "Describe key Filipino artists and their works"],
-                  sections: [
-                    { type: "h2", content: "Philippine Art History" },
-                    { type: "table", content: "Periods in Philippine Art", headers: ["Period", "Characteristics", "Examples"], rows: [["Pre-Colonial", "Gold ornaments, pottery, weaving, Baybayin", "Laguna Copperplate, Tabon Cave artifacts"], ["Spanish Colonial", "Religious art, church architecture", "San Agustin Church (Intramuros), retablos"], ["American Period", "Academism, naturalism, social realism", "Juan Luna, Felix Hidalgo"], ["Modern", "Abstract, experimental", "Victorio Edades (Father of Modern Philippine Painting)"], ["Contemporary", "Multi-media, digital art", "BenCab, Elmer Borlongan"]] },
-                    { type: "list", content: "Selected National Artists for Visual Arts", items: ["Fernando Amorsolo — Rural idyllic scenes with natural sunlight", "Guillermo Tolentino — Sculptor; Oblation (UP), Bonifacio Monument", "Victorio Edades — 'Father of Modern Philippine Painting'", "Carlos Francisco (Botong) — Muralist; depicted Philippine history", "BenCab (Benedicto Cabrera) — Contemporary; 'Sabel' series"] },
-                    { type: "note", content: "Juan Luna's Spolarium (1884) won major prize at the Madrid Exposition of Fine Arts — a landmark proving Filipino artistic excellence to the colonial world." },
-                  ],
-                  quiz: [
-                    { question: "Who is known as the 'Father of Modern Philippine Painting'?", options: ["Fernando Amorsolo", "Juan Luna", "Victorio Edades", "Carlos Francisco"], answer: 2, explanation: "Victorio Edades introduced modernist style to Philippine art." },
-                  ],
-                },
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: "finals", label: "FINALS",
-        modules: [
-          {
-            id: "ge6-m3", title: "Module 3: Art Criticism",
-            topics: [
-              {
-                id: "ge6-m3t1", title: "Approaches to Art Criticism",
-                content: {
-                  heading: "Approaches to Art Criticism", term: "FINALS", module: "Module 3: Art Criticism",
-                  objectives: ["Describe major approaches to art criticism", "Apply the steps of art criticism to analyze artworks"],
-                  sections: [
-                    { type: "h2", content: "Art Criticism (Feldman's Model)" },
-                    { type: "list", content: "Four Steps of Art Criticism", items: ["Description — What do you see? (Objective facts: subject matter, medium, size, colors)", "Analysis — How is it organized? (Elements and principles used)", "Interpretation — What does it mean? (Message, mood, symbolism, theme)", "Evaluation/Judgment — Is it successful? Why or why not?"] },
-                    { type: "table", content: "Art Criticism Approaches", headers: ["Approach", "Focus"], rows: [["Formalism", "Form, composition, and structure (Clement Greenberg)"], ["Expressionism", "Emotional content and the artist's intent"], ["Contextualism", "Cultural, historical, and social context"], ["Feminism", "Gender representation and women's perspectives"]] },
-                  ],
-                  quiz: [
-                    { question: "In Feldman's model, 'Interpretation' involves:", options: ["Listing the colors and medium used", "Analyzing elements and principles of design", "Determining the meaning, mood, and symbolism", "Judging whether the artwork is successful"], answer: 2, explanation: "Interpretation asks 'What does it mean?' — exploring message, mood, and symbolism." },
-                  ],
-                },
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
+    {
+      id: "ge6", code: "GE 6", title: "Art Appreciation", shortTitle: "GE 6", units: 3,
+      description: "Art Appreciation reviewer. Prelim and finals will be added only when the official modules are provided; current verified content is MIDTERM from the attached modules.",
+      terms: [
+        {
+          id: "midterm", label: "MIDTERM",
+          modules: [],
+        },
+      ],
+    },
 
-  // ─── GE 7: SCIENCE, TECHNOLOGY & SOCIETY ────────────────────────────────────
+    // ─── GE 7: SCIENCE, TECHNOLOGY & SOCIETY ────────────────────────────────────
   {
     id: "ge7", code: "GE 7", title: "Science, Technology & Society", shortTitle: "GE 7", units: 3,
     description: "Examines the relationship between science, technology, and society, including historical development, ethical implications, and the impact of technology on Filipino life.",
