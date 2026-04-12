@@ -1,56 +1,52 @@
 import { Subject } from "./types";
 
 export const OTHER_SUBJECTS: Subject[] = [
+
+  // ─── MST 01: ENVIRONMENTAL SCIENCE ──────────────────────────────────────────
   {
-    id: "mst01",
-    code: "MST 01",
-    title: "Mathematics in the Modern World",
-    shortTitle: "MST 01",
-    units: 3,
-    description: "Explores mathematics as a tool to quantify, organize, and control the world. Covers nature of mathematics, mathematical reasoning, statistics, and financial mathematics.",
+    id: "mst01", code: "MST 01", title: "Environmental Science", shortTitle: "MST 01", units: 3,
+    description: "Examines the natural environment, ecosystems, biodiversity, environmental issues, and the role of human activity in shaping our planet.",
     terms: [
       {
         id: "prelim", label: "PRELIM",
         modules: [
           {
-            id: "mst01-m1", title: "Module 1: Mathematics in Our World",
+            id: "mst01-m1", title: "Module 1: Ecology and Ecosystems",
             topics: [
               {
-                id: "mst01-m1t1", title: "Patterns and Numbers in Nature",
+                id: "mst01-m1t1", title: "Ecosystem Structure and Function",
                 content: {
-                  heading: "Patterns and Numbers in Nature", term: "PRELIM", module: "Module 1: Mathematics in Our World",
-                  objectives: ["Identify mathematical patterns in nature", "Explain the Fibonacci sequence and Golden Ratio", "Describe fractals and symmetry in natural phenomena"],
+                  heading: "Ecosystem Structure and Function", term: "PRELIM", module: "Module 1: Ecology and Ecosystems",
+                  objectives: ["Define ecosystem and its components", "Distinguish biotic from abiotic factors", "Explain energy flow and nutrient cycles"],
                   sections: [
-                    { type: "h2", content: "Mathematics in Nature" },
-                    { type: "text", content: "Mathematics is not just a school subject — it is the universal language of nature. Mathematical patterns appear in sunflower seeds, seashells, snowflakes, and galaxies." },
-                    { type: "definition", content: "Fibonacci Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89... Formula: F(n) = F(n-1) + F(n-2), where F(0)=0, F(1)=1. Each number is the sum of the two preceding numbers." },
-                    { type: "example", content: "Fibonacci in Nature:\n• Sunflower seeds: 21 spirals clockwise, 34 counterclockwise\n• Pineapple scales: 8, 13, 21 spirals\n• Leaf arrangement (phyllotaxis): follows Fibonacci ratios to maximize sunlight\n• Rabbit population growth follows Fibonacci numbers" },
-                    { type: "definition", content: "Golden Ratio (φ ≈ 1.618) — As Fibonacci numbers get larger, their ratio F(n+1)/F(n) approaches φ. Considered aesthetically pleasing; appears in art (Parthenon), architecture, nature (nautilus shells), and the human body." },
-                    { type: "h3", content: "Types of Symmetry" },
-                    { type: "table", content: "Symmetry in Nature", headers: ["Type", "Description", "Example"], rows: [["Bilateral", "Mirror image across a central axis", "Human body, butterfly wings"], ["Radial", "Arranged around a central point", "Starfish, flowers, snowflakes"], ["Rotational", "Looks the same after rotation", "Pinwheel, sunflower"], ["Translational", "Repeating pattern at regular intervals", "Honeycomb, brick wall"]] },
-                    { type: "definition", content: "Fractal — A geometric shape that exhibits self-similarity at different scales. When you zoom into a fractal, you see the same pattern repeated. Examples: Romanesco broccoli, coastlines, snowflakes, fern leaves, lightning bolts." },
+                    { type: "h2", content: "What is an Ecosystem?" },
+                    { type: "definition", content: "Ecosystem — A community of living organisms (biotic components) interacting with each other and with their non-living environment (abiotic components) as a system." },
+                    { type: "table", content: "Biotic vs. Abiotic Components", headers: ["Type", "Definition", "Examples"], rows: [["Biotic", "All living components", "Plants, animals, bacteria, fungi"], ["Abiotic", "All non-living components", "Water, sunlight, temperature, soil, air"]] },
+                    { type: "h3", content: "Trophic Levels and Energy Flow" },
+                    { type: "table", content: "Trophic Levels", headers: ["Level", "Name", "Examples"], rows: [["1", "Producers (Autotrophs)", "Plants, algae, phytoplankton"], ["2", "Primary Consumers (Herbivores)", "Deer, caterpillars, grasshoppers"], ["3", "Secondary Consumers (Carnivores)", "Frogs, small fish"], ["4", "Tertiary Consumers (Top Predators)", "Eagles, sharks, lions"], ["Any", "Decomposers", "Bacteria, fungi"]] },
+                    { type: "definition", content: "10% Rule — Only about 10% of energy is transferred from one trophic level to the next. 90% is lost as heat. This limits food chain length." },
+                    { type: "list", content: "Major Nutrient Cycles", items: ["Carbon Cycle — CO₂ absorbed by plants (photosynthesis), released by respiration, decomposition, and combustion", "Nitrogen Cycle — N₂ fixation, nitrification, denitrification. Key to protein synthesis", "Water Cycle — Evaporation, condensation, precipitation, runoff, infiltration"] },
                   ],
                   quiz: [
-                    { question: "What is the 8th term of the Fibonacci sequence (starting: 0, 1, 1, 2, 3...)?", options: ["13", "21", "8", "34"], answer: 0, explanation: "Fibonacci: 0(1st), 1(2nd), 1(3rd), 2(4th), 3(5th), 5(6th), 8(7th), 13(8th). The 8th term is 13." },
-                    { question: "The Golden Ratio φ is approximately:", options: ["1.414", "1.618", "2.718", "3.14159"], answer: 1, explanation: "The Golden Ratio φ (phi) ≈ 1.618. It's the limit of ratios of consecutive Fibonacci numbers." },
-                    { question: "A fractal is characterized by:", options: ["Perfect straight lines", "Self-similarity at different scales", "Random patterns", "Only existing in mathematics textbooks"], answer: 1, explanation: "Fractals exhibit self-similarity — the same pattern repeats when you zoom in or out." },
+                    { question: "According to the 10% rule, if producers have 10,000 kcal, how much energy reaches primary consumers?", options: ["10,000 kcal", "1,000 kcal", "100 kcal", "10 kcal"], answer: 1, explanation: "10% rule: 10% of 10,000 = 1,000 kcal reaches primary consumers." },
+                    { question: "Abiotic factors in an ecosystem include:", options: ["Bacteria and fungi", "Sunlight, water, and temperature", "Deer and grasshoppers", "Trees and shrubs"], answer: 1, explanation: "Abiotic = non-living factors: sunlight, water, temperature, soil, air." },
                   ],
                 },
               },
               {
-                id: "mst01-m1t2", title: "Mathematical Language and Symbols",
+                id: "mst01-m1t2", title: "Biodiversity and the Philippines",
                 content: {
-                  heading: "Mathematical Language and Symbols", term: "PRELIM", module: "Module 1: Mathematics in Our World",
-                  objectives: ["Distinguish mathematical expressions from sentences", "Understand common symbols and notation", "Translate English phrases to mathematical expressions"],
+                  heading: "Biodiversity", term: "PRELIM", module: "Module 1: Ecology and Ecosystems",
+                  objectives: ["Define biodiversity and its levels", "Explain threats to biodiversity", "Identify the Philippines as a biodiversity hotspot"],
                   sections: [
-                    { type: "h2", content: "The Language of Mathematics" },
-                    { type: "table", content: "Expressions vs. Sentences", headers: ["Type", "Definition", "Example"], rows: [["Expression", "Mathematical phrase (no verb, no = sign)", "3x + 5, 2y², x + y"], ["Equation", "Mathematical sentence with '=' showing equality", "2x + 3 = 7"], ["Inequality", "Uses <, >, ≤, ≥", "x + 2 > 5"]] },
-                    { type: "table", content: "Common Mathematical Symbols", headers: ["Symbol", "Meaning", "Example"], rows: [["∈", "Is an element of", "3 ∈ {1,2,3}"], ["∅", "Empty set", "{} = ∅"], ["∀", "For all (universal)", "∀x, x + 0 = x"], ["∃", "There exists (existential)", "∃x: x² = 4"], ["⊂", "Subset of", "{1,2} ⊂ {1,2,3}"], ["∪", "Union", "A ∪ B"], ["∩", "Intersection", "A ∩ B"]] },
-                    { type: "table", content: "English to Mathematical Expressions", headers: ["English Phrase", "Math Expression"], rows: [["Sum of a number and 5", "x + 5"], ["Twice a number decreased by 3", "2x − 3"], ["Product of a number and 7", "7x"], ["A number divided by 4", "x/4"], ["Square of a number increased by 1", "x² + 1"]] },
+                    { type: "h2", content: "Biodiversity" },
+                    { type: "definition", content: "Biodiversity — The variety of life on Earth. Measured at three levels: genetic diversity, species diversity, and ecosystem diversity." },
+                    { type: "list", content: "Threats to Biodiversity (HIPPO)", items: ["H — Habitat destruction and fragmentation", "I — Invasive species", "P — Pollution", "P — Population growth (human)", "O — Overhunting and overharvesting"] },
+                    { type: "note", content: "The Philippines is one of 17 'megadiverse' countries in the world and a biodiversity hotspot. It is home to over 52,000 animal species and more than 9,250 plant species — many found nowhere else on Earth (endemic)." },
+                    { type: "definition", content: "Endemic Species — Species found only in a particular geographic area and nowhere else. Philippines examples: Philippine Eagle (national bird, critically endangered), Tamaraw (dwarf buffalo, endemic to Mindoro)." },
                   ],
                   quiz: [
-                    { question: "Which is a mathematical EXPRESSION (not a sentence)?", options: ["2x + 3 = 7", "x > 5", "3x + 5", "y = 2x + 1"], answer: 2, explanation: "An expression has no '=' or inequality sign. '3x + 5' is an expression; others are equations or inequalities." },
-                    { question: "∀ means:", options: ["There exists", "For all / for every", "Is an element of", "Is a subset of"], answer: 1, explanation: "∀ is the universal quantifier meaning 'for all' or 'for every'." },
+                    { question: "The Philippine Eagle is an example of:", options: ["An invasive species", "An endemic species", "A keystone species", "An exotic species"], answer: 1, explanation: "The Philippine Eagle is endemic — found only in the Philippines." },
                   ],
                 },
               },
@@ -62,25 +58,37 @@ export const OTHER_SUBJECTS: Subject[] = [
         id: "midterm", label: "MIDTERM",
         modules: [
           {
-            id: "mst01-m2", title: "Module 2: Mathematical Reasoning and Logic",
+            id: "mst01-m2", title: "Module 2: Environmental Issues",
             topics: [
               {
-                id: "mst01-m2t1", title: "Inductive and Deductive Reasoning",
+                id: "mst01-m2t1", title: "Climate Change",
                 content: {
-                  heading: "Inductive and Deductive Reasoning", term: "MIDTERM", module: "Module 2: Mathematical Reasoning and Logic",
-                  objectives: ["Distinguish inductive from deductive reasoning", "Identify valid and invalid arguments", "Apply deductive reasoning to solve problems"],
+                  heading: "Climate Change", term: "MIDTERM", module: "Module 2: Environmental Issues",
+                  objectives: ["Explain the greenhouse effect and global warming", "Identify causes and consequences of climate change", "Evaluate mitigation strategies"],
                   sections: [
-                    { type: "h2", content: "Mathematical Reasoning" },
-                    { type: "definition", content: "Inductive Reasoning — Drawing a general conclusion (conjecture) from specific observations or examples. Moving from specific to general. Results in probable (but not certain) conclusions." },
-                    { type: "definition", content: "Deductive Reasoning — Drawing a specific conclusion from general principles or premises. Moving from general to specific. If premises are true and logic is valid, the conclusion must be true." },
-                    { type: "example", content: "Inductive Reasoning Example:\nObservation 1: The sun rose in the east today.\nObservation 2: The sun rose in the east yesterday.\nObservation 3: The sun rose in the east the day before.\nConclusion: The sun always rises in the east.\n(This is inductive — based on repeated observations, not proven with certainty)\n\nDeductive Reasoning Example:\nPremise 1: All IT students study programming.\nPremise 2: Juan is an IT student.\nConclusion: Therefore, Juan studies programming.\n(This is deductive — necessarily true if premises are true)" },
-                    { type: "h3", content: "Logic and Propositions" },
-                    { type: "definition", content: "Proposition — A declarative statement that is either true or false, but not both. Example: 'Manila is the capital of the Philippines' (True). 'All squares are circles' (False)." },
-                    { type: "table", content: "Logical Connectives", headers: ["Connective", "Symbol", "Name", "True When..."], rows: [["AND", "∧ or p∧q", "Conjunction", "Both p and q are true"], ["OR", "∨ or p∨q", "Disjunction", "At least one is true"], ["NOT", "¬p or ~p", "Negation", "p is false"], ["IF...THEN", "p→q", "Conditional", "p is false OR q is true"], ["IF AND ONLY IF", "p↔q", "Biconditional", "p and q have same truth value"]] },
+                    { type: "h2", content: "Climate Change" },
+                    { type: "definition", content: "Greenhouse Effect — Natural process where greenhouse gases (CO₂, CH₄, N₂O, H₂O vapor) trap heat in the atmosphere, keeping Earth warm enough to support life. Enhanced greenhouse effect = global warming from increased GHGs." },
+                    { type: "table", content: "Greenhouse Gases", headers: ["Gas", "Source", "Global Warming Potential"], rows: [["CO₂ (Carbon dioxide)", "Fossil fuels, deforestation", "1 (reference)"], ["CH₄ (Methane)", "Livestock, rice paddies, landfills", "25x CO₂"], ["N₂O (Nitrous oxide)", "Fertilizers, livestock", "298x CO₂"], ["CFCs", "Refrigerants, aerosols", "Thousands x CO₂"]] },
+                    { type: "list", content: "Effects of Climate Change", items: ["Rising sea levels (ice melt) — threatens low-lying areas like Manila Bay", "Extreme weather events — stronger typhoons, droughts, floods", "Ocean acidification — threatens coral reefs (Philippines has Tubbataha Reef)", "Threats to food security and water supply"] },
+                    { type: "note", content: "Philippines Vulnerability: The Philippines is among the world's most vulnerable countries to climate change due to its long coastline (36,289 km), frequent typhoons (20 annually), and many low-lying communities." },
                   ],
                   quiz: [
-                    { question: "Which type of reasoning draws a general conclusion from specific observations?", options: ["Deductive reasoning", "Inductive reasoning", "Abductive reasoning", "Circular reasoning"], answer: 1, explanation: "Inductive reasoning moves from specific observations to a general conclusion (conjecture)." },
-                    { question: "In deductive reasoning, if the premises are true and the logic is valid, the conclusion is:", options: ["Probably true", "Certainly true", "Possibly true", "Always false"], answer: 1, explanation: "Deductive reasoning guarantees the conclusion — if premises are true and logic valid, the conclusion must be true." },
+                    { question: "Which greenhouse gas has the highest global warming potential?", options: ["CO₂", "CH₄ (Methane)", "N₂O (Nitrous oxide)", "CFCs"], answer: 3, explanation: "CFCs (chlorofluorocarbons) have the highest global warming potential, thousands of times that of CO₂." },
+                  ],
+                },
+              },
+              {
+                id: "mst01-m2t2", title: "Pollution and Philippine Environmental Laws",
+                content: {
+                  heading: "Pollution Types and Philippine Environmental Laws", term: "MIDTERM", module: "Module 2: Environmental Issues",
+                  objectives: ["Classify different types of pollution", "Identify causes and effects of each type", "Explain key Philippine environmental laws"],
+                  sections: [
+                    { type: "h2", content: "Types of Pollution" },
+                    { type: "table", content: "Pollution Types", headers: ["Type", "Sources", "Effects"], rows: [["Air Pollution", "Vehicle emissions, factories, burning", "Respiratory diseases, acid rain, smog"], ["Water Pollution", "Industrial waste, sewage, agricultural runoff", "Waterborne diseases, dead zones, coral damage"], ["Land/Soil Pollution", "Pesticides, solid waste, mining", "Soil degradation, food contamination"], ["Noise Pollution", "Traffic, construction, industries", "Stress, hearing loss, sleep disturbance"]] },
+                    { type: "list", content: "Philippine Environmental Laws", items: ["RA 9003 — Ecological Solid Waste Management Act: segregation, composting, recycling", "RA 8749 — Clean Air Act: standards for air quality", "RA 9275 — Clean Water Act: protection of water resources", "RA 9147 — Wildlife Resources Conservation and Protection Act"] },
+                  ],
+                  quiz: [
+                    { question: "RA 9003 (Philippine Ecological Solid Waste Management Act) mandates:", options: ["Air quality standards", "Waste segregation, composting, and recycling", "Clean water standards", "Noise pollution limits"], answer: 1, explanation: "RA 9003 requires mandatory waste segregation, composting, and recycling." },
                   ],
                 },
               },
@@ -92,27 +100,21 @@ export const OTHER_SUBJECTS: Subject[] = [
         id: "finals", label: "FINALS",
         modules: [
           {
-            id: "mst01-m3", title: "Module 3: Data Analysis and Statistics",
+            id: "mst01-m3", title: "Module 3: Sustainable Development",
             topics: [
               {
-                id: "mst01-m3t1", title: "Descriptive Statistics",
+                id: "mst01-m3t1", title: "Sustainable Development and SDGs",
                 content: {
-                  heading: "Descriptive Statistics", term: "FINALS", module: "Module 3: Data Analysis and Statistics",
-                  objectives: ["Compute measures of central tendency", "Calculate measures of dispersion", "Interpret statistical data"],
+                  heading: "Sustainable Development", term: "FINALS", module: "Module 3: Sustainable Development",
+                  objectives: ["Define sustainable development", "Explain the SDGs", "Apply sustainability principles to daily life"],
                   sections: [
-                    { type: "h2", content: "Descriptive Statistics" },
-                    { type: "definition", content: "Statistics — The science of collecting, organizing, analyzing, and interpreting data. Descriptive statistics summarize and describe data; inferential statistics use sample data to make predictions about a population." },
-                    { type: "h3", content: "Measures of Central Tendency" },
-                    { type: "table", content: "Measures of Central Tendency", headers: ["Measure", "Definition", "Formula", "Best Used When..."], rows: [["Mean (Average)", "Sum of all values divided by the count", "x̄ = Σx/n", "Data is symmetrical, no extreme outliers"], ["Median", "Middle value when data is sorted", "Middle value (or avg of two middle values)", "Data has outliers or is skewed"], ["Mode", "Most frequently occurring value", "Value that appears most often", "Finding most common value (categorical data)"]] },
-                    { type: "example", content: "Dataset: 72, 85, 90, 65, 85, 78, 92, 85, 70, 88\n\nMean = (72+85+90+65+85+78+92+85+70+88) / 10\n     = 810 / 10 = 81\n\nSorted: 65, 70, 72, 78, 85, 85, 85, 88, 90, 92\nMedian = (85 + 85) / 2 = 85\n\nMode = 85 (appears 3 times)" },
-                    { type: "h3", content: "Measures of Dispersion" },
-                    { type: "list", content: "Measures of Spread", items: ["Range = Maximum − Minimum value", "Variance = Average of squared deviations from the mean", "Standard Deviation = Square root of variance; most common measure of spread", "Interquartile Range (IQR) = Q3 − Q1; middle 50% spread"] },
-                    { type: "note", content: "A small standard deviation means data points are close to the mean (consistent). A large standard deviation means data is spread out (variable). In the example above: Range = 92 − 65 = 27." },
+                    { type: "h2", content: "Sustainable Development" },
+                    { type: "definition", content: "Sustainable Development — 'Development that meets the needs of the present without compromising the ability of future generations to meet their own needs.' (Brundtland Commission, 1987)" },
+                    { type: "list", content: "Three Pillars of Sustainability", items: ["Environmental — Protecting natural resources and ecosystems", "Economic — Economic growth that is inclusive and efficient", "Social — Meeting human needs, equity, and quality of life"] },
+                    { type: "text", content: "The UN's 17 Sustainable Development Goals (SDGs), adopted in 2015 as part of Agenda 2030, provide a framework for global sustainable development. Relevant SDGs: SDG 6 (Clean Water), SDG 7 (Clean Energy), SDG 13 (Climate Action), SDG 14 (Life Below Water), SDG 15 (Life on Land)." },
                   ],
                   quiz: [
-                    { question: "Which measure of central tendency is most affected by outliers?", options: ["Median", "Mode", "Mean", "Range"], answer: 2, explanation: "The mean is most sensitive to outliers — one very large or small value can significantly change the mean." },
-                    { question: "For the data set 5, 7, 7, 8, 9, the MODE is:", options: ["7", "8", "7.2", "5"], answer: 0, explanation: "The mode is the most frequently occurring value. 7 appears twice, all others once. Mode = 7." },
-                    { question: "Standard deviation measures:", options: ["The middle value of a data set", "How spread out the data is around the mean", "The most common value", "The range from min to max"], answer: 1, explanation: "Standard deviation measures the average distance of data points from the mean — a measure of variability or spread." },
+                    { question: "Sustainable development was defined in the Brundtland Commission as:", options: ["Economic growth at all costs", "Development meeting present needs without compromising future generations", "Protecting only the environment", "Industrial development with green technology"], answer: 1, explanation: "Brundtland: meeting present needs without compromising future generations' ability to meet theirs." },
                   ],
                 },
               },
@@ -123,41 +125,51 @@ export const OTHER_SUBJECTS: Subject[] = [
     ],
   },
 
+  // ─── MST 02: LIVING IN THE IT ERA ─────────────────────────────────────────
   {
-    id: "mst02",
-    code: "MST 02",
-    title: "Statistics and Probability",
-    shortTitle: "MST 02",
-    units: 3,
-    description: "A comprehensive study of probability theory, probability distributions, statistical inference, hypothesis testing, and correlation and regression analysis.",
+    id: "mst02", code: "MST 02", title: "Living in the IT Era", shortTitle: "MST 02", units: 3,
+    description: "Explores how information technology shapes modern life, covering digital literacy, cybersecurity, social media, emerging technologies, and responsible use of digital tools.",
     terms: [
       {
         id: "prelim", label: "PRELIM",
         modules: [
           {
-            id: "mst02-m1", title: "Module 1: Probability Theory",
+            id: "mst02-m1", title: "Module 1: Digital Literacy and Information Technology",
             topics: [
               {
-                id: "mst02-m1t1", title: "Basic Concepts of Probability",
+                id: "mst02-m1t1", title: "Understanding Information Technology",
                 content: {
-                  heading: "Basic Concepts of Probability", term: "PRELIM", module: "Module 1: Probability Theory",
-                  objectives: ["Define probability and basic terms", "Apply classical and empirical probability", "Use counting techniques: permutations and combinations"],
+                  heading: "Understanding Information Technology", term: "PRELIM", module: "Module 1: Digital Literacy and Information Technology",
+                  objectives: ["Define information technology and digital literacy", "Trace the evolution of computing", "Identify key IT tools and their applications"],
                   sections: [
-                    { type: "h2", content: "Introduction to Probability" },
-                    { type: "definition", content: "Probability — A numerical measure of the likelihood that an event will occur. Expressed as a number between 0 (impossible) and 1 (certain), or as a percentage (0% to 100%)." },
-                    { type: "h3", content: "Key Terms" },
-                    { type: "table", content: "Probability Terminology", headers: ["Term", "Definition", "Example"], rows: [["Experiment", "A process that produces an outcome", "Rolling a die"], ["Sample Space (S)", "Set of all possible outcomes", "S = {1, 2, 3, 4, 5, 6}"], ["Event", "A subset of the sample space", "E = {even numbers} = {2, 4, 6}"], ["Outcome", "A single result of an experiment", "Rolling a 4"], ["Probability of Event E", "P(E) = favorable outcomes / total outcomes", "P(even) = 3/6 = 1/2"]] },
-                    { type: "h3", content: "Types of Probability" },
-                    { type: "list", content: "Three Types of Probability", items: ["Classical (Theoretical) — Based on equally likely outcomes. P(E) = n(E)/n(S)", "Empirical (Experimental) — Based on actual observations. P(E) = frequency of E / total trials", "Subjective — Based on personal judgment or experience. Example: 'There's a 70% chance of rain today'"] },
-                    { type: "h3", content: "Counting Techniques" },
-                    { type: "definition", content: "Fundamental Counting Principle — If event A can occur in m ways and event B can occur in n ways, then both events can occur in m × n ways.\n\nExample: 3 shirts × 4 pants = 12 possible outfits" },
-                    { type: "definition", content: "Permutation — An arrangement of objects where ORDER MATTERS.\nFormula: P(n,r) = n! / (n−r)!\nExample: How many 3-letter codes from {A,B,C,D,E}? P(5,3) = 5×4×3 = 60" },
-                    { type: "definition", content: "Combination — A selection of objects where ORDER DOES NOT MATTER.\nFormula: C(n,r) = n! / [r!(n−r)!]\nExample: Choosing 3 students from 5 for a committee: C(5,3) = 10" },
+                    { type: "h2", content: "What is Information Technology?" },
+                    { type: "definition", content: "Information Technology (IT) — The use of computers, software, networks, and electronics to store, process, transmit, and retrieve information. IT encompasses hardware, software, telecommunications, and data management." },
+                    { type: "definition", content: "Digital Literacy — The ability to use digital technologies effectively and responsibly. Includes finding, evaluating, creating, and communicating information using digital tools." },
+                    { type: "table", content: "Evolution of Computing", headers: ["Generation", "Period", "Technology", "Key Feature"], rows: [["1st", "1940s–1950s", "Vacuum tubes", "Room-sized computers; ENIAC"], ["2nd", "1950s–1960s", "Transistors", "Smaller, faster, more reliable"], ["3rd", "1960s–1970s", "Integrated circuits", "Further miniaturization"], ["4th", "1970s–present", "Microprocessors", "Personal computers; Intel 4004 (1971)"], ["5th", "Present–future", "AI, quantum computing", "Parallel processing, machine learning"]] },
+                    { type: "list", content: "Key Digital Literacy Skills", items: ["Information literacy: Finding and evaluating credible sources online", "Communication: Effective use of email, messaging, and digital platforms", "Content creation: Creating digital documents, presentations, media", "Cybersecurity awareness: Recognizing threats, protecting data", "Critical thinking: Evaluating digital content for accuracy and bias"] },
+                    { type: "note", content: "The Digital Divide in the Philippines: As of 2023, internet penetration is approximately 73% of the population. Rural areas have significantly lower access than Metro Manila." },
                   ],
                   quiz: [
-                    { question: "What is the probability of rolling an even number on a standard die?", options: ["1/6", "1/3", "1/2", "2/3"], answer: 2, explanation: "Even numbers: {2, 4, 6} = 3 outcomes. Total outcomes = 6. P(even) = 3/6 = 1/2." },
-                    { question: "In a Permutation, what is important?", options: ["The size of the group selected", "The ORDER of the arrangement", "Whether all elements are selected", "The type of objects chosen"], answer: 1, explanation: "Permutations are arrangements where ORDER MATTERS. Selecting A,B,C is different from C,B,A in a permutation." },
-                    { question: "P(5,2) equals:", options: ["10", "20", "5", "15"], answer: 1, explanation: "P(5,2) = 5! / (5-2)! = 5! / 3! = 5 × 4 = 20" },
+                    { question: "Digital literacy primarily refers to:", options: ["Being able to read digital text", "Using digital technologies effectively and responsibly", "Programming computer software", "Operating digital hardware"], answer: 1, explanation: "Digital literacy: the ability to use digital tools effectively and responsibly to find, evaluate, create, and share information." },
+                    { question: "The 4th generation of computers used:", options: ["Vacuum tubes", "Transistors", "Integrated circuits", "Microprocessors"], answer: 3, explanation: "4th generation computers (1970s–present) use microprocessors — entire CPUs on a single chip." },
+                  ],
+                },
+              },
+              {
+                id: "mst02-m1t2", title: "Internet and World Wide Web",
+                content: {
+                  heading: "Internet and World Wide Web", term: "PRELIM", module: "Module 1: Digital Literacy and Information Technology",
+                  objectives: ["Distinguish the Internet from the World Wide Web", "Understand web technologies and browsers", "Evaluate online information for credibility"],
+                  sections: [
+                    { type: "h2", content: "Internet vs. World Wide Web" },
+                    { type: "table", content: "Internet vs. WWW", headers: ["Aspect", "Internet", "World Wide Web (WWW)"], rows: [["Definition", "Global network of interconnected computers", "System of interlinked web pages accessed via the internet"], ["Nature", "Infrastructure (hardware and protocols)", "Content/service running ON the internet"], ["Inventor", "DARPA/multiple contributors (ARPANET, 1969)", "Tim Berners-Lee (1989)"], ["Access", "Via ISPs using TCP/IP", "Via web browsers using HTTP/HTTPS"]] },
+                    { type: "list", content: "Key Internet Services (Beyond WWW)", items: ["Email (SMTP, POP3, IMAP) — Electronic mail communication", "VoIP — Voice over IP (Zoom, Teams, Facebook Calls)", "FTP — File Transfer Protocol for downloading/uploading files", "Cloud storage — Google Drive, OneDrive, Dropbox", "Streaming — Netflix, YouTube, Spotify"] },
+                    { type: "h3", content: "CRAAP Test for Evaluating Online Sources" },
+                    { type: "list", content: "CRAAP Test Criteria", items: ["Currency — Is the information recent/up-to-date?", "Relevance — Does it relate to your topic?", "Authority — Who created it? What are their credentials?", "Accuracy — Is it supported by evidence? Can it be verified?", "Purpose — Is the goal to inform, persuade, sell, or entertain?"] },
+                  ],
+                  quiz: [
+                    { question: "The World Wide Web was invented by:", options: ["Bill Gates", "Tim Berners-Lee", "Steve Jobs", "Mark Zuckerberg"], answer: 1, explanation: "Tim Berners-Lee invented the World Wide Web in 1989 at CERN." },
+                    { question: "Which best distinguishes the Internet from the World Wide Web?", options: ["They are the same thing", "The Internet is the infrastructure; the WWW is a service on it", "The WWW is the infrastructure; the Internet is a service", "The Internet only works with web browsers"], answer: 1, explanation: "The Internet = global network infrastructure. The WWW = one service (web pages) that runs on the Internet." },
                   ],
                 },
               },
@@ -169,26 +181,43 @@ export const OTHER_SUBJECTS: Subject[] = [
         id: "midterm", label: "MIDTERM",
         modules: [
           {
-            id: "mst02-m2", title: "Module 2: Probability Distributions",
+            id: "mst02-m2", title: "Module 2: Cybersecurity and Social Media",
             topics: [
               {
-                id: "mst02-m2t1", title: "Normal Distribution",
+                id: "mst02-m2t1", title: "Cybersecurity Fundamentals",
                 content: {
-                  heading: "Normal Distribution", term: "MIDTERM", module: "Module 2: Probability Distributions",
-                  objectives: ["Describe the properties of the normal distribution", "Standardize values using z-scores", "Find probabilities using the standard normal table"],
+                  heading: "Cybersecurity Fundamentals", term: "MIDTERM", module: "Module 2: Cybersecurity and Social Media",
+                  objectives: ["Define cybersecurity and common cyber threats", "Identify methods of protecting digital assets", "Apply cybersecurity best practices"],
                   sections: [
-                    { type: "h2", content: "The Normal Distribution" },
-                    { type: "definition", content: "Normal Distribution — A continuous probability distribution that is symmetrical about the mean, shaped like a bell curve. Also called the Gaussian distribution." },
-                    { type: "list", content: "Properties of the Normal Distribution", items: ["Bell-shaped and symmetrical about the mean", "Mean = Median = Mode (all equal)", "Total area under the curve = 1 (100%)", "Curve extends infinitely in both directions but never touches the x-axis", "Defined by two parameters: mean (μ) and standard deviation (σ)"] },
-                    { type: "h3", content: "The Empirical Rule (68-95-99.7 Rule)" },
-                    { type: "table", content: "Empirical Rule", headers: ["Range", "% of Data"], rows: [["μ ± 1σ", "Approximately 68% of data"], ["μ ± 2σ", "Approximately 95% of data"], ["μ ± 3σ", "Approximately 99.7% of data"]] },
-                    { type: "h3", content: "Z-Score (Standard Score)" },
-                    { type: "definition", content: "Z-Score — The number of standard deviations a data point is from the mean.\nFormula: z = (x − μ) / σ\nwhere x = observed value, μ = mean, σ = standard deviation" },
-                    { type: "example", content: "Example: Exam scores are normally distributed with mean μ = 75 and σ = 10.\n\nWhat is the z-score for a score of 85?\nz = (85 − 75) / 10 = 10/10 = 1.0\n\nA score of 85 is 1 standard deviation above the mean.\nUsing the empirical rule: about 84% of scores fall below 85." },
+                    { type: "h2", content: "Cybersecurity" },
+                    { type: "definition", content: "Cybersecurity — The practice of protecting computers, servers, networks, programs, and data from digital attacks, damage, or unauthorized access." },
+                    { type: "table", content: "Common Cyber Threats", headers: ["Threat", "Definition", "Example"], rows: [["Phishing", "Fraudulent emails/messages tricking users into revealing credentials", "Fake bank email asking for password"], ["Malware", "Malicious software designed to harm", "Viruses, worms, ransomware, spyware"], ["Ransomware", "Encrypts victim's files; demands payment for decryption", "WannaCry (2017) affected 150+ countries"], ["Social Engineering", "Manipulating humans to breach security", "Pretending to be IT support to get your password"], ["Man-in-the-Middle", "Attacker intercepts communication between two parties", "Intercepting public Wi-Fi traffic"], ["DDoS", "Overloading a server with traffic to make it unavailable", "Taking down a website by flooding it with requests"]] },
+                    { type: "list", content: "Cybersecurity Best Practices", items: ["Use strong, unique passwords for each account (mix of upper/lowercase, numbers, symbols)", "Enable Two-Factor Authentication (2FA) wherever available", "Keep software and operating systems updated (patches fix vulnerabilities)", "Be suspicious of unsolicited emails — never click unknown links", "Use HTTPS websites; avoid unsecured public Wi-Fi for sensitive tasks", "Regularly back up important data (3-2-1 rule: 3 copies, 2 formats, 1 off-site)"] },
+                    { type: "definition", content: "CIA Triad — The three core principles of information security:\n• Confidentiality: Only authorized users access data\n• Integrity: Data is accurate and unaltered\n• Availability: Systems and data are accessible when needed" },
+                    { type: "note", content: "Philippine Cybercrime Prevention Act (RA 10175, 2012): Cybercrime offenses include illegal access, data interference, cybersex, child pornography, identity theft, and cyberlibel. Penalty: imprisonment of 6 years or more." },
                   ],
                   quiz: [
-                    { question: "In a normal distribution, what percentage of data falls within 2 standard deviations of the mean?", options: ["68%", "95%", "99.7%", "50%"], answer: 1, explanation: "The Empirical Rule: μ ± 1σ = 68%; μ ± 2σ = 95%; μ ± 3σ = 99.7%" },
-                    { question: "A z-score of -1.5 means the data point is:", options: ["1.5 standard deviations above the mean", "1.5 standard deviations below the mean", "1.5 units from the median", "In the top 1.5% of the distribution"], answer: 1, explanation: "A negative z-score means the value is below the mean. z = -1.5 means 1.5 standard deviations below the mean." },
+                    { question: "Phishing is best described as:", options: ["A type of malware that encrypts files", "Fraudulent messages tricking users into revealing credentials", "Flooding a server with traffic", "Intercepting network communication"], answer: 1, explanation: "Phishing = fraudulent emails/messages that trick users into revealing passwords or personal information." },
+                    { question: "The CIA Triad in cybersecurity stands for:", options: ["Computers, Internet, Applications", "Confidentiality, Integrity, Availability", "Cybercrime, Investigation, Accountability", "Coding, Implementation, Auditing"], answer: 1, explanation: "CIA Triad = Confidentiality, Integrity, Availability — the three core principles of information security." },
+                    { question: "Ransomware is a type of malware that:", options: ["Steals your personal information silently", "Tracks your browsing habits", "Encrypts your files and demands payment", "Sends spam from your computer"], answer: 2, explanation: "Ransomware encrypts a victim's files and demands a ransom for decryption." },
+                  ],
+                },
+              },
+              {
+                id: "mst02-m2t2", title: "Social Media and Digital Citizenship",
+                content: {
+                  heading: "Social Media and Digital Citizenship", term: "MIDTERM", module: "Module 2: Cybersecurity and Social Media",
+                  objectives: ["Analyze the impact of social media", "Define digital citizenship", "Identify responsible online behavior"],
+                  sections: [
+                    { type: "h2", content: "Social Media" },
+                    { type: "table", content: "Social Media Types and Platforms", headers: ["Type", "Examples", "Primary Use"], rows: [["Social Networking", "Facebook, LinkedIn", "Connecting with people"], ["Microblogging", "Twitter/X, Tumblr", "Short-form content sharing"], ["Photo/Video Sharing", "Instagram, TikTok, YouTube", "Visual content"], ["Professional", "LinkedIn", "Career networking"], ["Messaging", "WhatsApp, Telegram, Messenger", "Private communication"]] },
+                    { type: "table", content: "Effects of Social Media", headers: ["Positive", "Negative"], rows: [["Community building and social support", "Cyberbullying and online harassment"], ["Information sharing and awareness", "Fake news and misinformation"], ["Business marketing and e-commerce", "Mental health issues (social comparison, FOMO)"], ["Educational resources", "Echo chambers and filter bubbles"], ["Political participation", "Privacy risks and data exploitation"]] },
+                    { type: "definition", content: "Digital Citizenship — Responsible, ethical, and safe participation in digital life. It includes respecting others' rights, protecting privacy, thinking critically, and contributing positively online." },
+                    { type: "list", content: "Nine Elements of Digital Citizenship (Ribble)", items: ["Digital Access", "Digital Commerce", "Digital Communication", "Digital Literacy", "Digital Etiquette", "Digital Law", "Digital Rights and Responsibilities", "Digital Health and Wellness", "Digital Security"] },
+                  ],
+                  quiz: [
+                    { question: "Digital citizenship refers to:", options: ["Having a social media account", "Responsible, ethical, and safe participation in digital life", "Being able to write code", "Having internet access at home"], answer: 1, explanation: "Digital citizenship = responsible, ethical, safe online participation, respecting rights and contributing positively." },
+                    { question: "A 'filter bubble' on social media means:", options: ["Your private messages are encrypted", "Algorithms show you only content aligned with your existing views", "Your feed is filtered from offensive content", "You can filter spam emails"], answer: 1, explanation: "Filter bubbles: algorithms curate content based on your preferences, isolating you from opposing views." },
                   ],
                 },
               },
@@ -200,27 +229,44 @@ export const OTHER_SUBJECTS: Subject[] = [
         id: "finals", label: "FINALS",
         modules: [
           {
-            id: "mst02-m3", title: "Module 3: Hypothesis Testing",
+            id: "mst02-m3", title: "Module 3: Emerging Technologies",
             topics: [
               {
-                id: "mst02-m3t1", title: "Introduction to Hypothesis Testing",
+                id: "mst02-m3t1", title: "Artificial Intelligence and Machine Learning",
                 content: {
-                  heading: "Introduction to Hypothesis Testing", term: "FINALS", module: "Module 3: Hypothesis Testing",
-                  objectives: ["Define hypothesis testing and its steps", "Distinguish null and alternative hypotheses", "Interpret p-values and significance levels"],
+                  heading: "Artificial Intelligence and Machine Learning", term: "FINALS", module: "Module 3: Emerging Technologies",
+                  objectives: ["Define AI and its subfields", "Distinguish machine learning from traditional programming", "Analyze AI's impact on society and the workforce"],
                   sections: [
-                    { type: "h2", content: "Hypothesis Testing" },
-                    { type: "definition", content: "Hypothesis Testing — A statistical procedure for testing a claim about a population parameter using sample data. It helps determine if observed results are due to chance or reflect a real effect." },
-                    { type: "h3", content: "Types of Hypotheses" },
-                    { type: "definition", content: "Null Hypothesis (H₀) — The default assumption of 'no effect' or 'no difference.' We test whether there is enough evidence to REJECT it.\n\nAlternative Hypothesis (H₁ or Hₐ) — The claim we want to support. It contradicts H₀." },
-                    { type: "example", content: "Example: Testing if a new teaching method improves exam scores.\n\nH₀: The new method makes no difference. μ = 75\nH₁: The new method improves scores. μ > 75\n\nThis is a right-tailed (one-tailed) test." },
-                    { type: "h3", content: "Steps in Hypothesis Testing" },
-                    { type: "list", content: "Steps in Hypothesis Testing", items: ["1. State H₀ and H₁", "2. Set the significance level (α) — usually 0.05 or 5%", "3. Select the appropriate test statistic (z-test, t-test, chi-square)", "4. Compute the test statistic from sample data", "5. Find the p-value or compare test statistic to critical value", "6. Make a decision: Reject H₀ if p-value < α; otherwise Fail to Reject H₀", "7. State the conclusion in context"] },
-                    { type: "definition", content: "p-value — The probability of obtaining results as extreme as observed, assuming H₀ is true. A small p-value (< α) provides evidence against H₀. If p < 0.05, reject H₀ at the 5% significance level." },
-                    { type: "table", content: "Types of Errors in Hypothesis Testing", headers: ["Error Type", "Description", "Consequence"], rows: [["Type I Error (α)", "Rejecting a TRUE H₀ (false positive)", "Claiming an effect exists when it doesn't"], ["Type II Error (β)", "Failing to reject a FALSE H₀ (false negative)", "Missing a real effect"]] },
+                    { type: "h2", content: "Artificial Intelligence (AI)" },
+                    { type: "definition", content: "Artificial Intelligence (AI) — The simulation of human intelligence processes by computer systems, including learning, reasoning, problem-solving, perception, and language understanding." },
+                    { type: "table", content: "AI Subfields", headers: ["Subfield", "Description", "Example"], rows: [["Machine Learning", "Systems that learn from data without explicit programming", "Netflix recommendations, spam filters"], ["Deep Learning", "ML using multi-layered neural networks", "Face recognition, ChatGPT"], ["Natural Language Processing (NLP)", "Computers understanding human language", "Google Translate, Siri, ChatGPT"], ["Computer Vision", "Computers interpreting visual information", "CCTV recognition, medical imaging"], ["Robotics", "Intelligent physical machines", "Automated manufacturing, delivery drones"]] },
+                    { type: "table", content: "AI Applications in Daily Life", headers: ["Application Area", "AI Use"], rows: [["Healthcare", "Diagnosis, drug discovery, medical imaging analysis"], ["Finance", "Fraud detection, algorithmic trading, credit scoring"], ["Education", "Personalized learning, AI tutors"], ["Transportation", "Self-driving cars, route optimization"], ["Entertainment", "Content recommendations, game AI"], ["Customer Service", "Chatbots, virtual assistants"]] },
+                    { type: "list", content: "Ethical Concerns About AI", items: ["Job displacement — Automation may eliminate certain jobs", "Algorithmic bias — AI trained on biased data produces biased results", "Privacy — AI systems collect and analyze massive amounts of personal data", "Deepfakes — AI-generated fake images and videos can be used for misinformation", "Autonomous weapons — AI used in military without human oversight"] },
                   ],
                   quiz: [
-                    { question: "The null hypothesis (H₀) represents:", options: ["The research hypothesis we want to prove", "The assumption of no effect or no difference", "The conclusion after testing", "The significance level"], answer: 1, explanation: "H₀ is the null hypothesis — the default assumption of no effect or no difference that we test against." },
-                    { question: "If p-value = 0.03 and α = 0.05, we should:", options: ["Fail to reject H₀", "Reject H₀", "Accept H₁ as proven", "Repeat the experiment"], answer: 1, explanation: "Since p-value (0.03) < α (0.05), we reject H₀. The evidence is statistically significant." },
+                    { question: "Machine learning is best described as:", options: ["Teaching robots to move physically", "Systems that learn from data without explicit programming", "Manual programming of rules for computers to follow", "Artificial creation of human consciousness"], answer: 1, explanation: "Machine learning: systems that learn patterns from data automatically without being explicitly programmed." },
+                    { question: "Which is an example of Natural Language Processing?", options: ["Google Maps navigation", "Netflix movie recommendations", "Google Translate", "iPhone Face ID"], answer: 2, explanation: "Natural Language Processing (NLP): computers understand human language. Google Translate uses NLP." },
+                  ],
+                },
+              },
+              {
+                id: "mst02-m3t2", title: "Cloud Computing, IoT, and Blockchain",
+                content: {
+                  heading: "Cloud Computing, IoT, and Blockchain", term: "FINALS", module: "Module 3: Emerging Technologies",
+                  objectives: ["Explain cloud computing concepts", "Describe the Internet of Things (IoT)", "Understand blockchain technology basics"],
+                  sections: [
+                    { type: "h2", content: "Cloud Computing" },
+                    { type: "table", content: "Cloud Service Models", headers: ["Model", "What You Manage", "Example"], rows: [["SaaS", "Nothing (just use it)", "Gmail, Microsoft 365, Zoom"], ["PaaS", "Your applications", "Heroku, Google App Engine"], ["IaaS", "Your OS and applications", "AWS EC2, Azure VMs"]] },
+                    { type: "h2", content: "Internet of Things (IoT)" },
+                    { type: "definition", content: "Internet of Things (IoT) — The network of physical devices (smart home devices, wearables, sensors) embedded with electronics, software, and sensors that can collect and exchange data over the internet." },
+                    { type: "list", content: "IoT Applications", items: ["Smart home: Smart TVs, voice assistants (Alexa, Google Home), automated lighting", "Healthcare: Smartwatches monitoring heart rate, blood oxygen", "Agriculture: Soil sensors, automated irrigation systems", "Smart cities: Traffic management, smart parking, environmental sensors"] },
+                    { type: "h2", content: "Blockchain" },
+                    { type: "definition", content: "Blockchain — A decentralized, distributed digital ledger that records transactions across multiple computers. Records cannot be altered retroactively without changing all subsequent blocks." },
+                    { type: "table", content: "Blockchain Applications", headers: ["Application", "Description"], rows: [["Cryptocurrency", "Bitcoin, Ethereum — digital currencies without a central bank"], ["Smart Contracts", "Self-executing contracts with terms written in code"], ["Supply Chain", "Tracking goods from origin to consumer transparently"], ["Healthcare", "Secure sharing of medical records"], ["Voting", "Transparent, tamper-resistant election systems"]] },
+                  ],
+                  quiz: [
+                    { question: "The Internet of Things (IoT) refers to:", options: ["The World Wide Web", "Social media platforms", "Physical devices with sensors that connect and share data online", "Blockchain-based applications"], answer: 2, explanation: "IoT = physical devices (smart home, wearables, sensors) that connect to the internet and exchange data." },
+                    { question: "Which cloud service model provides the LEAST control to the user?", options: ["IaaS", "PaaS", "SaaS", "DaaS"], answer: 2, explanation: "SaaS provides the least control — you just use the software; all underlying infrastructure is managed by the provider." },
                   ],
                 },
               },
@@ -231,63 +277,34 @@ export const OTHER_SUBJECTS: Subject[] = [
     ],
   },
 
+  // ─── NSTP 1: CIVIC WELFARE TRAINING SERVICE 1 ────────────────────────────
   {
-    id: "nstp1",
-    code: "NSTP 1",
-    title: "National Service Training Program 1",
-    shortTitle: "NSTP 1",
-    units: 3,
-    description: "Develops civic consciousness and defense preparedness. Enhances civic awareness, community service skills, patriotism, and nation-building among college students.",
+    id: "nstp1", code: "NSTP 1", title: "Civic Welfare Training Service 1", shortTitle: "NSTP 1", units: 3,
+    description: "Introduces civic responsibility, volunteerism, and community service. Develops students' awareness of national issues and commitment to nation building.",
     terms: [
       {
         id: "prelim", label: "PRELIM",
         modules: [
           {
-            id: "nstp1-m1", title: "Module 1: Introduction to NSTP",
+            id: "nstp1-m1", title: "Module 1: Introduction to NSTP and CWTS",
             topics: [
               {
-                id: "nstp1-m1t1", title: "NSTP Law (RA 9163) and History",
+                id: "nstp1-m1t1", title: "Republic Act 9163 — The NSTP Law",
                 content: {
-                  heading: "NSTP Law (RA 9163) and History", term: "PRELIM", module: "Module 1: Introduction to NSTP",
-                  objectives: ["Explain the legal basis and history of NSTP", "Identify the three components of NSTP", "Distinguish ROTC, CWTS, and LTS"],
+                  heading: "Republic Act 9163 — The NSTP Law", term: "PRELIM", module: "Module 1: Introduction to NSTP and CWTS",
+                  objectives: ["Explain the purpose of RA 9163", "Identify the three NSTP components", "Explain the CWTS program objective"],
                   sections: [
-                    { type: "h2", content: "Republic Act 9163: The NSTP Act of 2001" },
-                    { type: "definition", content: "NSTP (National Service Training Program) — Mandated by RA 9163, this program aims to enhance civic consciousness and defense preparedness among the youth, develop ethics of service and patriotism, and encourage civic participation in nation-building." },
-                    { type: "table", content: "Three Components of NSTP", headers: ["Component", "Full Name", "Focus"], rows: [["ROTC", "Reserve Officers' Training Corps", "Military science and national defense"], ["CWTS", "Civic Welfare Training Service", "Community service and social development"], ["LTS", "Literacy Training Service", "Teaching literacy and numeracy to out-of-school youth and adults"]] },
-                    { type: "list", content: "Objectives of NSTP", items: ["Promote physical, moral, spiritual, intellectual, and social well-being of youth", "Train students to become civic-spirited and responsible citizens", "Inculcate patriotism and nationalism", "Advance youth leadership and citizenship", "Foster love of country and nation-building participation"] },
-                    { type: "note", content: "RA 9163 requires ALL incoming college freshmen — male AND female — to complete NSTP for 2 semesters. Students may choose any one of the three components. The law was enacted following public outcry over hazing incidents in ROTC (2001 Caltex ROTC hazing incident)." },
-                    { type: "h3", content: "Historical Background" },
-                    { type: "text", content: "Before RA 9163, only ROTC (compulsory for male students) was required. The law replaced this single military requirement with three options, broadening the scope to include civic welfare and literacy training — recognizing that national service goes beyond military preparedness." },
+                    { type: "h2", content: "National Service Training Program (NSTP)" },
+                    { type: "definition", content: "RA 9163 (2001) — The National Service Training Program Act. Mandates NSTP for all incoming freshmen in tertiary education, both public and private schools. Replaced the old Citizen's Military Training (CMT)." },
+                    { type: "table", content: "Three NSTP Components", headers: ["Component", "Full Name", "Focus"], rows: [["CWTS", "Civic Welfare Training Service", "Community service; social development; volunteerism"], ["ROTC", "Reserve Officers' Training Corps", "Military training for national defense"], ["LTS", "Literacy Training Service", "Teaching literacy and numeracy in communities"]] },
+                    { type: "definition", content: "CWTS (Civic Welfare Training Service) — NSTP component aimed at enhancing civic consciousness and defense preparedness in youth. Focuses on projects that contribute to the general welfare and betterment of life in communities." },
+                    { type: "list", content: "CWTS Program Goals", items: ["Develop civic responsibility and consciousness among students", "Equip students with skills for community service", "Promote values of service, patriotism, and solidarity", "Engage students in social development projects", "Foster love of country and commitment to nation-building"] },
+                    { type: "note", content: "NSTP is a requirement for graduation. Students must complete NSTP 1 and NSTP 2 (6 units total). CWTS is 3 hours per week for 2 semesters." },
                   ],
                   quiz: [
-                    { question: "What Republic Act established the NSTP?", options: ["RA 7722", "RA 8294", "RA 9163", "RA 10121"], answer: 2, explanation: "Republic Act 9163, the NSTP Act of 2001, established the National Service Training Program." },
-                    { question: "Which NSTP component focuses on teaching literacy to out-of-school youth?", options: ["ROTC", "CWTS", "LTS", "AFP Reserves"], answer: 2, explanation: "LTS (Literacy Training Service) focuses on teaching literacy and numeracy skills to out-of-school youth and adults." },
-                    { question: "NSTP under RA 9163 is required for:", options: ["Male students only", "All incoming freshmen regardless of gender", "College seniors only", "Graduate students"], answer: 1, explanation: "RA 9163 requires ALL incoming college freshmen — both male and female — to complete NSTP." },
-                  ],
-                },
-              },
-            ],
-          },
-          {
-            id: "nstp1-m2", title: "Module 2: Filipino Values and National Identity",
-            topics: [
-              {
-                id: "nstp1-m2t1", title: "Filipino Values and Character",
-                content: {
-                  heading: "Filipino Values and Character", term: "PRELIM", module: "Module 2: Filipino Values and National Identity",
-                  objectives: ["Identify core Filipino values and cultural origins", "Analyze both positive and negative Filipino values", "Explain how values contribute to national development"],
-                  sections: [
-                    { type: "h2", content: "Filipino Core Values" },
-                    { type: "list", content: "Positive Filipino Values", items: ["Bayanihan — Spirit of communal unity and cooperation", "Pakikipagkapwa — Treating others as equal human beings; empathy", "Paggalang — Respect for elders and authority (po, opo)", "Pagmamahal sa pamilya — Strong family orientation", "Pagtitiis — Perseverance and endurance; resilience", "Utang na loob — Debt of gratitude and reciprocity", "Malasakit — Genuine concern for others' welfare"] },
-                    { type: "definition", content: "Bayanihan — Filipino practice of communal work and unity. Historically demonstrated when neighbors help a family move their house together. Represents selfless cooperation for the common good." },
-                    { type: "h3", content: "Negative Filipino Traits to Overcome" },
-                    { type: "list", content: "Negative Cultural Tendencies", items: ["Kanya-kanya syndrome — Selfishness; putting personal gain over common good", "Crab mentality (Talangka mentality) — Pulling others down to prevent their success", "Manana habit (Mamaya na) — Procrastination; deferring tasks", "Ningas-kugon — Starting with enthusiasm but losing interest quickly", "Colonial mentality — Favoring foreign over Filipino products/culture", "Bahala na — Fatalistic attitude of leaving things to fate", "Pakikisama (excessive) — Conformity to group even against one's better judgment"] },
-                    { type: "note", content: "These negative traits are not inherent to Filipinos — they are products of historical circumstances, colonial experience, and social conditioning. Understanding them is the first step toward positive change and national progress." },
-                  ],
-                  quiz: [
-                    { question: "'Bayanihan' best represents:", options: ["Individual achievement", "Communal unity and cooperative work", "Respect for colonial influences", "Religious devotion"], answer: 1, explanation: "Bayanihan is the Filipino spirit of communal unity — working together for the common good." },
-                    { question: "'Ningas-kugon' means:", options: ["Strong perseverance until completion", "Starting enthusiastically but losing interest quickly", "Leaving everything to fate", "Excessive dependence on foreign products"], answer: 1, explanation: "Ningas-kugon (named after cogon grass that burns briefly) = starting with enthusiasm but abandoning tasks before completion." },
-                    { question: "The 'Kanya-kanya syndrome' refers to:", options: ["Extreme patriotism", "Pulling others down", "Selfishness and prioritizing personal gain over collective good", "Excessive community spirit"], answer: 2, explanation: "Kanya-kanya syndrome is selfishness — prioritizing personal gain even at the expense of community welfare." },
+                    { question: "RA 9163 (NSTP Law) was enacted in:", options: ["1991", "1997", "2001", "2010"], answer: 2, explanation: "RA 9163 (National Service Training Program Act) was signed into law in 2001." },
+                    { question: "CWTS stands for:", options: ["Civic Warfare Training Service", "Civic Welfare Training Service", "Community Work and Training Service", "Civic Welfare Teaching Service"], answer: 1, explanation: "CWTS = Civic Welfare Training Service — one of the three NSTP components." },
+                    { question: "Which NSTP component focuses on military training?", options: ["CWTS", "LTS", "ROTC", "NTS"], answer: 2, explanation: "ROTC (Reserve Officers' Training Corps) focuses on military training for national defense." },
                   ],
                 },
               },
@@ -299,26 +316,21 @@ export const OTHER_SUBJECTS: Subject[] = [
         id: "midterm", label: "MIDTERM",
         modules: [
           {
-            id: "nstp1-m3", title: "Module 3: Disaster Risk Reduction and Management",
+            id: "nstp1-m2", title: "Module 2: Volunteerism and Community Development",
             topics: [
               {
-                id: "nstp1-m3t1", title: "DRRM Fundamentals",
+                id: "nstp1-m2t1", title: "Volunteerism and Service Learning",
                 content: {
-                  heading: "Disaster Risk Reduction and Management (DRRM)", term: "MIDTERM", module: "Module 3: Disaster Risk Reduction and Management",
-                  objectives: ["Define disaster and its types", "Explain RA 10121 (PDRRM Act)", "Identify disaster preparedness measures"],
+                  heading: "Volunteerism and Service Learning", term: "MIDTERM", module: "Module 2: Volunteerism and Community Development",
+                  objectives: ["Define volunteerism and service learning", "Identify motivations for volunteering", "Distinguish service learning from community service"],
                   sections: [
-                    { type: "h2", content: "Disaster Risk Reduction and Management" },
-                    { type: "definition", content: "Disaster — A serious disruption of the functioning of a community or society involving widespread human, material, economic, or environmental losses and impacts exceeding the ability to cope using its own resources." },
-                    { type: "h3", content: "RA 10121: Philippine DRRM Act of 2010" },
-                    { type: "text", content: "Republic Act 10121 (Philippine Disaster Risk Reduction and Management Act of 2010) established the National Disaster Risk Reduction and Management Council (NDRRMC) and DRRM offices at all levels of government." },
-                    { type: "list", content: "Four Thematic Areas of DRRM (RA 10121)", items: ["Disaster Prevention and Mitigation — Reducing exposure and vulnerability before disasters", "Disaster Preparedness — Readiness for effective response when disasters occur", "Disaster Response — Providing timely assistance during disasters", "Disaster Rehabilitation and Recovery — Restoring and improving communities post-disaster"] },
-                    { type: "h3", content: "Natural Hazards in the Philippines" },
-                    { type: "table", content: "Common Philippine Natural Hazards", headers: ["Hazard", "Affected Areas", "Key Agencies"], rows: [["Typhoon/Bagyo", "Entire Philippines (especially Luzon and Visayas)", "PAGASA, NDRRMC"], ["Earthquake", "Entire Philippines (Ring of Fire)", "PHIVOLCS"], ["Volcanic Eruption", "Luzon (Mayon, Taal, Pinatubo area)", "PHIVOLCS"], ["Flood", "Low-lying areas, river basins", "NDRRMC, LGUs"], ["Landslide", "Mountainous areas, deforested slopes", "Mines and Geosciences Bureau"]] },
-                    { type: "note", content: "The Philippines is one of the most disaster-prone countries in the world, located along the Pacific Ring of Fire and the Pacific typhoon belt. It experiences an average of 20 typhoons per year and is prone to earthquakes and volcanic eruptions." },
+                    { type: "h2", content: "Volunteerism" },
+                    { type: "definition", content: "Volunteerism — The practice of freely giving time and effort for the benefit of others and the community without expectation of financial reward." },
+                    { type: "definition", content: "Service Learning — A teaching strategy that combines academic learning with meaningful community service. Students apply classroom knowledge to real-world problems." },
+                    { type: "table", content: "Community Service vs. Service Learning", headers: ["Aspect", "Community Service", "Service Learning"], rows: [["Focus", "Meeting community needs", "Student learning through service"], ["Reflection", "Optional", "Required and integrated"], ["Academic link", "Not required", "Directly connected to curriculum"], ["Goal", "Service only", "Service + academic + personal growth"]] },
                   ],
                   quiz: [
-                    { question: "RA 10121 is known as:", options: ["The NSTP Act", "The Philippine DRRM Act of 2010", "The Civil Defense Act", "The Disaster Relief Act"], answer: 1, explanation: "RA 10121 is the Philippine Disaster Risk Reduction and Management Act of 2010, creating the NDRRMC." },
-                    { question: "Which is NOT one of the four thematic areas of DRRM under RA 10121?", options: ["Prevention and Mitigation", "Preparedness", "Response", "Construction"], answer: 3, explanation: "The four areas are: Prevention and Mitigation, Preparedness, Response, and Rehabilitation and Recovery. 'Construction' is not one of them." },
+                    { question: "Service learning differs from regular community service in that it:", options: ["Provides financial incentives", "Is directly linked to academic learning with required reflection", "Does not involve community work", "Is only for graduate students"], answer: 1, explanation: "Service learning integrates meaningful community service with academic curriculum and required reflection." },
                   ],
                 },
               },
@@ -330,24 +342,21 @@ export const OTHER_SUBJECTS: Subject[] = [
         id: "finals", label: "FINALS",
         modules: [
           {
-            id: "nstp1-m4", title: "Module 4: Community Service and Leadership",
+            id: "nstp1-m3", title: "Module 3: Philippine Social Issues",
             topics: [
               {
-                id: "nstp1-m4t1", title: "Leadership and Community Development",
+                id: "nstp1-m3t1", title: "Poverty and Social Development in the Philippines",
                 content: {
-                  heading: "Leadership and Community Development", term: "FINALS", module: "Module 4: Community Service and Leadership",
-                  objectives: ["Define leadership and identify leadership styles", "Explain community development principles", "Apply leadership skills to community service projects"],
+                  heading: "Poverty and Social Development in the Philippines", term: "FINALS", module: "Module 3: Philippine Social Issues",
+                  objectives: ["Analyze poverty in the Philippines", "Identify government programs addressing poverty", "Explain how CWTS contributes to social development"],
                   sections: [
-                    { type: "h2", content: "Leadership in Community Service" },
-                    { type: "definition", content: "Leadership — The ability to guide, inspire, and influence others toward achieving a common goal. Effective leaders in community service mobilize people for collective action and positive social change." },
-                    { type: "table", content: "Leadership Styles", headers: ["Style", "Description", "Best For"], rows: [["Autocratic/Authoritarian", "Leader makes all decisions; top-down", "Emergencies; crisis situations"], ["Democratic/Participative", "Leader involves team in decision-making", "Collaborative projects; diverse expertise"], ["Laissez-faire", "Leader provides minimal direction; team has freedom", "Expert, highly motivated teams"], ["Transformational", "Leader inspires through vision and passion", "Change initiatives; motivating teams"], ["Servant Leadership", "Leader prioritizes the needs of others", "Community service; non-profit organizations"]] },
-                    { type: "h3", content: "Community Development" },
-                    { type: "definition", content: "Community Development — A process where community members identify shared needs and work collectively to address them, building capacity and improving quality of life. It emphasizes participation, empowerment, and sustainability." },
-                    { type: "list", content: "Principles of Community Development", items: ["Participation — Community members actively involved in decisions", "Empowerment — Building community capacity for self-reliance", "Sustainability — Programs continue beyond initial intervention", "Social Justice — Equitable distribution of resources and opportunities", "Cultural Sensitivity — Respecting local traditions and practices"] },
+                    { type: "h2", content: "Poverty in the Philippines" },
+                    { type: "text", content: "As of 2021, the Philippine poverty incidence was 18.1% (about 19.9 million Filipinos). Poverty is concentrated in rural areas, particularly in Mindanao." },
+                    { type: "list", content: "Causes of Poverty", items: ["Low wages and underemployment", "Limited access to quality education and healthcare", "Natural disasters (typhoons, earthquakes, floods)", "Conflict and displacement in Mindanao", "Systemic inequality and land ownership issues"] },
+                    { type: "list", content: "Government Programs", items: ["4Ps (Pantawid Pamilyang Pilipino Program) — Conditional cash transfer for poor families", "Libreng Sakay — Free public transportation for students, workers, seniors", "PhilHealth — Universal health insurance", "DepEd's Alternative Learning System (ALS) — For out-of-school youth"] },
                   ],
                   quiz: [
-                    { question: "Which leadership style is most appropriate for emergency disaster response?", options: ["Democratic", "Laissez-faire", "Autocratic/Authoritarian", "Transformational"], answer: 2, explanation: "Autocratic leadership is effective in emergencies where quick, decisive commands are needed without lengthy discussion." },
-                    { question: "Servant leadership is characterized by:", options: ["Making all decisions unilaterally", "The leader prioritizing the needs of others and the community", "Giving maximum freedom to the team", "Using authority and power to motivate"], answer: 1, explanation: "Servant leadership prioritizes serving others first — ideal for community service and non-profit work." },
+                    { question: "The 4Ps (Pantawid Pamilyang Pilipino Program) is best described as:", options: ["A housing subsidy program", "A conditional cash transfer program for poor families", "A free healthcare program", "A public transportation program"], answer: 1, explanation: "4Ps is a conditional cash transfer program providing cash grants to poor families." },
                   ],
                 },
               },
@@ -358,37 +367,31 @@ export const OTHER_SUBJECTS: Subject[] = [
     ],
   },
 
+  // ─── NSTP 2: CIVIC WELFARE TRAINING SERVICE 2 ────────────────────────────
   {
-    id: "nstp2",
-    code: "NSTP 2",
-    title: "National Service Training Program 2",
-    shortTitle: "NSTP 2",
-    units: 3,
-    description: "Continuation of NSTP 1. Focuses on community immersion, service project planning and implementation, and deepening civic engagement and patriotism.",
+    id: "nstp2", code: "NSTP 2", title: "Civic Welfare Training Service 2", shortTitle: "NSTP 2", units: 3,
+    description: "Continuation of CWTS 1. Focuses on hands-on community engagement, project implementation, disaster risk reduction, and evaluation of community service projects.",
     terms: [
       {
         id: "prelim", label: "PRELIM",
         modules: [
           {
-            id: "nstp2-m1", title: "Module 1: Community Needs Assessment",
+            id: "nstp2-m1", title: "Module 1: Disaster Risk Reduction",
             topics: [
               {
-                id: "nstp2-m1t1", title: "Community Needs Assessment (CNA)",
+                id: "nstp2-m1t1", title: "Disaster Risk Reduction and Management (DRRM)",
                 content: {
-                  heading: "Community Needs Assessment", term: "PRELIM", module: "Module 1: Community Needs Assessment",
-                  objectives: ["Define community needs assessment and its purpose", "Apply data collection methods for CNA", "Analyze CNA results to prioritize community needs"],
+                  heading: "Disaster Risk Reduction and Management (DRRM)", term: "PRELIM", module: "Module 1: Disaster Risk Reduction",
+                  objectives: ["Define disaster risk reduction", "Understand RA 10121", "Identify types of disasters affecting the Philippines"],
                   sections: [
-                    { type: "h2", content: "Community Needs Assessment (CNA)" },
-                    { type: "definition", content: "Community Needs Assessment (CNA) — A systematic process of gathering and analyzing information about a community's current situation to identify gaps between what exists and what is needed. It guides planning of appropriate interventions." },
-                    { type: "h3", content: "Purpose of CNA" },
-                    { type: "list", content: "Why Conduct a CNA?", items: ["Identify the actual needs of the community (not assumed needs)", "Prioritize needs based on urgency and resources", "Gather data to design effective community projects", "Establish a baseline for measuring project impact", "Ensure community participation in the planning process"] },
-                    { type: "h3", content: "Data Collection Methods" },
-                    { type: "table", content: "CNA Data Collection Methods", headers: ["Method", "Description", "Advantages"], rows: [["Survey/Questionnaire", "Structured questions given to community members", "Quantitative data; can reach many people"], ["Interview", "In-depth one-on-one or group conversation", "Rich qualitative data; explores perspectives"], ["Focus Group Discussion (FGD)", "Small group discussion on specific topics", "Multiple perspectives; interactive"], ["Observation", "Directly observing conditions and behaviors", "First-hand information; non-intrusive"], ["Secondary Data Review", "Analyzing existing records and reports", "Cost-effective; provides historical context"]] },
-                    { type: "note", content: "The Barangay Development Plan (BDP) and the Annual Investment Plan (AIP) of LGUs contain community data that can be used as secondary sources for CNA. NSTP students should coordinate with the Barangay Hall before conducting community assessments." },
+                    { type: "h2", content: "DRRM in the Philippines" },
+                    { type: "definition", content: "Disaster Risk Reduction (DRR) — The concept and practice of reducing disaster risks through systematic efforts including reduced exposure to hazards and lessened vulnerability of people and property." },
+                    { type: "definition", content: "RA 10121 (Philippine Disaster Risk Reduction and Management Act, 2010) — Provides for a comprehensive national DRRM policy. Created NDRRMC (National Disaster Risk Reduction and Management Council)." },
+                    { type: "table", content: "DRRM Phases", headers: ["Phase", "Activities"], rows: [["Prevention & Mitigation", "Risk assessment, land use planning, building codes, early warning systems"], ["Preparedness", "Training, drills, emergency plans, stockpiling"], ["Response", "Search and rescue, evacuation, emergency relief"], ["Recovery & Rehabilitation", "Rebuilding infrastructure, livelihood restoration, psychosocial support"]] },
+                    { type: "list", content: "Natural Hazards in the Philippines", items: ["Typhoons — Average 20 typhoons per year; strongest: Yolanda/Haiyan (2013)", "Earthquakes — Located on Pacific Ring of Fire; Valley Fault System near Metro Manila", "Volcanic Eruptions — 24 active volcanoes; Taal (2020), Mayon, Pinatubo (1991)", "Floods and Landslides — Especially in mountainous provinces after heavy rains"] },
                   ],
                   quiz: [
-                    { question: "A Community Needs Assessment helps primarily to:", options: ["Determine the GDP of a community", "Identify gaps between what exists and what is needed in a community", "Evaluate students' NSTP performance", "Establish barangay governance structures"], answer: 1, explanation: "CNA systematically identifies the community's actual needs — the gaps between current conditions and desired conditions." },
-                    { question: "A Focus Group Discussion (FGD) is best described as:", options: ["One-on-one structured interview", "Small group discussion on specific topics to gather qualitative data", "A written questionnaire distributed to the community", "Direct observation of community behaviors"], answer: 1, explanation: "FGD involves a small group discussing specific topics — it gathers multiple qualitative perspectives interactively." },
+                    { question: "RA 10121 created which government body for disaster management?", options: ["PAGASA", "PHIVOLCS", "NDRRMC", "OCD"], answer: 2, explanation: "RA 10121 created the NDRRMC (National Disaster Risk Reduction and Management Council)." },
                   ],
                 },
               },
@@ -400,25 +403,21 @@ export const OTHER_SUBJECTS: Subject[] = [
         id: "midterm", label: "MIDTERM",
         modules: [
           {
-            id: "nstp2-m2", title: "Module 2: Community Service Project Planning",
+            id: "nstp2-m2", title: "Module 2: Community Project Implementation",
             topics: [
               {
                 id: "nstp2-m2t1", title: "Project Planning and Implementation",
                 content: {
-                  heading: "Community Service Project Planning", term: "MIDTERM", module: "Module 2: Community Service Project Planning",
-                  objectives: ["Develop a community service project plan", "Apply project management tools to community service", "Monitor and evaluate community projects"],
+                  heading: "Project Planning and Implementation", term: "MIDTERM", module: "Module 2: Community Project Implementation",
+                  objectives: ["Plan a community service project", "Apply SMART objectives", "Evaluate project outcomes"],
                   sections: [
-                    { type: "h2", content: "Community Service Project Planning" },
-                    { type: "text", content: "A community service project must be carefully planned, implemented, monitored, and evaluated to ensure it creates a real positive impact for the target community." },
-                    { type: "h3", content: "Project Planning Framework" },
-                    { type: "list", content: "Key Elements of a Community Project Plan", items: ["Project Title — Clear, descriptive name", "Project Background — Rationale/justification based on CNA", "Project Objectives — SMART: Specific, Measurable, Achievable, Realistic, Time-bound", "Target Beneficiaries — Who will benefit", "Activities — Step-by-step tasks to achieve objectives", "Timeline — Schedule using Gantt chart", "Budget — Estimated costs and sources of funding", "Monitoring and Evaluation (M&E) — How success will be measured"] },
-                    { type: "definition", content: "SMART Objectives — Specific (clear and well-defined), Measurable (can be quantified), Achievable (realistic given resources), Relevant (addresses the identified need), Time-bound (has a deadline)." },
-                    { type: "example", content: "Good SMART Objective:\n'Conduct a literacy tutoring session for 30 out-of-school youth in Barangay San Jose every Saturday from March 1 to May 31, 2025, improving their reading level from Grade 1 to Grade 3 as measured by a pre-post test.'" },
-                    { type: "h3", content: "Gantt Chart" },
-                    { type: "text", content: "A Gantt chart is a horizontal bar chart that visually shows project activities against time. It helps teams see the schedule, identify overlapping tasks, track progress, and ensure milestones are met." },
+                    { type: "h2", content: "Community Project Cycle" },
+                    { type: "list", content: "Steps in Community Project Management", items: ["1. Community Assessment — Identify needs and problems (surveys, interviews, focus groups)", "2. Problem Identification — Prioritize the most pressing need", "3. Project Planning — Set SMART objectives, identify activities, resources, timeline", "4. Implementation — Execute the activities; coordinate volunteers", "5. Monitoring — Track progress against plan; adjust as needed", "6. Evaluation — Measure outcomes; did you achieve objectives?", "7. Documentation and Reporting — Write project report; present findings"] },
+                    { type: "definition", content: "SMART Objectives — Specific, Measurable, Achievable, Relevant, Time-bound." },
+                    { type: "example", content: "Poor objective: 'Help the community.'\nSMART: 'Reduce littering by 50% in Barangay X within 3 months by conducting weekly clean-up drives and installing 10 additional trash bins.'" },
                   ],
                   quiz: [
-                    { question: "SMART in project objectives stands for:", options: ["Simple, Manageable, Achievable, Real, Timely", "Specific, Measurable, Achievable, Relevant, Time-bound", "Strategic, Meaningful, Aligned, Reasonable, Thorough", "Short, Measurable, Actionable, Reliable, Tracked"], answer: 1, explanation: "SMART = Specific, Measurable, Achievable, Relevant, Time-bound — criteria for well-defined project objectives." },
+                    { question: "SMART objectives must be:", options: ["Simple, Meaningful, Achievable, Realistic, Timely", "Specific, Measurable, Achievable, Relevant, Time-bound", "Specific, Manageable, Accessible, Realistic, Tangible", "Simple, Manageable, Achievable, Relevant, Time-bound"], answer: 1, explanation: "SMART = Specific, Measurable, Achievable, Relevant, Time-bound." },
                   ],
                 },
               },
@@ -430,24 +429,20 @@ export const OTHER_SUBJECTS: Subject[] = [
         id: "finals", label: "FINALS",
         modules: [
           {
-            id: "nstp2-m3", title: "Module 3: Environmental Awareness and Conservation",
+            id: "nstp2-m3", title: "Module 3: Peace Education and Filipino Values",
             topics: [
               {
-                id: "nstp2-m3t1", title: "Environmental Stewardship",
+                id: "nstp2-m3t1", title: "Peace Education and Nation-Building",
                 content: {
-                  heading: "Environmental Stewardship", term: "FINALS", module: "Module 3: Environmental Awareness and Conservation",
-                  objectives: ["Describe key environmental laws in the Philippines", "Apply principles of environmental stewardship", "Plan community-based environmental projects"],
+                  heading: "Peace Education and Filipino Values", term: "FINALS", module: "Module 3: Peace Education and Filipino Values",
+                  objectives: ["Define peace education", "Identify Filipino values relevant to community service", "Develop personal commitment to nation-building"],
                   sections: [
-                    { type: "h2", content: "Environmental Stewardship" },
-                    { type: "definition", content: "Environmental Stewardship — The responsible use and protection of the natural environment through conservation and sustainable practices. It recognizes that the environment is a shared heritage to be protected for future generations." },
-                    { type: "h3", content: "Key Philippine Environmental Laws" },
-                    { type: "table", content: "Philippine Environmental Laws", headers: ["Law", "Description"], rows: [["RA 9003 — Ecological Solid Waste Management Act (2001)", "Requires segregation of waste and establishment of MRFs"], ["RA 8749 — Clean Air Act (1999)", "Addresses air pollution from vehicles and industries"], ["RA 9275 — Clean Water Act (2004)", "Protects water bodies from pollution"], ["RA 7586 — NIPAS Act (1992)", "Establishes National Integrated Protected Areas System"], ["PD 1586 — EIS System", "Requires Environmental Impact Statement for major projects"]] },
-                    { type: "h3", content: "The 3Rs and Beyond" },
-                    { type: "list", content: "Waste Hierarchy (Most to Least Preferred)", items: ["Refuse — Avoid purchasing what you don't need", "Reduce — Minimize waste generation", "Reuse — Use items multiple times", "Recycle — Process waste into new products", "Recover — Extract energy from waste (waste-to-energy)", "Rot — Composting organic waste", "Responsible Disposal — Sanitary landfill as last resort"] },
-                    { type: "note", content: "In the Philippines, RA 9003 prohibits open burning, open dumping, and throwing of garbage in waterways. LGUs are required to operate Materials Recovery Facilities (MRFs) for waste segregation and recycling." },
+                    { type: "h2", content: "Peace Education" },
+                    { type: "definition", content: "Peace Education — The process of acquiring values, knowledge, and skills that promote nonviolent coexistence, conflict resolution, and social justice." },
+                    { type: "list", content: "Filipino Core Values in CWTS", items: ["Bayanihan — Community spirit; collective effort for a common good", "Kapwa — Shared identity; recognizing others as part of your community", "Malasakit — Compassion and concern for others", "Pagmamahal sa bayan — Love of country; patriotism"] },
                   ],
                   quiz: [
-                    { question: "RA 9003 is the Philippine law on:", options: ["Clean Air", "Clean Water", "Ecological Solid Waste Management", "Protected Areas"], answer: 2, explanation: "RA 9003 (Ecological Solid Waste Management Act, 2001) requires waste segregation, MRFs, and prohibits open dumping and burning." },
+                    { question: "Bayanihan refers to:", options: ["Personal achievement", "Community spirit and collective effort for a common good", "Love of country", "Compassion for others"], answer: 1, explanation: "Bayanihan = Filipino tradition of working together as a community for a common purpose." },
                   ],
                 },
               },
@@ -458,60 +453,31 @@ export const OTHER_SUBJECTS: Subject[] = [
     ],
   },
 
+  // ─── PE 1: MOVEMENT COMPETENCY TRAINING ─────────────────────────────────────
   {
-    id: "pe1",
-    code: "PE 1",
-    title: "Physical Education 1 (Movement Enhancement)",
-    shortTitle: "PE 1",
-    units: 2,
-    description: "Develops fundamental movement skills, physical fitness, and a healthy lifestyle. Covers wellness concepts, fitness components, and basic exercise principles.",
+    id: "pe1", code: "PE 1", title: "Movement Competency Training", shortTitle: "PE 1", units: 2,
+    description: "Develops fundamental movement skills, body coordination, physical fitness, and motor competencies through structured physical activities and training programs.",
     terms: [
       {
         id: "prelim", label: "PRELIM",
         modules: [
           {
-            id: "pe1-m1", title: "Module 1: Health and Wellness Concepts",
+            id: "pe1-m1", title: "Module 1: Physical Fitness and Movement Fundamentals",
             topics: [
               {
-                id: "pe1-m1t1", title: "Health, Wellness, and Fitness",
+                id: "pe1-m1t1", title: "Components of Physical Fitness",
                 content: {
-                  heading: "Health, Wellness, and Fitness", term: "PRELIM", module: "Module 1: Health and Wellness Concepts",
-                  objectives: ["Define health, wellness, and physical fitness", "Identify the dimensions of wellness", "Distinguish between health-related and skill-related fitness components"],
+                  heading: "Physical Fitness Concepts", term: "PRELIM", module: "Module 1: Physical Fitness and Movement Fundamentals",
+                  objectives: ["Define physical fitness and its components", "Distinguish health-related from skill-related fitness", "Assess personal fitness levels"],
                   sections: [
-                    { type: "h2", content: "Health, Wellness, and Physical Fitness" },
-                    { type: "definition", content: "Health (WHO Definition) — 'A state of complete physical, mental, and social well-being and not merely the absence of disease or infirmity.' It encompasses the whole person, not just the physical body." },
-                    { type: "definition", content: "Wellness — An active, ongoing process of making choices toward a healthier and more fulfilling life. It is multidimensional and goes beyond the absence of illness." },
-                    { type: "definition", content: "Physical Fitness — The ability to perform daily activities with vigor and without undue fatigue, with energy remaining for leisure activities. Achieved through regular exercise, proper nutrition, and adequate rest." },
-                    { type: "h3", content: "Dimensions of Wellness" },
-                    { type: "list", content: "Seven Dimensions of Wellness", items: ["Physical — Proper nutrition, regular exercise, adequate sleep, avoiding harmful behaviors", "Emotional — Managing emotions effectively; self-awareness; resilience", "Social — Healthy relationships; communication; community connections", "Intellectual — Lifelong learning; creativity; critical thinking", "Spiritual — Sense of purpose; values; meaning in life", "Environmental — Living in harmony with the earth; protecting the environment", "Occupational/Vocational — Satisfaction and enrichment from work or studies"] },
-                    { type: "h3", content: "Components of Physical Fitness" },
-                    { type: "table", content: "Health-Related vs. Skill-Related Fitness", headers: ["Category", "Components"], rows: [["Health-Related Fitness (CAVE-F)", "Cardiovascular Endurance, Muscular Strength, Muscular Endurance, Flexibility, Body Composition"], ["Skill-Related Fitness (BAC-PRS)", "Balance, Agility, Coordination, Power, Reaction Time, Speed"]] },
+                    { type: "h2", content: "Physical Fitness" },
+                    { type: "definition", content: "Physical Fitness — The ability of the body to function efficiently and effectively in daily activities, occupational tasks, and leisure activities." },
+                    { type: "table", content: "Health-Related Components of Fitness", headers: ["Component", "Definition", "Test"], rows: [["Cardiovascular Endurance", "Heart and lungs sustaining activity over time", "3-minute step test, 12-min run"], ["Muscular Strength", "Maximum force a muscle can exert in one effort", "1-rep maximum (1RM)"], ["Muscular Endurance", "Muscles performing repeated contractions", "Push-up test, sit-up test"], ["Flexibility", "Range of motion around a joint", "Sit-and-reach test"], ["Body Composition", "Ratio of fat to lean mass", "BMI, skinfold measurement"]] },
+                    { type: "table", content: "Skill-Related Components of Fitness", headers: ["Component", "Definition", "Sport Example"], rows: [["Speed", "Rate of movement", "100m sprint"], ["Power", "Speed + strength combined", "Jumping, throwing"], ["Agility", "Quick direction changes", "Basketball, badminton"], ["Balance", "Maintaining equilibrium", "Gymnastics"], ["Coordination", "Multiple body parts working together", "Ball skills, dance"], ["Reaction Time", "Speed of response to a stimulus", "Sprinting at the gun"]] },
                   ],
                   quiz: [
-                    { question: "According to the WHO, health is:", options: ["The absence of disease only", "A state of complete physical, mental, and social well-being", "Being able to exercise without pain", "Having a normal BMI"], answer: 1, explanation: "WHO defines health as 'a state of complete physical, mental, and social well-being and not merely the absence of disease.'" },
-                    { question: "Cardiovascular endurance is classified as:", options: ["A skill-related fitness component", "A health-related fitness component", "A performance-related skill", "A recreational activity"], answer: 1, explanation: "Cardiovascular endurance is a health-related fitness component — directly related to overall health and disease prevention." },
-                    { question: "Which is a SKILL-RELATED fitness component?", options: ["Muscular strength", "Flexibility", "Body composition", "Agility"], answer: 3, explanation: "Agility (ability to change direction quickly) is skill-related. Muscular strength, flexibility, and body composition are health-related." },
-                  ],
-                },
-              },
-              {
-                id: "pe1-m1t2", title: "Exercise Principles and FITT",
-                content: {
-                  heading: "Exercise Principles and FITT", term: "PRELIM", module: "Module 1: Health and Wellness Concepts",
-                  objectives: ["Explain the principles of exercise training", "Apply the FITT principle to design exercise programs", "Describe the phases of an exercise session"],
-                  sections: [
-                    { type: "h2", content: "Principles of Exercise Training" },
-                    { type: "list", content: "Principles of Training", items: ["Overload — Must exercise beyond your current level to improve (progressive overload)", "Specificity — Train specifically for your goal (runners train by running, not swimming)", "Progression — Gradually increase intensity, frequency, or duration over time", "Reversibility — Fitness gains are lost when you stop training ('use it or lose it')", "Individuality — Each person responds differently to the same training", "Rest and Recovery — Adequate rest is needed for muscles to repair and grow"] },
-                    { type: "h3", content: "FITT Principle" },
-                    { type: "table", content: "FITT Principle", headers: ["Component", "Definition", "Cardiovascular Recommendation"], rows: [["Frequency (F)", "How often you exercise", "3–5 days per week"], ["Intensity (I)", "How hard you exercise", "Moderate (50–70% max heart rate)"], ["Time/Duration (T)", "How long each session lasts", "20–60 minutes"], ["Type (T)", "What kind of exercise", "Aerobic activities (walking, running, swimming)"]] },
-                    { type: "h3", content: "Target Heart Rate" },
-                    { type: "definition", content: "Maximum Heart Rate (MHR) = 220 − Age\nTarget Heart Rate Zone = 50–85% of MHR\n\nFor a 19-year-old: MHR = 220 − 19 = 201 bpm\nTarget zone = 100.5 to 170.85 bpm" },
-                    { type: "h3", content: "Phases of an Exercise Session" },
-                    { type: "list", content: "Three Phases", items: ["Warm-Up (5–10 min) — Gradual increase in activity; prepares body for exercise; reduces injury risk", "Main Activity (20–60 min) — The actual exercise at target intensity", "Cool-Down (5–10 min) — Gradual decrease in activity; returns body to resting state; prevents blood pooling"] },
-                  ],
-                  quiz: [
-                    { question: "The FITT principle stands for:", options: ["Fitness, Intensity, Training, Tempo", "Frequency, Intensity, Time, Type", "Force, Interval, Tolerance, Training", "Frequency, Interval, Training, Time"], answer: 1, explanation: "FITT = Frequency (how often), Intensity (how hard), Time (how long), Type (what kind of exercise)." },
-                    { question: "The Overload principle in exercise means:", options: ["Exercising until you are exhausted", "Training at a level beyond your current capacity to stimulate improvement", "Always using heavy weights", "Exercising every day without rest"], answer: 1, explanation: "The Overload principle: To improve, you must exercise at a level that challenges your current capacity — gradually increasing the demand." },
+                    { question: "Cardiovascular endurance involves:", options: ["Maximum force a muscle can exert", "The heart and lungs' ability to sustain activity over time", "Range of motion around a joint", "Ratio of fat to lean body mass"], answer: 1, explanation: "Cardiovascular endurance: the ability of the heart and lungs to deliver oxygen to working muscles during sustained exercise." },
+                    { question: "Which of these is a SKILL-related fitness component?", options: ["Flexibility", "Body Composition", "Agility", "Muscular Strength"], answer: 2, explanation: "Agility is skill-related. Flexibility, body composition, and muscular strength are health-related fitness components." },
                   ],
                 },
               },
@@ -523,23 +489,20 @@ export const OTHER_SUBJECTS: Subject[] = [
         id: "midterm", label: "MIDTERM",
         modules: [
           {
-            id: "pe1-m2", title: "Module 2: Physical Activities and Sports",
+            id: "pe1-m2", title: "Module 2: Movement Skills and FITT Principle",
             topics: [
               {
-                id: "pe1-m2t1", title: "Individual and Dual Sports",
+                id: "pe1-m2t1", title: "Fundamental Movement Skills",
                 content: {
-                  heading: "Individual and Dual Sports", term: "MIDTERM", module: "Module 2: Physical Activities and Sports",
-                  objectives: ["Identify common individual and dual sports", "Explain basic rules of selected sports", "Apply fundamental skills in physical activity"],
+                  heading: "Fundamental Movement Skills", term: "MIDTERM", module: "Module 2: Movement Skills and FITT Principle",
+                  objectives: ["Classify fundamental movement skills", "Apply movement skills to physical activities"],
                   sections: [
-                    { type: "h2", content: "Sports Classification" },
-                    { type: "table", content: "Sports Classification", headers: ["Category", "Description", "Examples"], rows: [["Individual Sports", "Competed alone against other individuals or course", "Swimming, athletics (track & field), gymnastics, tennis (singles)"], ["Dual Sports", "Competed between two players or two teams of equal small numbers", "Badminton, table tennis, chess, tennis (doubles)"], ["Team Sports", "Competed between teams of multiple players", "Basketball, volleyball, football, softball"]] },
-                    { type: "h3", content: "Badminton Basics" },
-                    { type: "list", content: "Basic Badminton Rules", items: ["Court: 13.4m × 6.1m (doubles); 13.4m × 5.18m (singles)", "Scoring: Rally point system; first to 21 points wins a game (lead of 2 required)", "Serve: Must be diagonal; shuttle below server's waist", "Rally continues until shuttle lands on court or hits net", "Match: Best of 3 games"] },
-                    { type: "h3", content: "Table Tennis Basics" },
-                    { type: "list", content: "Basic Table Tennis Rules", items: ["Points scored by opponent missing, hitting table edge, or double-bouncing on own side", "Games: First to 11 points (lead of 2); Match: best of 5 or 7 games", "Serve: Toss ball 16cm high, hit from flat open palm; must bounce on server's side first"] },
+                    { type: "h2", content: "Fundamental Movement Skills" },
+                    { type: "table", content: "Categories of Movement Skills", headers: ["Category", "Description", "Examples"], rows: [["Locomotor", "Moving from one place to another", "Running, jumping, hopping, skipping, galloping, leaping"], ["Non-locomotor (Stability)", "Movements performed in place", "Bending, stretching, twisting, turning, swinging, balancing"], ["Manipulative", "Controlling objects with body parts", "Throwing, catching, kicking, striking, dribbling"]] },
+                    { type: "list", content: "FITT Principle", items: ["Frequency — How often you exercise (days per week)", "Intensity — How hard you exercise (heart rate, perceived exertion)", "Time — Duration of each exercise session", "Type — Mode of exercise (aerobic, resistance, flexibility)"] },
                   ],
                   quiz: [
-                    { question: "Badminton uses which scoring system?", options: ["Sideout scoring", "Rally point scoring (21 points)", "Deuce/advantage scoring", "15-30-40 scoring"], answer: 1, explanation: "Badminton uses rally point scoring — any rally can score a point. First to 21 wins (must lead by 2)." },
+                    { question: "Which movement skill involves controlling objects with body parts?", options: ["Locomotor", "Non-locomotor", "Manipulative", "Stability"], answer: 2, explanation: "Manipulative skills: controlling objects using body parts (throwing, catching, kicking, dribbling)." },
                   ],
                 },
               },
@@ -551,25 +514,19 @@ export const OTHER_SUBJECTS: Subject[] = [
         id: "finals", label: "FINALS",
         modules: [
           {
-            id: "pe1-m3", title: "Module 3: Fitness Testing and Lifestyle",
+            id: "pe1-m3", title: "Module 3: Principles of Training",
             topics: [
               {
-                id: "pe1-m3t1", title: "Fitness Assessment and Healthy Lifestyle",
+                id: "pe1-m3t1", title: "Training Principles for Fitness Development",
                 content: {
-                  heading: "Fitness Assessment and Healthy Lifestyle", term: "FINALS", module: "Module 3: Fitness Testing and Lifestyle",
-                  objectives: ["Conduct and interpret fitness tests", "Calculate and interpret BMI", "Design a personal physical activity plan"],
+                  heading: "Principles of Physical Training", term: "FINALS", module: "Module 3: Principles of Training",
+                  objectives: ["Apply principles of exercise training", "Design a basic personal fitness program"],
                   sections: [
-                    { type: "h2", content: "Fitness Assessment" },
-                    { type: "text", content: "Regular fitness assessment helps track progress and design appropriate exercise programs. Key tests measure different health-related fitness components." },
-                    { type: "table", content: "Common Fitness Tests", headers: ["Test", "Fitness Component", "Procedure"], rows: [["3-Minute Step Test", "Cardiovascular endurance", "Step up and down a 30cm step for 3 minutes; measure recovery HR"], ["1-Mile Run/Walk", "Cardiovascular endurance", "Complete 1 mile as fast as possible"], ["Push-up Test", "Muscular endurance/strength (upper body)", "Max push-ups without rest"], ["Sit-up/Crunch Test", "Muscular endurance (core)", "Max sit-ups in 1 minute"], ["Sit-and-Reach Test", "Flexibility (lower back and hamstrings)", "Reach forward while seated; measure distance"], ["Body Mass Index (BMI)", "Body composition (indirect)", "Weight (kg) / Height (m)²"]] },
-                    { type: "h3", content: "BMI Classification" },
-                    { type: "table", content: "BMI Classifications (WHO)", headers: ["BMI Range", "Classification"], rows: [["Below 18.5", "Underweight"], ["18.5 – 24.9", "Normal/Healthy Weight"], ["25.0 – 29.9", "Overweight"], ["30.0 and above", "Obese"]] },
-                    { type: "example", content: "BMI Calculation:\nA student weighs 65 kg and is 1.70 m tall.\nBMI = 65 / (1.70)² = 65 / 2.89 = 22.5\nClassification: Normal/Healthy Weight" },
-                    { type: "note", content: "BMI is a simple screening tool but has limitations — it doesn't distinguish between fat and muscle. Athletes may have high BMI but low body fat. Use BMI alongside other assessments for a complete picture." },
+                    { type: "h2", content: "Principles of Training" },
+                    { type: "table", content: "Training Principles", headers: ["Principle", "Definition", "Example"], rows: [["Overload", "Exercise must exceed normal demands to improve fitness", "Increasing weight lifted by 5% each week"], ["Progression", "Gradually increase exercise intensity over time", "Walking → jogging → running"], ["Specificity", "Train the specific component you want to improve", "Swimmer trains swimming, not weightlifting"], ["Reversibility", "'Use it or lose it' — fitness decreases if training stops", "2 weeks of inactivity reduces aerobic fitness"], ["Individuality", "Programs must be tailored to the individual", "Different starting weights for different people"], ["Recovery", "Muscles need rest to repair and grow stronger", "Rest day between strength training sessions"]] },
                   ],
                   quiz: [
-                    { question: "A BMI of 27 is classified as:", options: ["Underweight", "Normal/Healthy", "Overweight", "Obese"], answer: 2, explanation: "BMI 25.0–29.9 = Overweight. BMI 27 falls in the overweight range." },
-                    { question: "The Sit-and-Reach test measures:", options: ["Cardiovascular endurance", "Muscular strength", "Flexibility", "Speed"], answer: 2, explanation: "The Sit-and-Reach test measures flexibility, specifically of the lower back and hamstrings." },
+                    { question: "The principle of specificity means:", options: ["You should train every day without rest", "You should train the specific component/activity you want to improve", "Exercise intensity should gradually increase", "Fitness decreases when you stop training"], answer: 1, explanation: "Specificity: to improve a specific fitness component or skill, you must train that specific component." },
                   ],
                 },
               },
@@ -580,39 +537,50 @@ export const OTHER_SUBJECTS: Subject[] = [
     ],
   },
 
+  // ─── PE 2: EXERCISE-BASED FITNESS ACTIVITIES ─────────────────────────────────
   {
-    id: "pe2",
-    code: "PE 2",
-    title: "Physical Education 2 (Rhythmic Activities)",
-    shortTitle: "PE 2",
-    units: 2,
-    description: "Introduces rhythmic activities, dance forms, aerobics, and recreational sports. Develops coordination, musicality, and appreciation for dance as physical activity and cultural expression.",
+    id: "pe2", code: "PE 2", title: "Exercise-based Fitness Activities", shortTitle: "PE 2", units: 2,
+    description: "Applies principles of exercise science to design and implement personal fitness programs. Covers aerobic and anaerobic training, resistance exercises, flexibility, body composition, and sports nutrition.",
     terms: [
       {
         id: "prelim", label: "PRELIM",
         modules: [
           {
-            id: "pe2-m1", title: "Module 1: Introduction to Rhythmic Activities",
+            id: "pe2-m1", title: "Module 1: Exercise Physiology Basics",
             topics: [
               {
-                id: "pe2-m1t1", title: "Rhythmic Activities and Dance",
+                id: "pe2-m1t1", title: "Energy Systems in Exercise",
                 content: {
-                  heading: "Rhythmic Activities and Dance", term: "PRELIM", module: "Module 1: Introduction to Rhythmic Activities",
-                  objectives: ["Define rhythmic activities and their benefits", "Identify types of dance and rhythmic activities", "Describe basic elements of dance and movement"],
+                  heading: "Energy Systems in Exercise", term: "PRELIM", module: "Module 1: Exercise Physiology Basics",
+                  objectives: ["Explain the three energy systems", "Identify which energy system is used for different exercise types", "Understand ATP and its role in muscle contraction"],
                   sections: [
-                    { type: "h2", content: "Rhythmic Activities" },
-                    { type: "definition", content: "Rhythmic Activities — Physical activities performed to an underlying beat or rhythm. They combine movement, music, and expression, developing coordination, timing, endurance, and artistic expression." },
-                    { type: "h3", content: "Benefits of Rhythmic Activities" },
-                    { type: "list", content: "Benefits", items: ["Physical: Improves cardiovascular endurance, muscular strength, flexibility, and coordination", "Mental: Reduces stress; improves mood through endorphin release", "Social: Promotes teamwork and social interaction", "Cultural: Preserves and expresses cultural heritage through folk dances"] },
-                    { type: "h3", content: "Types of Dance Forms" },
-                    { type: "table", content: "Types of Dance", headers: ["Type", "Description", "Examples"], rows: [["Folk/Ethnic Dance", "Traditional dances of a cultural group", "Tinikling, Pandanggo sa Ilaw, Binasuan (Philippines)"], ["Social Dance", "Dance done with a partner in social settings", "Waltz, Cha-cha, Rumba, Tango"], ["Modern/Contemporary", "Abstract movement expressing ideas and emotions", "Jazz, Hip-hop, Contemporary"], ["Ballroom Dance", "Formalized partner dancing", "Foxtrot, Quickstep, Viennese Waltz"], ["Aerobic Dance", "Dance for cardiovascular fitness", "Zumba, aerobics, step aerobics"]] },
-                    { type: "h3", content: "Elements of Dance" },
-                    { type: "list", content: "BASTE Elements of Dance", items: ["Body — Parts of the body used in movement", "Action — What the body does (locomotor, non-locomotor movements)", "Space — Where the body moves (level, direction, pathway, size)", "Time — Rhythm, tempo, duration of movement", "Energy — How the body moves (smooth, sharp, heavy, light, sustained, sudden)"] },
-                    { type: "note", content: "Tinikling is the Philippine national folk dance — it mimics the tikling bird hopping between grass stems. Dancers step between two bamboo poles that are clapped together rhythmically. It is considered one of the most difficult folk dances due to its speed and precision." },
+                    { type: "h2", content: "Energy for Exercise" },
+                    { type: "definition", content: "ATP (Adenosine Triphosphate) — The immediate energy currency of the body. All muscular work requires ATP. The body must constantly replenish ATP through three energy systems." },
+                    { type: "table", content: "Three Energy Systems", headers: ["System", "Fuel", "Duration", "Type of Activity", "Oxygen Required?"], rows: [["Phosphagen (ATP-PCr)", "Creatine phosphate (stored)", "0–10 seconds", "Very high intensity: 100m sprint, 1RM weight lift, shot put", "No (Anaerobic)"], ["Glycolytic (Lactic Acid)", "Glycogen (glucose)", "10 sec–2 min", "High intensity: 200m–800m race, basketball sprint, HIIT", "No (Anaerobic)"], ["Oxidative (Aerobic)", "Glucose, fat, protein", "2 min +", "Low-moderate intensity: long-distance running, swimming, cycling", "Yes (Aerobic)"]] },
+                    { type: "note", content: "Real exercise involves all three systems simultaneously — just in different proportions. A 100m sprint is 95% phosphagen; a marathon is mostly aerobic." },
                   ],
                   quiz: [
-                    { question: "Tinikling is classified as what type of dance?", options: ["Social dance", "Ballroom dance", "Folk/Ethnic dance", "Modern contemporary"], answer: 2, explanation: "Tinikling is a Philippine folk/ethnic dance that mimics the movement of the tikling bird — it is a traditional dance of Philippine cultural heritage." },
-                    { question: "The BASTE elements of dance stand for:", options: ["Body, Action, Space, Time, Energy", "Balance, Agility, Skill, Tempo, Expression", "Bend, Align, Stretch, Turn, Elevate", "Beat, Accent, Sequence, Technique, Execution"], answer: 0, explanation: "BASTE = Body, Action, Space, Time, Energy — the five elements that describe how dance movement is created." },
+                    { question: "Which energy system is used primarily during a 100m sprint?", options: ["Aerobic (Oxidative) system", "Glycolytic (Lactic Acid) system", "Phosphagen (ATP-PCr) system", "All systems equally"], answer: 2, explanation: "100m sprint (~10 seconds, max intensity) relies primarily on the Phosphagen (ATP-PCr) system." },
+                    { question: "ATP stands for:", options: ["Adenosine Triphosphate", "Active Training Protocol", "Aerobic Training Program", "Adenosine Triadenine Phosphate"], answer: 0, explanation: "ATP = Adenosine Triphosphate — the immediate energy currency for all cellular work including muscle contraction." },
+                  ],
+                },
+              },
+              {
+                id: "pe2-m1t2", title: "Aerobic vs. Anaerobic Training and Heart Rate Zones",
+                content: {
+                  heading: "Aerobic vs. Anaerobic Training", term: "PRELIM", module: "Module 1: Exercise Physiology Basics",
+                  objectives: ["Distinguish aerobic from anaerobic exercise", "Understand target heart rate zones", "Apply heart rate monitoring for training intensity"],
+                  sections: [
+                    { type: "h2", content: "Aerobic vs. Anaerobic" },
+                    { type: "table", content: "Aerobic vs. Anaerobic Exercise", headers: ["Feature", "Aerobic", "Anaerobic"], rows: [["Oxygen", "Requires oxygen", "Does NOT require oxygen"], ["Intensity", "Low to moderate intensity", "High intensity"], ["Duration", "Longer (20+ minutes)", "Shorter (0–2 minutes)"], ["Examples", "Jogging, cycling, swimming, Zumba", "Sprinting, weightlifting, HIIT"], ["Primary fuel", "Fat and glucose", "Glucose (and creatine)"], ["By-product", "Water and CO₂", "Lactic acid"]] },
+                    { type: "h2", content: "Heart Rate Zones" },
+                    { type: "definition", content: "Maximum Heart Rate (MHR) — Estimated using: MHR = 220 − age.\nExample: 19-year-old: MHR = 220 − 19 = 201 bpm" },
+                    { type: "table", content: "Heart Rate Training Zones", headers: ["Zone", "% of MHR", "Training Effect"], rows: [["Zone 1: Recovery", "50–60%", "Active recovery, warm-up"], ["Zone 2: Fat Burn", "60–70%", "Fat oxidation, base endurance"], ["Zone 3: Aerobic", "70–80%", "Improved aerobic capacity, cardiovascular fitness"], ["Zone 4: Threshold", "80–90%", "Increased anaerobic threshold, speed"], ["Zone 5: Maximum", "90–100%", "Maximum performance, brief only"]] },
+                    { type: "example", content: "For a 20-year-old student (MHR = 200 bpm):\nZone 2 (Fat Burn): 120–140 bpm — comfortable jogging\nZone 3 (Aerobic): 140–160 bpm — challenging but sustained\nZone 4 (Threshold): 160–180 bpm — very hard, breathing heavily" },
+                  ],
+                  quiz: [
+                    { question: "What is the estimated Maximum Heart Rate for a 20-year-old?", options: ["180 bpm", "190 bpm", "200 bpm", "210 bpm"], answer: 2, explanation: "MHR = 220 − age = 220 − 20 = 200 bpm." },
+                    { question: "Lactic acid is a by-product of which type of exercise?", options: ["Aerobic exercise", "Anaerobic exercise", "Flexibility training", "Balance exercises"], answer: 1, explanation: "Anaerobic exercise produces lactic acid as a by-product of energy production." },
                   ],
                 },
               },
@@ -624,22 +592,40 @@ export const OTHER_SUBJECTS: Subject[] = [
         id: "midterm", label: "MIDTERM",
         modules: [
           {
-            id: "pe2-m2", title: "Module 2: Philippine Folk Dances",
+            id: "pe2-m2", title: "Module 2: Resistance Training and Flexibility",
             topics: [
               {
-                id: "pe2-m2t1", title: "Philippine Folk Dances by Region",
+                id: "pe2-m2t1", title: "Resistance Training Fundamentals",
                 content: {
-                  heading: "Philippine Folk Dances by Region", term: "MIDTERM", module: "Module 2: Philippine Folk Dances",
-                  objectives: ["Identify major Philippine folk dances by region", "Describe the cultural significance of each dance", "Perform basic steps of selected folk dances"],
+                  heading: "Resistance Training Fundamentals", term: "MIDTERM", module: "Module 2: Resistance Training and Flexibility",
+                  objectives: ["Explain benefits of resistance training", "Identify major muscle groups", "Apply progressive overload principles"],
                   sections: [
-                    { type: "h2", content: "Philippine Folk Dances" },
-                    { type: "text", content: "Philippine folk dances reflect the cultural diversity of the archipelago. They express the customs, beliefs, and daily lives of various ethnic groups across Luzon, Visayas, and Mindanao." },
-                    { type: "table", content: "Major Philippine Folk Dances", headers: ["Dance", "Origin/Region", "Description"], rows: [["Tinikling", "Leyte, Visayas", "National folk dance; mimics tikling bird; bamboo pole dance"], ["Binasuan", "Pangasinan, Luzon", "Balancing glasses filled with rice wine; graceful and skillful"], ["Pandanggo sa Ilaw", "Mindoro", "Graceful dance balancing oil lamps on head and both hands"], ["Maglalatik", "Biñan, Laguna", "Coconut shell dance; originally depicts battle between Moros and Christians"], ["Subli", "Batangas", "Religious dance for the Holy Cross; slow and dignified"], ["Itik-Itik", "Surigao del Sur, Mindanao", "Mimics movements of the itik (duck)"], ["Singkil", "Maranao, Mindanao", "Royal dance of Maranao Muslims; bamboo clapping poles; inspired by epic of Princess Gandingan"]] },
-                    { type: "note", content: "The Bayanihan Philippine National Folk Dance Company (established 1956) has brought Philippine folk dances to international stages, preserving and promoting them as cultural heritage. They are based at the Cultural Center of the Philippines (CCP)." },
+                    { type: "h2", content: "Resistance Training" },
+                    { type: "definition", content: "Resistance Training (Strength Training) — Exercise that causes muscles to contract against an external resistance, resulting in increases in strength, tone, mass, and/or endurance." },
+                    { type: "list", content: "Benefits of Resistance Training", items: ["Increased muscular strength and endurance", "Increased bone density (reduces osteoporosis risk)", "Improved metabolic rate (muscle burns more calories at rest)", "Better posture and body composition", "Reduced risk of injury in daily activities"] },
+                    { type: "table", content: "Major Muscle Groups", headers: ["Group", "Muscles", "Common Exercises"], rows: [["Chest", "Pectoralis major/minor", "Push-ups, bench press"], ["Back", "Latissimus dorsi, rhomboids, trapezius", "Pull-ups, rows"], ["Shoulders", "Deltoids", "Overhead press, lateral raises"], ["Biceps", "Biceps brachii", "Bicep curls"], ["Triceps", "Triceps brachii", "Dips, tricep extensions"], ["Core", "Rectus abdominis, obliques, erector spinae", "Planks, crunches, deadlifts"], ["Quadriceps", "Rectus femoris, vastus lateralis/medialis", "Squats, lunges"], ["Hamstrings", "Biceps femoris, semimembranosus", "Romanian deadlifts, leg curls"], ["Glutes", "Gluteus maximus/medius", "Hip thrusts, squats"], ["Calves", "Gastrocnemius, soleus", "Calf raises"]] },
+                    { type: "table", content: "Compound vs. Isolation Exercises", headers: ["Type", "Definition", "Examples", "Advantage"], rows: [["Compound", "Multi-joint; works multiple muscle groups", "Squat, deadlift, bench press, pull-up", "More muscle activation, functional strength, time efficient"], ["Isolation", "Single-joint; works one muscle group", "Bicep curl, leg extension, lat pulldown", "Target weak muscles, bodybuilding, rehabilitation"]] },
                   ],
                   quiz: [
-                    { question: "The Philippine national folk dance is:", options: ["Pandanggo sa Ilaw", "Tinikling", "Singkil", "Maglalatik"], answer: 1, explanation: "Tinikling is the national folk dance of the Philippines, originating from Leyte. It mimics the tikling bird hopping between bamboo poles." },
-                    { question: "The Singkil is a dance originating from the:", options: ["Igorots of Mountain Province", "Maranao people of Mindanao", "Tagalogs of Luzon", "Cebuanos of Visayas"], answer: 1, explanation: "Singkil is a royal dance of the Maranao Muslims of Lake Lanao, Mindanao, depicting Princess Gandingan in an epic story." },
+                    { question: "Which exercise is classified as COMPOUND?", options: ["Bicep curl", "Leg extension", "Lateral raise", "Squat"], answer: 3, explanation: "Squat = compound exercise working quads, hamstrings, glutes, core, and back simultaneously." },
+                    { question: "Which is a benefit of resistance training?", options: ["Decreased bone density", "Reduced metabolic rate", "Increased bone density", "Decreased muscular endurance"], answer: 2, explanation: "Resistance training increases bone density, reducing osteoporosis risk." },
+                  ],
+                },
+              },
+              {
+                id: "pe2-m2t2", title: "Flexibility Training and Stretching",
+                content: {
+                  heading: "Flexibility Training and Stretching", term: "MIDTERM", module: "Module 2: Resistance Training and Flexibility",
+                  objectives: ["Define flexibility and its importance", "Distinguish types of stretching", "Design a stretching routine"],
+                  sections: [
+                    { type: "h2", content: "Flexibility" },
+                    { type: "definition", content: "Flexibility — The ability of a joint or series of joints to move through an unrestricted, pain-free range of motion (ROM)." },
+                    { type: "table", content: "Types of Stretching", headers: ["Type", "Description", "When to Use", "Example"], rows: [["Static", "Hold a stretch for 15–60 seconds without movement", "Post-workout (cool-down)", "Quad stretch, hamstring stretch"], ["Dynamic", "Controlled movements through the range of motion", "Pre-workout (warm-up)", "Leg swings, arm circles, hip rotations"], ["Ballistic", "Bouncing movements (forced range)", "Not recommended (injury risk)", "Bouncing toe touch"], ["PNF", "Contract, then relax, then stretch (with partner)", "Advanced flexibility training", "Contract-relax hamstring stretch"]] },
+                    { type: "note", content: "NEVER stretch cold muscles. Always warm up (5–10 min light cardio) before stretching. Static stretching before exercise can temporarily reduce power output — use dynamic stretching pre-workout." },
+                  ],
+                  quiz: [
+                    { question: "Which type of stretching is best suited for warm-up BEFORE exercise?", options: ["Static stretching", "Ballistic stretching", "Dynamic stretching", "PNF stretching"], answer: 2, explanation: "Dynamic stretching (controlled movements through ROM) is best for pre-workout warm-up." },
+                    { question: "Static stretching involves:", options: ["Bouncing movements through the range of motion", "Contracting then relaxing a muscle before stretching", "Holding a stretched position for 15–60 seconds", "Using a partner to push beyond normal range"], answer: 2, explanation: "Static stretching: hold a stretch in a fixed position for 15–60 seconds without bouncing." },
                   ],
                 },
               },
@@ -651,26 +637,47 @@ export const OTHER_SUBJECTS: Subject[] = [
         id: "finals", label: "FINALS",
         modules: [
           {
-            id: "pe2-m3", title: "Module 3: Aerobics and Recreational Activities",
+            id: "pe2-m3", title: "Module 3: Sports Nutrition and Personal Fitness Programs",
             topics: [
               {
-                id: "pe2-m3t1", title: "Aerobic Exercise and Zumba",
+                id: "pe2-m3t1", title: "Sports Nutrition",
                 content: {
-                  heading: "Aerobic Exercise and Zumba", term: "FINALS", module: "Module 3: Aerobics and Recreational Activities",
-                  objectives: ["Describe aerobic exercise and its health benefits", "Explain the principles of Zumba fitness", "Design a simple aerobic exercise routine"],
+                  heading: "Sports Nutrition", term: "FINALS", module: "Module 3: Sports Nutrition and Personal Fitness Programs",
+                  objectives: ["Explain macronutrients and their role in exercise", "Apply nutrition timing principles", "Calculate caloric needs for different fitness goals"],
                   sections: [
-                    { type: "h2", content: "Aerobic Exercise" },
-                    { type: "definition", content: "Aerobic Exercise — Physical activity that uses oxygen for energy production, involving large muscle groups in rhythmic, continuous activity. Examples: jogging, cycling, swimming, dancing, aerobics." },
-                    { type: "h3", content: "Benefits of Aerobic Exercise" },
-                    { type: "list", content: "Health Benefits", items: ["Strengthens the heart and lungs (cardiovascular health)", "Lowers blood pressure and cholesterol", "Burns calories; helps with weight management", "Reduces risk of diabetes, heart disease, and stroke", "Improves mood and mental health (releases endorphins)", "Improves sleep quality", "Boosts energy levels"] },
-                    { type: "h3", content: "Zumba Fitness" },
-                    { type: "text", content: "Zumba was created in the 1990s by Colombian dancer Alberto 'Beto' Perez. It combines Latin dance styles (salsa, merengue, cumbia, reggaeton) with fitness principles into a fun, high-energy workout." },
-                    { type: "list", content: "Zumba Dance Styles Used", items: ["Salsa — Cuban-origin; 4-count rhythm; hip movement", "Merengue — Dominican Republic; simple march-like steps; 2/4 time", "Cumbia — Colombian; circular hip movements; 4/4 time", "Reggaeton — Urban Latin style; hip-hop influenced", "Samba — Brazilian; syncopated rhythm; bouncy movement"] },
-                    { type: "note", content: "Zumba is effective as a cardiovascular workout, burning 400–600 calories per hour (depending on intensity). Its dance format makes exercise enjoyable, improving long-term adherence to physical activity." },
+                    { type: "h2", content: "Macronutrients for Exercise" },
+                    { type: "table", content: "Macronutrients and Exercise", headers: ["Macronutrient", "Calories/gram", "Primary Role in Exercise", "Sources"], rows: [["Carbohydrates", "4 kcal/g", "Primary fuel source; replenishes muscle glycogen", "Rice, bread, pasta, fruits, vegetables"], ["Proteins", "4 kcal/g", "Muscle repair and growth; enzyme production", "Meat, fish, eggs, tofu, legumes, dairy"], ["Fats", "9 kcal/g", "Energy for low-intensity, long-duration exercise; hormones", "Avocado, nuts, olive oil, fish"]] },
+                    { type: "h3", content: "Protein Requirements for Exercise" },
+                    { type: "table", content: "Protein Needs by Activity Level", headers: ["Activity Level", "Protein Need (g/kg body weight/day)"], rows: [["Sedentary", "0.8 g/kg"], ["Recreational exercise", "1.2–1.4 g/kg"], ["Endurance athlete", "1.4–1.6 g/kg"], ["Strength/power athlete", "1.6–2.2 g/kg"]] },
+                    { type: "example", content: "Example: 60 kg college student who does weight training:\nProtein target: 60 kg × 1.8 g/kg = 108 g of protein per day\nCaloric value: 108 g × 4 kcal/g = 432 kcal from protein" },
+                    { type: "h3", content: "Nutrition Timing" },
+                    { type: "list", content: "Pre-Workout Nutrition (1–3 hours before)", items: ["Emphasize carbohydrates for energy", "Moderate protein", "Low fat (slower digestion, can cause discomfort)", "Stay hydrated: drink 400–600 ml water 2 hours before"] },
+                    { type: "list", content: "Post-Workout Nutrition (within 30–60 min after)", items: ["'Anabolic window' — prime time for recovery", "Carbohydrates to replenish glycogen stores", "Protein for muscle repair (20–40g recommended)", "Example: Rice + grilled chicken, chocolate milk, protein shake"] },
+                    { type: "definition", content: "Hydration — For every 1% loss of body weight in sweat, performance can decrease by 2–3%. Aim for pale yellow urine as indicator of adequate hydration. Drink ~2–3 liters of water daily." },
                   ],
                   quiz: [
-                    { question: "Aerobic exercise is characterized by:", options: ["Short, intense bursts of anaerobic effort", "Using oxygen for energy in continuous, rhythmic activity with large muscle groups", "Weightlifting and resistance training only", "Static stretching exercises"], answer: 1, explanation: "Aerobic exercise uses oxygen continuously, involves large muscle groups in rhythmic movement, and builds cardiovascular endurance." },
-                    { question: "Zumba was created by:", options: ["Jane Fonda", "Alberto 'Beto' Perez", "Richard Simmons", "Billy Blanks"], answer: 1, explanation: "Zumba was created by Colombian dancer Alberto 'Beto' Perez in the 1990s, combining Latin dance styles with fitness principles." },
+                    { question: "Which macronutrient is the PRIMARY fuel source for high-intensity exercise?", options: ["Fat", "Protein", "Carbohydrates", "Water"], answer: 2, explanation: "Carbohydrates (stored as glycogen) are the primary and preferred fuel source for high-intensity exercise." },
+                    { question: "The recommended post-workout protein intake to support muscle recovery is:", options: ["5–10g", "20–40g", "60–80g", "100g+"], answer: 1, explanation: "Research supports 20–40g of protein post-workout for optimal muscle protein synthesis." },
+                    { question: "Fats provide how many calories per gram?", options: ["4 kcal/g", "7 kcal/g", "9 kcal/g", "11 kcal/g"], answer: 2, explanation: "Fat = 9 kcal/g (more than double carbs and protein at 4 kcal/g each)." },
+                  ],
+                },
+              },
+              {
+                id: "pe2-m3t2", title: "Designing a Personal Fitness Program",
+                content: {
+                  heading: "Designing a Personal Fitness Program", term: "FINALS", module: "Module 3: Sports Nutrition and Personal Fitness Programs",
+                  objectives: ["Apply FITT principle to design a complete fitness program", "Balance different training types", "Account for rest and recovery"],
+                  sections: [
+                    { type: "h2", content: "Personal Fitness Program Design" },
+                    { type: "list", content: "Steps to Design a Fitness Program", items: ["1. Assess current fitness level — push-ups, sit-up, step test, sit-and-reach", "2. Set SMART goals — specific, measurable, time-bound", "3. Apply FITT principle — frequency, intensity, time, type", "4. Include all fitness components — cardio, strength, flexibility", "5. Incorporate progressive overload — gradually increase demands", "6. Plan rest/recovery — 1–2 rest days per week", "7. Monitor and evaluate — track progress, adjust plan"] },
+                    { type: "example", content: "Sample Weekly Program for General Fitness (College Student):\nMonday: Resistance training (upper body) — 45 min\nTuesday: Cardio (jogging/cycling) — 30 min\nWednesday: Resistance training (lower body) — 45 min\nThursday: Active recovery (yoga/stretching) — 30 min\nFriday: Full-body circuit training — 45 min\nSaturday: Recreational sports/aerobics — 60 min\nSunday: Rest or light walking" },
+                    { type: "table", content: "FITT Guidelines for Different Components", headers: ["Component", "Frequency", "Intensity", "Time", "Type"], rows: [["Cardio (Aerobic)", "3–5 days/week", "60–85% MHR", "20–60 min", "Running, swimming, cycling"], ["Resistance", "2–4 days/week", "60–80% 1RM", "20–60 min", "Weights, bodyweight"], ["Flexibility", "2–7 days/week", "Mild discomfort (not pain)", "10–30 sec hold", "Static, dynamic, PNF"]] },
+                    { type: "note", content: "BMI (Body Mass Index) = Weight (kg) / Height (m)². Healthy BMI: 18.5–24.9. Limitation: does not distinguish between muscle and fat mass." },
+                  ],
+                  quiz: [
+                    { question: "The FITT principle stands for:", options: ["Fitness, Intensity, Training, Technique", "Frequency, Intensity, Time, Type", "Focus, Intensity, Timing, Tension", "Frequency, Interval, Time, Tension"], answer: 1, explanation: "FITT = Frequency, Intensity, Time, Type — the four variables to manipulate in an exercise program." },
+                    { question: "BMI is calculated as:", options: ["Weight (kg) × Height (m)", "Weight (kg) / Height (m)²", "Height (m) / Weight (kg)", "Weight (lbs) / Height (inches)²"], answer: 1, explanation: "BMI = Weight in kilograms divided by Height in meters squared (kg/m²)." },
+                    { question: "According to FITT guidelines, aerobic exercise should be performed at what intensity?", options: ["20–40% MHR", "40–60% MHR", "60–85% MHR", "90–100% MHR"], answer: 2, explanation: "ACSM recommends 60–85% of Maximum Heart Rate for effective aerobic training." },
                   ],
                 },
               },

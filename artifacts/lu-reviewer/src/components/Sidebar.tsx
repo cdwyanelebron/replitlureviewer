@@ -75,7 +75,7 @@ export default function Sidebar({ subject, activeTopicId, onTopicSelect, searchQ
         return (
           <div key={term.id}>
             <button
-              className="sidebar-term-header w-full text-left"
+              className={`sidebar-term-header sidebar-term-header--${term.id} w-full text-left`}
               onClick={() => toggleTerm(term.id)}
               data-testid={`sidebar-term-${term.id}`}
             >
