@@ -74,9 +74,9 @@ export default function TopNav({
                 backgroundColor: subject.id === activeSubjectId ? "#027a4d" : "transparent",
                 color: "white",
                 border: subject.id === activeSubjectId ? "1px solid rgba(255,255,255,0.65)" : "1px solid transparent",
-                borderRadius: subject.id === activeSubjectId ? "999px" : "0",
-                lineHeight: "28px",
-                marginInline: "2px",
+                borderRadius: "0",
+                lineHeight: "44px",
+                marginInline: "0",
               }}
             >
               {subject.shortTitle}
