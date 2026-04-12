@@ -669,49 +669,182 @@ const MST02_MIDTERM_TOPICS: Topic[] = [
     },
   },
   {
-    id: "mst02-mid-m6",
-    title: "Module 6: Data Security, Data Privacy, and Protection",
+    id: "mst02-mid-m6-l1",
+    title: "Module 6 Lesson 1: Computer and Data Security",
     content: {
-      heading: "Data Security, Data Privacy, and Protection",
+      heading: "Computer and Data Security",
       term: "MIDTERM",
       module: "Module 6: Data Security, Data Privacy and Protection",
-      objectives: ["Define computer/data security", "Explain data privacy and the Data Privacy Act", "Recognize examples, issues, and concerns"],
+      objectives: ["Define computer security and data security", "Identify common security threats", "Describe security measures used to protect systems and data"],
       sections: [
-        { type: "definition", content: "Computer and data security — practices that protect systems and data from unauthorized access, damage, theft, disruption, or misuse." },
-        { type: "definition", content: "Data privacy — proper handling of personal information, including lawful collection, informed consent, limited use, secure storage, and respect for data subject rights." },
-        { type: "table", content: "Security vs. Privacy", headers: ["Security", "Privacy"], rows: [["Protects data from threats", "Controls how personal data is collected and used"], ["Uses passwords, encryption, backups, access control", "Uses consent, transparency, purpose limitation, data rights"], ["Question: Is data safe?", "Question: Is data used properly and fairly?"]] },
-        { type: "h2", content: "Data Privacy Act" },
-        { type: "text", content: "The Philippine Data Privacy Act of 2012 (RA 10173) protects personal information in government and private sectors. It promotes transparency, legitimate purpose, proportionality, and the rights of data subjects." },
-        { type: "list", content: "Common issues and concerns:", items: ["Weak passwords and account sharing", "Oversharing personal information online", "Unauthorized collection of student or customer data", "Identity theft", "Data breaches", "Improper use of photos, messages, and records"] },
+        { type: "definition", content: "Computer security — protection of computer systems, hardware, software, and networks from damage, theft, disruption, or unauthorized access." },
+        { type: "definition", content: "Data security — safeguarding data from corruption, unauthorized access, disclosure, or loss, ensuring confidentiality, integrity, and availability." },
+        { type: "h2", content: "Common Security Threats" },
+        { type: "list", content: "Threats to computer and data security include:", items: ["Malware such as viruses, worms, trojans, ransomware, and spyware", "Phishing attacks that trick users into revealing sensitive data", "Unauthorized access through weak passwords or stolen credentials", "Physical theft or loss of devices with sensitive data", "Insider threats from employees with access", "Denial-of-service attacks that disrupt system availability"] },
+        { type: "h2", content: "Security Measures" },
+        { type: "table", content: "Security Controls", headers: ["Control", "Purpose"], rows: [["Strong passwords and MFA", "Limit unauthorized access"], ["Antivirus/anti-malware software", "Detect and remove malicious programs"], ["Firewall", "Filter network traffic based on security rules"], ["Encryption", "Make data unreadable to unauthorized parties"], ["Regular backups", "Recover data after loss or ransomware attack"], ["Access control", "Limit who can view or modify data"], ["Software updates/patches", "Close known security vulnerabilities"]] },
+        { type: "note", content: "Security is a shared responsibility. Both organizations and individual users must follow good security practices." },
       ],
       quiz: [
-        { question: "RA 10173 is the:", options: ["Data Privacy Act", "Cybercrime Prevention Act", "Clean Air Act", "NSTP Law"], answer: 0, explanation: "RA 10173 is the Data Privacy Act of 2012." },
-        { question: "Data security asks mainly:", options: ["Is the data protected from unauthorized access or damage?", "Is a squat lower body exercise?", "Is climate daily weather?", "Is hydration optional?"], answer: 0, explanation: "Security focuses on protecting systems and data." },
-        { question: "A privacy-respecting practice is:", options: ["Collect only necessary data for a clear purpose", "Post private records publicly", "Share passwords", "Ignore consent"], answer: 0, explanation: "Privacy requires lawful, fair, transparent, limited, and purposeful data handling." },
+        { question: "Computer security aims to protect systems from:", options: ["Unauthorized access, damage, theft, and disruption", "Only printer jams", "Only lower body injuries", "Only weather changes"], answer: 0, explanation: "Computer security protects hardware, software, and networks." },
+        { question: "Which is a security measure?", options: ["Using a firewall and strong passwords", "Sharing login credentials", "Disabling antivirus", "Using default passwords"], answer: 0, explanation: "Firewalls and strong passwords are basic security controls." },
+        { question: "Encryption is used to:", options: ["Make data unreadable to unauthorized users", "Delete all files permanently", "Speed up the internet only", "Replace passwords"], answer: 0, explanation: "Encryption protects data confidentiality." },
+        { question: "Ransomware is a type of:", options: ["Malware that encrypts data and demands payment", "Physical exercise", "Network topology", "Climate event"], answer: 0, explanation: "Ransomware locks or encrypts data and demands ransom for access." },
+        { question: "Which habit helps prevent unauthorized account access?", options: ["Using multi-factor authentication", "Using the same password everywhere", "Sharing OTP codes", "Disabling security updates"], answer: 0, explanation: "MFA adds a second verification step beyond just the password." },
       ],
     },
   },
   {
-    id: "mst02-mid-m7",
-    title: "Module 7: Political, Economic, and Societal Impacts of ICT",
+    id: "mst02-mid-m6-l2",
+    title: "Module 6 Lesson 2: Definitions and Views on Data",
     content: {
-      heading: "Political, Economic, and Societal Impacts of ICT",
+      heading: "Definitions and Views on Data",
       term: "MIDTERM",
-      module: "Module 7: Political, Economic and Societal Impacts and Change",
-      objectives: ["Explain economic impacts of ICT", "Explain political impacts of ICT", "Explain social impacts and changes caused by ICT"],
+      module: "Module 6: Data Security, Data Privacy and Protection",
+      objectives: ["Define data, information, and personal data", "Distinguish sensitive personal information from regular personal data", "Explain why data handling requires care and responsibility"],
       sections: [
-        { type: "table", content: "ICT Impacts", headers: ["Area", "Positive Impact", "Risk/Challenge"], rows: [["Economic", "E-commerce, IT jobs, remote work, productivity, digital entrepreneurship", "Job displacement, platform dependence, unequal opportunity"], ["Political", "E-governance, online participation, faster public information", "Disinformation, manipulation, surveillance, cyberattacks"], ["Social", "Communication, online learning, communities, access to knowledge", "Cyberbullying, addiction, privacy issues, digital divide"]] },
-        { type: "h3", content: "Economic Change" },
-        { type: "text", content: "ICT creates new industries and ways of working, including online selling, freelancing, IT-BPO, digital marketing, and automation. It can increase productivity but may also reduce demand for some traditional jobs." },
-        { type: "h3", content: "Political Change" },
-        { type: "text", content: "ICT helps citizens receive information, report issues, join discussions, and participate in campaigns. However, politics online can be affected by fake news, trolls, bot networks, and privacy violations." },
-        { type: "h3", content: "Social Change" },
-        { type: "text", content: "ICT changes relationships, education, entertainment, language, culture, and identity. It can connect families and learners, but it can also increase isolation, comparison, and screen fatigue." },
+        { type: "definition", content: "Data — raw facts, figures, or values that have not yet been processed into meaningful context." },
+        { type: "definition", content: "Information — data that has been processed, organized, or structured to provide meaning or context." },
+        { type: "definition", content: "Personal information — any information that identifies or can be used to identify a natural person (data subject)." },
+        { type: "definition", content: "Sensitive personal information — a category of personal data with stricter protection, including health records, religious/political beliefs, biometrics, financial details, and similar sensitive categories." },
+        { type: "table", content: "Types of Data", headers: ["Type", "Meaning", "Example"], rows: [["Data", "Raw values without context", "The number 37 or 'Juan'"], ["Information", "Processed, meaningful data", "Juan's temperature is 37°C — he may have a fever"], ["Personal information", "Identifies a person", "Name, address, student ID, email, phone number"], ["Sensitive personal information", "Highly protected category", "Medical records, biometrics, financial data, religious affiliation"]] },
+        { type: "h2", content: "Why Data Handling Matters" },
+        { type: "text", content: "Improper handling of data — especially personal and sensitive data — can harm individuals through identity theft, discrimination, financial loss, reputation damage, and privacy violations. Organizations that collect data have responsibilities to protect it." },
+        { type: "list", content: "Responsible data views include:", items: ["People have rights over their personal information", "Data is collected for specific, legitimate purposes — not unlimited use", "Less is more: collect only what is necessary", "Individuals should be informed when their data is used"] },
       ],
       quiz: [
-        { question: "Which is an economic impact of ICT?", options: ["Growth of e-commerce and digital jobs", "No change in business", "No online market", "Ending communication"], answer: 0, explanation: "ICT supports e-commerce, digital services, remote work, and IT industries." },
-        { question: "Which is a political risk of ICT?", options: ["Disinformation and manipulation", "Transparent public information", "Online government services", "Citizen reporting"], answer: 0, explanation: "ICT can be misused to spread false information or manipulate public opinion." },
-        { question: "Which is a social effect of ICT?", options: ["Changed communication and learning", "No effect on relationships", "Only affects volcanoes", "Only affects genes"], answer: 0, explanation: "ICT changes how people learn, work, communicate, and build relationships." },
+        { question: "Which best describes data?", options: ["Raw, unprocessed facts or values", "Finished research reports", "Fully designed software", "A physical network cable"], answer: 0, explanation: "Data is raw input before processing." },
+        { question: "Which is an example of personal information?", options: ["A student's full name and school ID number", "An anonymous weather average", "A generic formula", "An unlabeled random number"], answer: 0, explanation: "Information that identifies a person is personal information." },
+        { question: "Sensitive personal information receives stricter protection because:", options: ["It includes especially private or potentially harmful data like health or biometrics", "It is the same as ordinary facts", "It has no legal protection", "It is publicly available by default"], answer: 0, explanation: "Sensitive categories can cause more serious harm if misused." },
+        { question: "Which is an example of sensitive personal information?", options: ["Medical records", "A student's school name only", "A general schedule with no names", "Public event announcements"], answer: 0, explanation: "Medical records are among the most strictly protected categories." },
+        { question: "The difference between data and information is that information is:", options: ["Data that has been processed into meaningful context", "The same as raw facts", "Always publicly available", "Only numbers without context"], answer: 0, explanation: "Information gives context and meaning to data." },
+      ],
+    },
+  },
+  {
+    id: "mst02-mid-m6-l3",
+    title: "Module 6 Lesson 3: Data Privacy Act",
+    content: {
+      heading: "Data Privacy Act (RA 10173)",
+      term: "MIDTERM",
+      module: "Module 6: Data Security, Data Privacy and Protection",
+      objectives: ["State the name and number of the Philippine Data Privacy Act", "Explain its key principles", "Identify the rights of data subjects"],
+      sections: [
+        { type: "definition", content: "Data Privacy Act of 2012 (RA 10173) — the Philippine law that protects personal information held by the government and private sector, establishing rights of data subjects and responsibilities of organizations that process data." },
+        { type: "h2", content: "Key Principles of RA 10173" },
+        { type: "table", content: "DPA Principles", headers: ["Principle", "Meaning"], rows: [["Transparency", "Data subjects must be informed how their data is collected, used, and shared"], ["Legitimate purpose", "Data can only be processed for a lawful, specified, and declared purpose"], ["Proportionality", "Only data that is adequate, relevant, and necessary may be processed"]] },
+        { type: "h2", content: "Rights of Data Subjects" },
+        { type: "list", content: "Under RA 10173, individuals have the right to:", items: ["Be informed — know what data is collected and why", "Access their own personal data held by organizations", "Correct inaccurate or outdated personal data", "Erasure or blocking — have data removed when no longer needed", "Object to processing in certain circumstances", "File a complaint with the National Privacy Commission (NPC)"] },
+        { type: "h2", content: "National Privacy Commission" },
+        { type: "text", content: "The National Privacy Commission (NPC) is the government body that administers and enforces RA 10173. Organizations that process personal data must comply with its rules and may face penalties for violations." },
+        { type: "note", content: "For the exam: RA 10173 = Data Privacy Act. RA 10175 = Cybercrime Prevention Act. These are different laws — do not confuse them." },
+      ],
+      quiz: [
+        { question: "RA 10173 is the:", options: ["Data Privacy Act of 2012", "Cybercrime Prevention Act", "Anti-Wiretapping Act", "Electronic Commerce Act"], answer: 0, explanation: "RA 10173 is the Data Privacy Act of 2012." },
+        { question: "The principle of transparency requires that data subjects be:", options: ["Informed about how their data is collected and used", "Kept ignorant of data processing", "Given no access to records", "Allowed no rights"], answer: 0, explanation: "Transparency means telling people what you will do with their data." },
+        { question: "Proportionality means organizations should:", options: ["Collect only the data that is necessary for a declared purpose", "Collect everything available regardless of need", "Share all data publicly", "Never collect any data"], answer: 0, explanation: "Proportionality limits data collection to what is adequate and necessary." },
+        { question: "Which right allows a person to correct their wrong personal data?", options: ["Right to correction", "Right to silence only", "Right to share all data", "Right to unlimited processing"], answer: 0, explanation: "Data subjects can demand correction of inaccurate data." },
+        { question: "The body that enforces RA 10173 is the:", options: ["National Privacy Commission", "Department of Justice only", "Bureau of Internal Revenue", "National Telecommunications Commission"], answer: 0, explanation: "The NPC administers and enforces the Data Privacy Act." },
+      ],
+    },
+  },
+  {
+    id: "mst02-mid-m6-l4",
+    title: "Module 6 Lesson 4: Cases, Examples, Issues, and Concerns",
+    content: {
+      heading: "Data Privacy Cases, Examples, Issues, and Concerns",
+      term: "MIDTERM",
+      module: "Module 6: Data Security, Data Privacy and Protection",
+      objectives: ["Apply data privacy principles to real-world scenarios", "Identify common violations and their consequences", "Recognize responsible practices in handling data"],
+      sections: [
+        { type: "h2", content: "Common Data Privacy Issues" },
+        { type: "table", content: "Common Violations and Concerns", headers: ["Issue", "Example", "Concern"], rows: [["Data breach", "School database hacked, student records exposed", "Unauthorized access to thousands of personal records"], ["Identity theft", "Stolen personal data used to open fraudulent accounts", "Financial and reputation harm to victims"], ["Unauthorized disclosure", "Employee shares customer data without consent", "Violation of trust and legal penalties"], ["Oversharing online", "Student posts ID, address, and phone number publicly", "Risk of fraud, stalking, or harassment"], ["Improper use of photos", "Posting someone's photo without consent", "Privacy violation and possible harassment"]] },
+        { type: "h2", content: "Concerns in Common Settings" },
+        { type: "list", content: "Data privacy issues arise in everyday contexts:", items: ["Educational: student grades, health conditions, disciplinary records", "Healthcare: medical history, diagnoses, prescriptions shared improperly", "Banking and finance: unauthorized transactions using stolen credentials", "Social media: profile information harvested and sold to third parties", "Government: improper access to citizen records"] },
+        { type: "h2", content: "Practical Responsibilities" },
+        { type: "list", content: "How to protect personal data:", items: ["Never share passwords or one-time passwords with anyone", "Use privacy settings on social media accounts", "Limit what personal data you share online", "Read privacy notices before signing up for services", "Report suspicious activity or data leaks to the NPC or proper authorities", "Organizations must notify affected persons if a data breach occurs"] },
+        { type: "note", content: "Data privacy is everyone's concern — both organizations that handle data and individuals who share their own information." },
+      ],
+      quiz: [
+        { question: "A data breach occurs when:", options: ["Personal data is accessed, disclosed, or lost without authorization", "A backup is created successfully", "A password is strong and unique", "A privacy notice is read"], answer: 0, explanation: "Data breaches compromise confidentiality or security of personal information." },
+        { question: "Posting someone's photo online without their consent is an example of:", options: ["A data privacy violation", "Good netiquette", "Proper data handling", "A security update"], answer: 0, explanation: "Sharing another person's image without consent violates their privacy." },
+        { question: "Which practice protects personal data?", options: ["Using privacy settings and strong passwords", "Sharing personal data in public posts", "Ignoring security updates", "Posting your ID number online"], answer: 0, explanation: "Privacy settings and strong passwords are important personal data protection habits." },
+        { question: "Organizations that experience a data breach are expected to:", options: ["Notify affected individuals and report to proper authorities", "Keep the breach secret forever", "Ignore it if data is digital", "Delete all records without reporting"], answer: 0, explanation: "Breach notification is required under data privacy regulations." },
+        { question: "Which setting is most likely to create a privacy risk for students?", options: ["Posting full name, student ID, and home address on a public profile", "Using a strong private password", "Enabling two-factor authentication", "Reading the app's privacy policy"], answer: 0, explanation: "Combining identifiers in public spaces increases risk of identity theft or targeting." },
+      ],
+    },
+  },
+  {
+    id: "mst02-mid-m7-l1",
+    title: "Module 7 Lesson 1: Economic Impacts of ICT",
+    content: {
+      heading: "Economic Impacts of ICT",
+      term: "MIDTERM",
+      module: "Module 7: Political, Economic and Societal Impacts and Change",
+      objectives: ["Describe how ICT has transformed economies", "Identify new industries and job types created by ICT", "Recognize economic risks and challenges from ICT"],
+      sections: [
+        { type: "definition", content: "ICT (Information and Communications Technology) — technologies used to handle and transmit information, including computers, internet, software, mobile devices, and networks." },
+        { type: "h2", content: "Positive Economic Impacts" },
+        { type: "list", content: "How ICT drives economic growth:", items: ["E-commerce enables buying and selling across geographic boundaries, expanding markets", "IT and digital service industries create new high-skill jobs", "IT-BPO (Business Process Outsourcing) is a major employer in the Philippines", "Digital entrepreneurship lowers startup costs and barriers for small businesses", "Remote work reduces geographic limitations for workers and employers", "Automation improves efficiency and productivity in many industries", "Digital payments and fintech increase financial inclusion"] },
+        { type: "h2", content: "Economic Challenges" },
+        { type: "table", content: "Risks and Challenges", headers: ["Challenge", "Explanation"], rows: [["Job displacement", "Automation may reduce demand for routine manual or cognitive tasks"], ["Digital divide", "Unequal access limits economic participation for some groups"], ["Platform dependence", "Small businesses depend on large platforms that control rules and fees"], ["Unequal distribution of gains", "Benefits may concentrate among technology companies and skilled workers"], ["Cybersecurity costs", "Businesses must invest in protection against cyber threats"]] },
+        { type: "note", content: "The key exam point: ICT creates both opportunities (e-commerce, IT jobs, efficiency) and challenges (job loss, digital divide, dependence)." },
+      ],
+      quiz: [
+        { question: "Which is a positive economic impact of ICT?", options: ["Growth of e-commerce and IT industry jobs", "No change in employment opportunities", "Ending all business communication", "Making products more expensive always"], answer: 0, explanation: "ICT creates new industries, job types, and market opportunities." },
+        { question: "IT-BPO is economically significant in the Philippines because:", options: ["It employs many Filipinos in digital service and outsourcing work", "It only affects the climate", "It has no local impact", "It is only for foreigners"], answer: 0, explanation: "The IT-BPO sector is one of the major sources of employment and foreign exchange." },
+        { question: "Automation presents an economic challenge because it can:", options: ["Replace or reduce demand for some traditional jobs", "Create more jobs always without exception", "Have no effect on employment", "Improve all wages automatically"], answer: 0, explanation: "Automation can displace workers in routine or predictable tasks." },
+        { question: "Digital entrepreneurship benefits from ICT because:", options: ["It lowers startup costs and allows access to wider markets", "It requires no internet", "It is only possible for large corporations", "It eliminates all economic risk"], answer: 0, explanation: "Online tools and platforms allow small businesses to reach more customers at lower cost." },
+        { question: "Which ICT challenge limits economic participation for poorer communities?", options: ["Digital divide", "Too many job opportunities", "Unlimited internet access", "Free devices for all"], answer: 0, explanation: "Digital divide means unequal access, limiting economic benefits for some groups." },
+      ],
+    },
+  },
+  {
+    id: "mst02-mid-m7-l2",
+    title: "Module 7 Lesson 2: Political Impacts of ICT",
+    content: {
+      heading: "Political Impacts of ICT",
+      term: "MIDTERM",
+      module: "Module 7: Political, Economic and Societal Impacts and Change",
+      objectives: ["Explain how ICT has changed political participation and governance", "Identify risks of ICT in political contexts", "Evaluate responsible digital political behavior"],
+      sections: [
+        { type: "h2", content: "Positive Political Impacts" },
+        { type: "list", content: "How ICT supports democracy and governance:", items: ["E-governance enables online government services — licenses, permits, tax filing, and public records", "Faster citizen access to public information and government advisories", "Online platforms allow citizens to report problems, petitions, and public concerns", "Social media amplifies political participation, campaigns, and social movements", "Transparency portals allow oversight of government spending and decisions"] },
+        { type: "h2", content: "Political Risks of ICT" },
+        { type: "table", content: "Political Risks", headers: ["Risk", "Explanation"], rows: [["Disinformation", "False political content can mislead voters and inflame divisions"], ["Troll and bot campaigns", "Fake accounts can manipulate trends and public perception"], ["Surveillance", "ICT can be used to monitor dissidents, journalists, and citizens without consent"], ["Cyberattacks", "Government systems and infrastructure can be attacked by rivals or criminals"], ["Echo chambers", "Algorithms can reinforce one-sided views and reduce exposure to different perspectives"]] },
+        { type: "note", content: "ICT is a powerful political tool that can support transparency and participation, but it can also be misused for propaganda, manipulation, and surveillance." },
+      ],
+      quiz: [
+        { question: "Which is a positive political impact of ICT?", options: ["E-governance making public services accessible online", "Ending all voter participation", "No access to government information", "Removing transparency from public records"], answer: 0, explanation: "E-governance uses ICT to deliver faster, more accessible government services." },
+        { question: "Disinformation in political contexts refers to:", options: ["Intentionally false content designed to mislead", "Accurate public advisories", "Official government publications", "Verified news from journalists"], answer: 0, explanation: "Disinformation involves deliberately false or misleading content." },
+        { question: "Echo chambers are created when:", options: ["Algorithms repeatedly show content that matches existing views", "All political opinions are equally shown", "Government transparency is increased", "Citizens access diverse sources"], answer: 0, explanation: "Echo chambers limit exposure to diverse perspectives." },
+        { question: "ICT supports political transparency by:", options: ["Providing public access to government records and spending data", "Hiding all public information", "Limiting citizen participation", "Preventing online campaigns"], answer: 0, explanation: "Transparency portals and public data platforms increase government accountability." },
+        { question: "Which political risk involves using ICT to monitor citizens without their knowledge?", options: ["Surveillance", "E-governance", "Online voting only", "Digital entrepreneurship"], answer: 0, explanation: "Surveillance uses technology to track individuals, often without consent or legal basis." },
+      ],
+    },
+  },
+  {
+    id: "mst02-mid-m7-l3",
+    title: "Module 7 Lesson 3: Social Impacts of ICT",
+    content: {
+      heading: "Social Impacts of ICT",
+      term: "MIDTERM",
+      module: "Module 7: Political, Economic and Societal Impacts and Change",
+      objectives: ["Describe how ICT has changed daily social life", "Identify both positive and negative social effects", "Reflect on responsible and balanced technology use"],
+      sections: [
+        { type: "h2", content: "Positive Social Impacts" },
+        { type: "list", content: "How ICT improves social life:", items: ["Faster and easier communication with family and friends across distances", "Online learning platforms extend education to more people", "Social media connects communities and amplifies awareness of social issues", "Access to health information and telemedicine improves care", "Disaster alerts, emergency hotlines, and coordination improve safety", "Digital tools support access to entertainment, culture, and creative work"] },
+        { type: "h2", content: "Negative Social Impacts" },
+        { type: "table", content: "Social Challenges", headers: ["Challenge", "Explanation"], rows: [["Cyberbullying", "Harassment online can cause emotional, psychological, and reputational harm"], ["Screen fatigue", "Excessive screen time affects sleep, attention, and mental health"], ["Privacy loss", "Social media and apps collect personal data, reducing control over privacy"], ["Digital divide", "Unequal access creates inequality in learning and social participation"], ["Misinformation", "False content spreads quickly and influences beliefs and behavior"], ["Social isolation", "Ironic result: heavy use of social media may reduce real-world connection"]] },
+        { type: "h2", content: "Balanced Technology Use" },
+        { type: "text", content: "Technology is a tool whose impact depends on how it is designed, regulated, and used. Individuals can practice digital wellness by setting limits, verifying information, using privacy controls, taking breaks, and maintaining face-to-face relationships." },
+      ],
+      quiz: [
+        { question: "Which is a positive social impact of ICT?", options: ["Faster communication and access to online education", "Guaranteed cyberbullying prevention", "Always improving mental health", "No social problems at all"], answer: 0, explanation: "ICT improves communication, learning, healthcare access, and emergency response." },
+        { question: "Cyberbullying is a social concern because it:", options: ["Can cause emotional, psychological, and reputational harm", "Always improves relationships", "Has no effect on students", "Only affects adults"], answer: 0, explanation: "Cyberbullying harms mental health and can damage reputations." },
+        { question: "Screen fatigue refers to:", options: ["Negative effects of excessive screen time on health and attention", "An advantage of ICT for learning", "A physical exercise type", "A network protocol"], answer: 0, explanation: "Too much screen time can disrupt sleep, attention, and mental well-being." },
+        { question: "Digital divide is a social concern because:", options: ["Unequal access creates inequality in education, work, and participation", "Everyone has equal internet and device access", "ICT helps everyone equally without exception", "No one is excluded from digital benefits"], answer: 0, explanation: "Those without reliable internet, devices, or skills face significant disadvantage." },
+        { question: "A good way to balance ICT's social impact is to:", options: ["Verify information, take digital breaks, and maintain real-world connections", "Use social media constantly without limits", "Share everything online without checking sources", "Avoid all technology"], answer: 0, explanation: "Digital wellness requires conscious, balanced, and responsible use of technology." },
       ],
     },
   },
@@ -902,8 +1035,8 @@ export const MIDTERM_FOCUS_SUBJECTS: Subject[] = [
           { id: "ge7-mid-m5", title: "Module 5: Environmental Awareness", topics: GE7_MIDTERM_TOPICS.slice(0, 4) },
           { id: "ge7-mid-m6", title: "Module 6: Energy Crisis", topics: GE7_MIDTERM_TOPICS.slice(4, 7) },
           { id: "ge7-mid-m7", title: "Module 7: The Information Age", topics: GE7_MIDTERM_TOPICS.slice(7, 11) },
-          { id: "ge7-mid-m8", title: "Module 8: Gene", topics: GE7_MIDTERM_TOPICS.slice(11, 12) },
-          { id: "ge7-mid-final-content", title: "Final Content: Midterm Comprehensive Exam", topics: GE7_MIDTERM_TOPICS.slice(12) },
+          { id: "ge7-mid-m8", title: "Module 8: Gene", topics: GE7_MIDTERM_TOPICS.slice(11, 17) },
+          { id: "ge7-mid-final-content", title: "Final Content: Midterm Comprehensive Exam", topics: GE7_MIDTERM_TOPICS.slice(17) },
         ],
       },
     ],
@@ -921,9 +1054,9 @@ export const MIDTERM_FOCUS_SUBJECTS: Subject[] = [
         label: "MIDTERM",
         modules: [
           { id: "mst02-mid-m5", title: "Module 5: Networks and Types", topics: MST02_MIDTERM_TOPICS.slice(0, 6) },
-          { id: "mst02-mid-m6", title: "Module 6: Data Security, Data Privacy and Protection", topics: MST02_MIDTERM_TOPICS.slice(6, 7) },
-          { id: "mst02-mid-m7", title: "Module 7: Political, Economic and Societal Impacts and Change", topics: MST02_MIDTERM_TOPICS.slice(7, 8) },
-          { id: "mst02-mid-final-content", title: "Final Content: Midterm Comprehensive Exam", topics: MST02_MIDTERM_TOPICS.slice(8) },
+          { id: "mst02-mid-m6", title: "Module 6: Data Security, Data Privacy and Protection", topics: MST02_MIDTERM_TOPICS.slice(6, 10) },
+          { id: "mst02-mid-m7", title: "Module 7: Political, Economic and Societal Impacts and Change", topics: MST02_MIDTERM_TOPICS.slice(10, 13) },
+          { id: "mst02-mid-final-content", title: "Final Content: Midterm Comprehensive Exam", topics: MST02_MIDTERM_TOPICS.slice(13) },
         ],
       },
     ],
@@ -1074,14 +1207,71 @@ const MODULE_OBJECTIVE_SUPPORT: Record<string, ModuleObjectiveSupport> = {
   },
   "ge7-mid-m8-l1": {
     sections: [
-      { type: "h2", content: "Exam Focus: Gene Module" },
-      { type: "list", content: "Must-know points:", items: ["Gene: DNA segment carrying hereditary instructions", "Heredity: passing traits from parents to offspring", "Gene therapy targets faulty genes; stem cell therapy uses cells for repair/regeneration", "Genes interact with environment; traits are not always genes alone", "GMOs have possible agricultural benefits and ethical/environmental concerns"] },
-      { type: "table", content: "Common Exam Pairings", headers: ["Pair", "Difference"], rows: [["Gene therapy vs Stem cell therapy", "Gene therapy changes genetic instructions; stem cell therapy uses cells"], ["Gene vs Heredity", "Gene is unit/instruction; heredity is transmission of traits"], ["GMO benefit vs concern", "Higher yield/pest resistance vs biodiversity, labeling, and control issues"]] },
+      { type: "h2", content: "Exam Focus: Gene and DNA" },
+      { type: "list", content: "Must-know points:", items: ["Gene is a specific segment of DNA that carries biological instructions", "DNA stores genetic information; genes are parts of DNA", "Genes help produce proteins that influence traits and biological processes", "Wilhelm Johannsen is associated with coining the term 'gene'", "Traits reflect both genetic instructions and environmental influences"] },
+      { type: "note", content: "For exam answers: a gene is the instruction/segment; DNA is the molecule; a trait is the observed result. Do not confuse them." },
     ],
     quiz: [
-      { question: "Heredity refers to:", options: ["Passing traits from parents to offspring", "Daily weather changes", "Router configuration", "Exercise hydration"], answer: 0, explanation: "Heredity is trait transmission through genetic information." },
-      { question: "Which is the clearest stem cell therapy idea?", options: ["Using cells that can develop or repair tissues", "Changing a URL", "Reducing typhoons", "Increasing coal use"], answer: 0, explanation: "Stem cell therapy focuses on cells with regenerative or developmental potential." },
-      { question: "A fair GMO answer should mention:", options: ["Both possible benefits and possible risks/concerns", "Only benefits always", "Only fear without evidence", "No relation to society"], answer: 0, explanation: "The module presents GMO as a science-society issue with benefits and concerns." },
+      { question: "DNA stands for:", options: ["Deoxyribonucleic acid", "Digital Network Algorithm", "Dynamic Nutrient Absorber", "Data Network Analyzer"], answer: 0, explanation: "DNA (deoxyribonucleic acid) is the molecule that stores genetic information." },
+      { question: "Which scientist is associated with coining the term 'gene'?", options: ["Wilhelm Johannsen", "Isaac Newton", "Albert Einstein", "Charles Babbage"], answer: 0, explanation: "Wilhelm Johannsen coined the term 'gene' in 1909." },
+      { question: "Genes help produce which molecules that influence biological processes?", options: ["Proteins", "Volcanoes", "Network cables", "Carbohydrates only"], answer: 0, explanation: "Genes code for proteins that regulate and build biological functions." },
+    ],
+  },
+  "ge7-mid-m8-l2": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Gene Therapy" },
+      { type: "list", content: "Must-know points:", items: ["Gene therapy treats disease by adding, replacing, editing, or regulating genetic material", "It targets the genetic source of a disorder, not just the symptoms", "Vectors (often modified viruses) deliver genetic material to target cells", "Somatic therapy affects body cells only; germline editing may affect descendants", "Concerns: safety, delivery, ethics, long-term effects, cost, access"] },
+      { type: "note", content: "For exam: gene therapy = works with genetic instructions (DNA). Key exam word = 'faulty gene'." },
+    ],
+    quiz: [
+      { question: "Gene therapy aims to treat disease at the level of:", options: ["Genetic instructions (DNA)", "Exercise routines", "Network infrastructure", "Weather patterns"], answer: 0, explanation: "Gene therapy addresses the genetic root cause of a disease." },
+      { question: "Somatic gene therapy differs from germline editing because somatic therapy:", options: ["Only affects body cells and is not passed to offspring", "Affects all future generations", "Changes the weather", "Replaces exercise"], answer: 0, explanation: "Somatic therapy changes body cells only, not reproductive cells." },
+      { question: "Why is germline editing more ethically controversial than somatic therapy?", options: ["Changes to reproductive cells may be inherited by future generations", "It has no relation to genetics", "It is easier to perform", "It only treats minor conditions"], answer: 0, explanation: "Germline editing raises concerns because changes can be passed to offspring." },
+    ],
+  },
+  "ge7-mid-m8-l3": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Stem Cell Therapy" },
+      { type: "list", content: "Must-know points:", items: ["Stem cells can self-renew and develop into different specialized cell types", "Stem cell therapy uses these cells to repair or replace damaged tissues or cells", "Key difference from gene therapy: stem cell = cell-level; gene therapy = DNA/instruction level", "Concerns: tumor risk, immune rejection, ethical issues (especially embryonic stem cells), regulation"] },
+      { type: "table", content: "Quick Comparison", headers: ["Feature", "Gene Therapy", "Stem Cell Therapy"], rows: [["Works on", "Genetic instructions (DNA)", "Cells and tissues"], ["Goal", "Fix faulty gene", "Replace or repair cells/tissue"], ["Main concern", "Delivery, ethics, long-term", "Tumor risk, rejection, ethics"]] },
+    ],
+    quiz: [
+      { question: "Stem cells are described as special because they can:", options: ["Self-renew and develop into different cell types", "Only produce hair cells", "Only function as network nodes", "Only predict weather"], answer: 0, explanation: "Stem cells have self-renewal and differentiation potential." },
+      { question: "Which statement correctly distinguishes gene therapy from stem cell therapy?", options: ["Gene therapy works with DNA; stem cell therapy works with cells for repair", "They are exactly the same approach", "Stem cell therapy edits genes; gene therapy grows tissues", "Neither is related to biology"], answer: 0, explanation: "Gene therapy = DNA/instruction approach; stem cell therapy = cell regeneration approach." },
+      { question: "A concern with embryonic stem cells is:", options: ["Ethical issues related to the source of embryonic cells", "No possible medical use", "They are the same as exercise programs", "They predict climate change"], answer: 0, explanation: "Use of embryonic cells raises significant ethical debates." },
+    ],
+  },
+  "ge7-mid-m8-l4": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Heredity" },
+      { type: "list", content: "Must-know points:", items: ["Heredity = passing traits from parents to offspring through genetic information", "Inherited traits include blood type, some eye color patterns, genetic disorders", "Acquired characteristics are learned or developed through experience and environment", "Exam trap: skills, habits, and behaviors learned through practice are NOT inherited through genes"] },
+    ],
+    quiz: [
+      { question: "Which is the best example of a hereditary trait?", options: ["Blood type inherited from parents", "A skill developed through years of practice", "A scar from an accident", "A language learned in school"], answer: 0, explanation: "Blood type is determined by genes inherited from both parents." },
+      { question: "Which is an acquired characteristic?", options: ["Speaking a language fluently after years of study", "Blood type", "Eye color pattern inherited genetically", "A hereditary disorder"], answer: 0, explanation: "Language is learned through experience, not inherited through genes." },
+      { question: "Why is height an example of gene-environment interaction?", options: ["Genetic potential for height can be limited or supported by nutrition and environment", "Height is determined only by genes always", "Height is only determined by diet with no genetic input", "Height has nothing to do with biology"], answer: 0, explanation: "Height results from both genetic potential and environmental factors like nutrition." },
+    ],
+  },
+  "ge7-mid-m8-l5": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Genes and Environment" },
+      { type: "list", content: "Must-know points:", items: ["Gene-environment interaction means both genes and environment influence outcomes", "Environmental factors: nutrition, pollution, stress, activity, healthcare, sleep", "Genetic determinism (genes alone decide everything) is an oversimplification", "Safe exam answer: genes are important, but environment and choices also matter"] },
+    ],
+    quiz: [
+      { question: "Which statement best reflects gene-environment interaction?", options: ["Both genetic and environmental factors shape traits and health outcomes", "Only genes matter in all traits", "Only environment matters and genes are irrelevant", "Traits never change regardless of environment"], answer: 0, explanation: "Traits and health reflect both genetic potential and environmental influence." },
+      { question: "Which environmental factor can affect health expression?", options: ["Chronic stress affecting hormones and immune function", "DNA being a physical cable", "Genes being a type of router", "Blood type changing daily"], answer: 0, explanation: "Stress, nutrition, pollution, and other environmental factors influence health." },
+      { question: "Genetic determinism is a problem because:", options: ["It ignores the important role of environment, choices, and healthcare in outcomes", "It is always scientifically accurate", "It explains everything completely", "It has no relation to biology"], answer: 0, explanation: "Reducing all outcomes to genes alone ignores environmental complexity." },
+    ],
+  },
+  "ge7-mid-m8-l6": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Genetically Modified Organisms (GMO)" },
+      { type: "list", content: "Must-know points for objective answers:", items: ["Define GMO: organism with altered genetic material through biotechnology", "Possible benefits: pest resistance, higher yield, improved nutrition, longer shelf life", "Possible concerns: biodiversity, gene flow, labeling, corporate control, health debates", "A balanced answer acknowledges both benefits and concerns and calls for evidence-based regulation"] },
+    ],
+    quiz: [
+      { question: "Which statement about Golden Rice is a GMO benefit example?", options: ["It is engineered to contain Vitamin A, addressing nutrient deficiency", "It has no relation to nutrition", "It was created only to harm biodiversity", "It is the same as ordinary wild rice"], answer: 0, explanation: "Golden Rice is a GMO crop designed to address Vitamin A deficiency in rice-dependent populations." },
+      { question: "Which GMO concern involves natural ecosystems?", options: ["Gene flow to wild relatives and effects on biodiversity", "Improved crop storage with no ecological interaction", "Reduced pesticide use only", "Only economic corporate profit"], answer: 0, explanation: "GMO plants may interact with wild relatives through pollen/gene flow, raising ecological concerns." },
+      { question: "Labeling of GMO products is a concern because:", options: ["Consumers have a right to know what is in their food to make informed choices", "Labels have no effect on consumer decisions", "Labeling prevents all food production", "GMOs need no regulation"], answer: 0, explanation: "Labeling supports informed consumer choice and transparency." },
     ],
   },
   "mst02-mid-m5-l1": {
@@ -1144,26 +1334,81 @@ const MODULE_OBJECTIVE_SUPPORT: Record<string, ModuleObjectiveSupport> = {
       { question: "Before sharing alarming news online, you should:", options: ["Verify it through credible sources", "Forward it immediately", "Add unverified claims", "Remove context"], answer: 0, explanation: "Verification helps prevent misinformation." },
     ],
   },
-  "mst02-mid-m6": {
+  "mst02-mid-m6-l1": {
     sections: [
-      { type: "h2", content: "Exam Focus: Data Security and Privacy" },
-      { type: "list", content: "Must-know points:", items: ["Security protects data/systems from unauthorized access, damage, or disruption", "Privacy governs proper use of personal data", "RA 10173 is the Data Privacy Act", "Remember transparency, legitimate purpose, and proportionality", "Examples include data breach, identity theft, oversharing, weak passwords, and unauthorized disclosure"] },
+      { type: "h2", content: "Exam Focus: Computer and Data Security" },
+      { type: "list", content: "Must-know security points:", items: ["Computer security protects hardware, software, networks", "Data security protects data confidentiality, integrity, and availability", "Threats: malware, phishing, unauthorized access, ransomware", "Controls: passwords, MFA, antivirus, firewall, encryption, backups, access control"] },
     ],
     quiz: [
-      { question: "Which principle requires informing people how their data will be used?", options: ["Transparency", "Overcollection", "Secrecy", "Random posting"], answer: 0, explanation: "Transparency is a key privacy principle." },
-      { question: "Which is a security control?", options: ["Strong passwords and access control", "Sharing OTP codes", "Posting private records", "Ignoring updates"], answer: 0, explanation: "Passwords and access controls help protect systems and data." },
-      { question: "Data privacy is violated when:", options: ["Personal data is used without proper basis or consent", "Data is protected lawfully", "A user reads a privacy notice", "A system limits access"], answer: 0, explanation: "Improper collection/use/disclosure violates privacy principles." },
+      { question: "Which is NOT a security measure?", options: ["Using the same password for every account", "Enabling multi-factor authentication", "Installing antivirus software", "Creating regular backups"], answer: 0, explanation: "Reusing passwords is a security risk, not a protective measure." },
+      { question: "A firewall helps protect systems by:", options: ["Filtering network traffic based on security rules", "Creating files automatically", "Teaching users to stretch", "Measuring DNA sequences"], answer: 0, explanation: "Firewalls control incoming and outgoing network traffic." },
+      { question: "Phishing attacks work by:", options: ["Tricking users into revealing sensitive data", "Improving antivirus software", "Increasing encryption", "Performing regular backups"], answer: 0, explanation: "Phishing uses deception to steal passwords, card numbers, or personal data." },
     ],
   },
-  "mst02-mid-m7": {
+  "mst02-mid-m6-l2": {
     sections: [
-      { type: "h2", content: "Exam Focus: ICT Impacts" },
-      { type: "list", content: "Use the three-impact framework:", items: ["Economic: jobs, e-commerce, productivity, automation, digital entrepreneurship", "Political: e-governance, participation, campaigns, disinformation, surveillance", "Social: communication, learning, culture, relationships, cyberbullying, screen fatigue, digital divide"] },
+      { type: "h2", content: "Exam Focus: Data Definitions" },
+      { type: "list", content: "Key distinctions for the exam:", items: ["Data = raw facts; Information = processed, meaningful data", "Personal information = data identifying a person", "Sensitive personal information = health, biometrics, financial, religious data — stricter protection"] },
     ],
     quiz: [
-      { question: "Automation belongs mainly to which ICT impact area?", options: ["Economic", "Lower body", "Gene therapy", "Weather"], answer: 0, explanation: "Automation affects jobs, productivity, and industries." },
-      { question: "Online petitions and government portals show ICT's:", options: ["Political impact", "Muscle soreness impact", "GMO impact", "Hydration impact"], answer: 0, explanation: "They involve citizen participation and government services." },
-      { question: "Cyberbullying belongs mainly to which ICT impact area?", options: ["Social impact", "Energy crisis", "Climate adaptation", "Stem cell therapy"], answer: 0, explanation: "Cyberbullying affects social behavior and well-being." },
+      { question: "Which is an example of information rather than raw data?", options: ["A student's GPA calculated from their grades", "A list of random scores with no labels", "An unlabeled spreadsheet column", "A blank form"], answer: 0, explanation: "GPA is data processed into a meaningful measure." },
+      { question: "A person's medical record is:", options: ["Sensitive personal information requiring stricter protection", "Ordinary public data", "Non-personal data", "A network protocol"], answer: 0, explanation: "Health records are among the most sensitive categories of personal data." },
+      { question: "Why does personal information need protection?", options: ["Misuse can cause identity theft, harm, or discrimination", "It has no value to anyone", "It is always publicly available", "It can only help people"], answer: 0, explanation: "Personal data misuse can cause significant real-world harm." },
+    ],
+  },
+  "mst02-mid-m6-l3": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Data Privacy Act" },
+      { type: "list", content: "Key facts for the exam:", items: ["RA 10173 = Data Privacy Act of 2012", "RA 10175 = Cybercrime Prevention Act — different law", "Principles: transparency, legitimate purpose, proportionality", "Rights: be informed, access, correct, object, erasure, file complaint", "NPC = National Privacy Commission — enforces RA 10173"] },
+    ],
+    quiz: [
+      { question: "Legitimate purpose in the Data Privacy Act means:", options: ["Data can only be processed for a lawful and declared purpose", "Organizations can use data for any reason they choose", "Data subjects have no rights", "Only government agencies need to comply"], answer: 0, explanation: "Legitimate purpose limits data use to what was clearly declared and lawful." },
+      { question: "A data subject who wants to remove their no-longer-needed personal data can exercise the right to:", options: ["Erasure or blocking", "Unlimited data collection", "Public disclosure", "No right exists for this"], answer: 0, explanation: "The right to erasure/blocking allows removal of unnecessary or unlawfully processed data." },
+      { question: "Which law focuses on cybercrime rather than data privacy?", options: ["RA 10175", "RA 10173", "RA 9003", "RA 6713"], answer: 0, explanation: "RA 10175 is the Cybercrime Prevention Act; RA 10173 is the Data Privacy Act." },
+    ],
+  },
+  "mst02-mid-m6-l4": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Data Privacy Cases and Issues" },
+      { type: "list", content: "Common scenarios to recognize:", items: ["Data breach: unauthorized access to stored records", "Identity theft: using stolen personal data fraudulently", "Unauthorized disclosure: sharing data without consent", "Oversharing: posting personal info in public spaces", "Organizations must notify affected individuals after a breach"] },
+    ],
+    quiz: [
+      { question: "Which scenario is a data privacy violation?", options: ["A school shares student health records with an unauthorized party", "A user reads a privacy notice before signing up", "An organization uses strong encryption", "A person creates a strong unique password"], answer: 0, explanation: "Sharing data without authority violates data privacy." },
+      { question: "Identity theft usually begins with:", options: ["Unauthorized access to or misuse of personal data", "Installing antivirus software", "Following a privacy policy", "Exercising data subject rights"], answer: 0, explanation: "Identity theft uses stolen personal information for fraud." },
+      { question: "After a data breach, affected persons should be:", options: ["Notified as required by law", "Kept uninformed to avoid panic", "Blamed for the breach", "Asked to delete their own data"], answer: 0, explanation: "Breach notification is a legal and ethical requirement." },
+    ],
+  },
+  "mst02-mid-m7-l1": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Economic Impacts of ICT" },
+      { type: "list", content: "Key economic impacts:", items: ["E-commerce, IT jobs, IT-BPO sector (Philippines)", "Digital entrepreneurship, remote work, automation", "Risks: job displacement, digital divide, platform dependence"] },
+    ],
+    quiz: [
+      { question: "Which Philippine industry is significantly linked to ICT economic impact?", options: ["IT-BPO (Business Process Outsourcing)", "Traditional fishing without technology", "Non-digital agriculture only", "Manual-only government work"], answer: 0, explanation: "The IT-BPO sector is a major ICT-driven industry in the Philippines." },
+      { question: "Which is an economic risk of ICT?", options: ["Job displacement due to automation", "Guaranteed job creation for everyone", "No change in any industry", "Removal of all digital transactions"], answer: 0, explanation: "Automation can displace some categories of workers." },
+      { question: "Remote work is an example of ICT's:", options: ["Economic impact", "Only social impact", "Only genetic impact", "Only climate impact"], answer: 0, explanation: "Remote work changes how labor markets and businesses operate." },
+    ],
+  },
+  "mst02-mid-m7-l2": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Political Impacts of ICT" },
+      { type: "list", content: "Key political impacts:", items: ["E-governance: online public services", "Citizen participation and transparency", "Disinformation, trolls, bots, surveillance, cyberattacks are risks", "Echo chambers from algorithms reinforce existing views"] },
+    ],
+    quiz: [
+      { question: "E-governance refers to:", options: ["Using ICT to deliver and improve government services", "Campaigning only on paper", "Removing internet from government offices", "Physical-only citizen registration"], answer: 0, explanation: "E-governance applies ICT to modernize and improve public administration." },
+      { question: "Troll and bot campaigns are a political risk because they:", options: ["Manipulate public perception through fake accounts", "Always promote truth and transparency", "Represent genuine citizen opinion", "Improve democratic participation"], answer: 0, explanation: "Fake account campaigns manipulate trends and mislead the public." },
+      { question: "ICT can strengthen political transparency by:", options: ["Publishing government spending and records online", "Hiding all public decisions", "Limiting citizen access to information", "Preventing online reporting"], answer: 0, explanation: "Transparency portals and open data empower citizens to hold governments accountable." },
+    ],
+  },
+  "mst02-mid-m7-l3": {
+    sections: [
+      { type: "h2", content: "Exam Focus: Social Impacts of ICT" },
+      { type: "list", content: "Key social impacts:", items: ["Positive: communication, online learning, community building, health info, disaster alerts", "Negative: cyberbullying, screen fatigue, privacy loss, digital divide, misinformation, isolation", "Balance: responsible, critical, and mindful technology use"] },
+    ],
+    quiz: [
+      { question: "Which is a negative social impact of social media?", options: ["Cyberbullying causing emotional harm", "Connecting families across distances", "Faster emergency communication", "Access to online learning materials"], answer: 0, explanation: "Cyberbullying is a harmful social effect of online platforms." },
+      { question: "Digital divide as a social issue means:", options: ["Unequal access to digital tools causes inequality in education and participation", "All people have equal technology access", "Everyone benefits equally from ICT", "No students lack devices or internet"], answer: 0, explanation: "Digital divide limits opportunities for those without reliable access." },
+      { question: "Which habit represents balanced social use of ICT?", options: ["Taking digital breaks and maintaining in-person relationships", "Maximizing screen time always", "Sharing everything without verification", "Avoiding sleep to use more apps"], answer: 0, explanation: "Digital wellness requires conscious management of technology use." },
     ],
   },
   "pe2-mid-m4": {
@@ -1175,6 +1420,10 @@ const MODULE_OBJECTIVE_SUPPORT: Record<string, ModuleObjectiveSupport> = {
       { question: "Health appraisal is done before activity mainly to:", options: ["Identify risks and guide safe participation", "Choose a random song", "Avoid all movement forever", "Test internet speed"], answer: 0, explanation: "Health appraisal supports safe exercise decisions." },
       { question: "Which is part of exercise safety?", options: ["Proper equipment inspection", "Using broken equipment", "Skipping warm-up always", "Ignoring pain"], answer: 0, explanation: "Safe equipment reduces accident and injury risk." },
       { question: "Sports drinks may be considered when activity lasts:", options: ["More than about 60–90 minutes", "Only 2 seconds", "Never under any condition", "Only while sleeping"], answer: 0, explanation: "Longer activity may require electrolytes/carbohydrates depending on intensity and conditions." },
+      { question: "Which clothing material is best for exercise?", options: ["Moisture-wicking synthetic blends", "Very tight rubber suits", "Heavy non-breathable fabrics", "Any clothing regardless of fit"], answer: 0, explanation: "Moisture-wicking, breathable materials regulate temperature and reduce discomfort." },
+      { question: "When should a student seek medical attention for a blister?", options: ["When signs of infection like pus, severe redness, or worsening pain appear", "Whenever a blister forms, immediately", "Only after the blister has completely healed", "Never — all blisters are minor"], answer: 0, explanation: "Infected or severe blisters require professional care." },
+      { question: "To minimize muscle soreness, a student should:", options: ["Warm up properly and progress exercise intensity gradually", "Jump immediately to maximum effort without rest", "Avoid all hydration", "Skip cool-down always"], answer: 0, explanation: "Gradual progression and proper preparation reduce severity of muscle soreness." },
+      { question: "Which statement about risk assessment before exercise is correct?", options: ["Self-assessment helps identify factors that may affect safe exercise participation", "Risk assessment is only for professional athletes", "No risks need to be considered for young students", "Risk assessment replaces all other safety checks"], answer: 0, explanation: "Pre-exercise self-assessment helps anyone exercise more safely." },
     ],
   },
   "pe2-mid-m5-l1": {
@@ -1185,6 +1434,9 @@ const MODULE_OBJECTIVE_SUPPORT: Record<string, ModuleObjectiveSupport> = {
     quiz: [
       { question: "Dynamic stretching prepares the body by:", options: ["Using controlled movement through range of motion", "Holding still for a long time only", "Stopping circulation", "Replacing the workout"], answer: 0, explanation: "Dynamic stretching uses movement to prepare for activity." },
       { question: "Which is best before HIIT?", options: ["Dynamic warm-up", "No warm-up", "Only long static holds", "Immediate maximum effort"], answer: 0, explanation: "A dynamic warm-up prepares the body for intense movement." },
+      { question: "Static stretching differs from dynamic stretching because static stretching:", options: ["Holds a position without active movement", "Uses fast uncontrolled bouncing", "Is only done after exercise always", "Is the same as a full workout"], answer: 0, explanation: "Static stretches hold a fixed position; dynamic stretches use controlled movement." },
+      { question: "Which movement is an example of dynamic stretching?", options: ["Leg swings", "Sitting still in a chair", "Lying flat without moving", "Only very slow breathing"], answer: 0, explanation: "Leg swings are controlled movements through hip range of motion." },
+      { question: "Why should dynamic stretches be controlled and not forced?", options: ["Forced movements can push beyond safe range and increase injury risk", "Forced movements always improve results faster", "Control is unnecessary", "Slow movements have no benefit"], answer: 0, explanation: "Controlled dynamic movements improve preparation safely." },
     ],
   },
   "pe2-mid-m5-l2": {
@@ -1195,6 +1447,9 @@ const MODULE_OBJECTIVE_SUPPORT: Record<string, ModuleObjectiveSupport> = {
     quiz: [
       { question: "If form breaks during HIIT, the best action is to:", options: ["Slow down, modify, or rest", "Move faster", "Ignore technique", "Hold breath"], answer: 0, explanation: "Maintaining form is essential for safety." },
       { question: "Proper landing during jumps should be:", options: ["Soft and controlled", "Stiff and painful", "Random and twisted", "Ignored"], answer: 0, explanation: "Soft landing reduces stress on joints." },
+      { question: "During a push-up, the body should be:", options: ["Straight from head to heels with core braced", "Arched heavily at the lower back", "Bent sharply at the hips", "Completely relaxed with no control"], answer: 0, explanation: "A straight body position protects the spine and trains the intended muscles." },
+      { question: "Why should breathing never be held during intense exercise?", options: ["Holding breath can increase pressure and reduce performance and safety", "Holding breath improves oxygen levels", "Breathing is optional during exercise", "Breathing out slows the exercise"], answer: 0, explanation: "Continuous breathing maintains oxygen delivery and helps regulate effort safely." },
+      { question: "Which is the safest initial version of an exercise for a beginner?", options: ["Easier, lower-impact variation with proper form", "The most advanced version immediately", "Any variation with eyes closed", "Maximum speed with no control"], answer: 0, explanation: "Beginners should start with simpler, safer variations and build up gradually." },
     ],
   },
   "pe2-mid-m5-l3": {
@@ -1205,6 +1460,9 @@ const MODULE_OBJECTIVE_SUPPORT: Record<string, ModuleObjectiveSupport> = {
     quiz: [
       { question: "In a 30 seconds exercise + 30 seconds rest setup, the 30 seconds exercise part is the:", options: ["Work interval", "Cool-down only", "Whole semester", "Health appraisal"], answer: 0, explanation: "The active high-effort period is the work interval." },
       { question: "Recovery interval is included to:", options: ["Manage fatigue and support safe repeated effort", "Make the workout dangerous", "Remove all rest", "Stop adaptation"], answer: 0, explanation: "Recovery makes interval training safer and more sustainable." },
+      { question: "HIIT stands for:", options: ["High Intensity Interval Training", "Healthy Indoor Information Task", "Hydraulic Interval Integration Testing", "High Impact Isolation Technique"], answer: 0, explanation: "HIIT alternates high-intensity effort with recovery periods." },
+      { question: "A beginner starting HIIT should use:", options: ["Shorter work intervals, longer recovery, and low-impact variations", "Maximum intervals immediately", "No recovery periods", "Only jumping exercises on day one"], answer: 0, explanation: "Beginners need more recovery and lower-impact options to adapt safely." },
+      { question: "One complete cycle of work interval plus recovery is called:", options: ["A round or set", "The entire workout", "The cool-down only", "A health appraisal"], answer: 0, explanation: "Round/set refers to one cycle of effort followed by rest." },
     ],
   },
   "pe2-mid-m5-l4": {
@@ -1215,6 +1473,10 @@ const MODULE_OBJECTIVE_SUPPORT: Record<string, ModuleObjectiveSupport> = {
     quiz: [
       { question: "Which FITT variable tells how often exercise is done?", options: ["Frequency", "Intensity", "Time", "Type"], answer: 0, explanation: "Frequency means how often." },
       { question: "A program that becomes harder slowly over time uses:", options: ["Progression", "Overexertion", "Neglect", "Randomization only"], answer: 0, explanation: "Progression gradually increases demand." },
+      { question: "The 'T' for Time in FITT refers to:", options: ["How long each session lasts", "The type of exercise only", "The training goal", "The temperature outside"], answer: 0, explanation: "Time controls the duration of each exercise session." },
+      { question: "A SMART fitness goal is Specific, Measurable, Attainable, Relevant, and:", options: ["Time-bound", "Totally random", "Theoretical only", "Not measurable"], answer: 0, explanation: "SMART goals have a clear timeline for achieving them." },
+      { question: "Why must rest days be included in a fitness program?", options: ["Rest allows muscles and the body to recover and adapt", "Rest removes all progress", "Rest makes the program shorter with no benefit", "Rest is unnecessary for students"], answer: 0, explanation: "Recovery is essential for adaptation, injury prevention, and long-term progress." },
+      { question: "Which best describes an individualized fitness program?", options: ["A plan adjusted to a person's goals, health, fitness level, and available resources", "The same plan copied from any athlete", "A single maximum-intensity plan for everyone", "A plan without any assessment"], answer: 0, explanation: "Programs must be adapted to the individual for safety and effectiveness." },
     ],
   },
   "pe2-mid-m6-l1": {
@@ -1225,6 +1487,10 @@ const MODULE_OBJECTIVE_SUPPORT: Record<string, ModuleObjectiveSupport> = {
     quiz: [
       { question: "Which cue is correct for plank?", options: ["Brace core and keep neutral spine", "Let hips sag", "Hold breath always", "Twist the neck"], answer: 0, explanation: "Neutral spine and core bracing improve plank safety." },
       { question: "Bird dog trains:", options: ["Core control and coordination", "Only calves", "Only biceps", "Only hydration"], answer: 0, explanation: "Bird dog challenges stability while limbs move." },
+      { question: "A side plank primarily targets:", options: ["Lateral core stability and obliques", "Only hip flexors", "Only neck muscles", "Only fingers"], answer: 0, explanation: "Side plank challenges the lateral core muscles." },
+      { question: "The dead bug exercise trains:", options: ["Core control while moving the limbs", "Only sprint speed", "Only shoulder press", "Only ankle rotation"], answer: 0, explanation: "Dead bug trains trunk stability while managing limb movement." },
+      { question: "Why is core strength important for lower body exercises?", options: ["It stabilizes the trunk, transferring force and protecting the spine during movement", "It has no relation to lower body exercise", "It only improves arm strength", "It replaces all lower body muscle groups"], answer: 0, explanation: "Core stability supports safe and efficient lower body movement." },
+      { question: "During a mountain climber exercise, the hands should be:", options: ["Stable on the ground with wrists under shoulders", "Moving randomly", "Crossed behind the back", "On the face"], answer: 0, explanation: "Stable hands protect shoulders and allow controlled core engagement." },
     ],
   },
   "pe2-mid-m6-l2": {
@@ -1235,6 +1501,10 @@ const MODULE_OBJECTIVE_SUPPORT: Record<string, ModuleObjectiveSupport> = {
     quiz: [
       { question: "Which muscle group is strongly used in glute bridges?", options: ["Glutes", "Forearms only", "Neck only", "Fingers only"], answer: 0, explanation: "Glute bridges focus on hip extension and glute activation." },
       { question: "Before adding jumps or weights, a student should first:", options: ["Master controlled bodyweight form", "Skip basics", "Ignore pain", "Use maximum load immediately"], answer: 0, explanation: "Progression starts with safe movement quality." },
+      { question: "Quadriceps are primarily trained by:", options: ["Squats and lunges", "Only arm curls", "Only planks", "Only stretching"], answer: 0, explanation: "Squats and lunges train the front thigh muscles (quadriceps)." },
+      { question: "Calf raises focus on:", options: ["Ankle plantar flexion and lower leg muscles", "Upper chest only", "Core rotation only", "Shoulder muscles only"], answer: 0, explanation: "Calf raises strengthen the gastrocnemius and soleus muscles of the lower leg." },
+      { question: "Which safety cue is most important during lower body exercises?", options: ["Knees should track in line with toes without collapsing inward", "Knees can twist in any direction", "No warm-up is needed for lower body", "Pain is the goal"], answer: 0, explanation: "Proper knee alignment prevents joint stress and injury." },
+      { question: "A lateral lunge primarily trains:", options: ["Hip abductors, adductors, and inner thigh", "Only shoulder press", "Only elbow flexion", "Only back extension"], answer: 0, explanation: "Lateral lunges train the inner and outer thigh muscles through side-to-side movement." },
     ],
   },
 };
