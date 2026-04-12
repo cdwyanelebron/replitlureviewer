@@ -75,6 +75,7 @@
     "zod": "catalog:"
   },
   "dependencies": {
-    "JSCPP": "^2.0.9"
+    "JSCPP": "^2.0.9",
+    "babel-polyfill": "^6.26.0"
   }
 }
