@@ -1,6 +1,6 @@
-import { useState, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Topic, Subject, ContentSection, QuizQuestion } from "../data/subjects";
-import { ChevronLeft, ChevronRight, CheckSquare, BookOpen, RotateCcw, Play, Copy, Check, Terminal } from "lucide-react";
+import { ChevronLeft, ChevronRight, CheckSquare, BookOpen, RotateCcw, Play, Copy, Check, Terminal, Download, Upload, Save } from "lucide-react";
 
 interface ContentAreaProps {
   topic: Topic;
@@ -180,14 +180,35 @@ function ReviewContent({ sections }: { sections: ContentSection[] }) {
 }
 
 function CodeBlock({ code: initialCode, language, codeInput }: { code: string; language: string; codeInput?: string }) {
-  const [code, setCode] = useState(initialCode);
-  const [stdinVal, setStdinVal] = useState(codeInput ?? "");
+  const storageKey = useMemo(() => {
+    let hash = 0;
+    const source = `${language}:${initialCode}`;
+    for (let i = 0; i < source.length; i++) hash = ((hash << 5) - hash + source.charCodeAt(i)) | 0;
+    return `lu-reviewer-code-${language}-${Math.abs(hash)}`;
+  }, [initialCode, language]);
+
+  const [code, setCode] = useState(() => localStorage.getItem(`${storageKey}:code`) ?? initialCode);
+  const [stdinVal, setStdinVal] = useState(() => localStorage.getItem(`${storageKey}:input`) ?? codeInput ?? "");
   const [showInput, setShowInput] = useState(!!codeInput);
   const [output, setOutput] = useState<string | null>(null);
   const [running, setRunning] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [saved, setSaved] = useState(false);
   const [isError, setIsError] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
   const jscppRef = useRef<null | { run: (code: string, input: string, cfg: object) => void }>(null);
+
+  useEffect(() => {
+    localStorage.setItem(`${storageKey}:code`, code);
+    localStorage.setItem(`${storageKey}:input`, stdinVal);
+  }, [code, stdinVal, storageKey]);
+
+  useEffect(() => {
+    setCode(localStorage.getItem(`${storageKey}:code`) ?? initialCode);
+    setStdinVal(localStorage.getItem(`${storageKey}:input`) ?? codeInput ?? "");
+    setOutput(null);
+    setIsError(false);
+  }, [initialCode, codeInput, storageKey]);
 
   const getJSCPP = async () => {
     if (jscppRef.current) return jscppRef.current;
@@ -204,20 +225,32 @@ function CodeBlock({ code: initialCode, language, codeInput }: { code: string; l
     let out = "";
     try {
       const JSCPP = await getJSCPP();
-      JSCPP.run(code, stdinVal, {
+      const exitCode = JSCPP.run(code, stdinVal, {
         stdio: { write: (s: string) => { out += s; } },
         unsigned_overflow: "warn",
       });
-      setOutput(out.trim() || "(no output)");
+      const finalOutput = out.trimEnd();
+      setOutput(`${finalOutput || "(no output)"}\n\nProgram finished with exit code ${exitCode ?? 0}.`);
     } catch (e: unknown) {
       const msg = e instanceof Error ? e.message : String(e);
-      setOutput("Error: " + msg.split("\n")[0]);
+      const cleaned = msg
+        .replace(/^ERROR:\s*/i, "")
+        .replace(/\n{3,}/g, "\n\n")
+        .trim();
+      setOutput(`Compiler/runtime error:\n${cleaned}\n\nCheck syntax, missing semicolons/braces, #include lines, scanf format, and whether your Input panel has enough values.`);
       setIsError(true);
     }
     setRunning(false);
   };
 
-  const reset = () => { setCode(initialCode); setOutput(null); setIsError(false); };
+  const reset = () => {
+    setCode(initialCode);
+    setStdinVal(codeInput ?? "");
+    localStorage.removeItem(`${storageKey}:code`);
+    localStorage.removeItem(`${storageKey}:input`);
+    setOutput(null);
+    setIsError(false);
+  };
 
   const copyCode = () => {
     navigator.clipboard.writeText(code);
@@ -225,22 +258,53 @@ function CodeBlock({ code: initialCode, language, codeInput }: { code: string; l
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const saveCode = () => {
+    localStorage.setItem(`${storageKey}:code`, code);
+    localStorage.setItem(`${storageKey}:input`, stdinVal);
+    setSaved(true);
+    setTimeout(() => setSaved(false), 2000);
+  };
+
+  const downloadCode = () => {
+    const ext = language.toLowerCase().includes("c") ? "c" : "txt";
+    const blob = new Blob([code], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `cc1202-practice.${ext}`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  };
+
+  const loadCodeFile = (file?: File) => {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      setCode(String(reader.result ?? ""));
+      setOutput(null);
+      setIsError(false);
+    };
+    reader.readAsText(file);
+  };
+
   const lineCount = code.split("\n").length;
 
   return (
-    <div className="my-4 rounded-lg border border-border overflow-hidden text-sm">
-      <div className="flex items-center justify-between px-3 py-1.5 bg-muted/50 border-b border-border flex-wrap gap-1">
+    <div className="my-5 rounded-xl border border-border overflow-hidden text-sm shadow-sm">
+      <div className="flex items-center justify-between px-3 py-2 bg-muted/50 border-b border-border flex-wrap gap-2">
         <div className="flex items-center gap-1.5 text-xs font-mono text-muted-foreground">
           <Terminal size={12} />
-          <span className="font-semibold">{language.toUpperCase()}</span>
-          <span className="text-green-600 dark:text-green-400 text-[10px]">● offline</span>
+          <span className="font-semibold">{language.toUpperCase()} browser compiler</span>
+          <span className="text-green-600 dark:text-green-400 text-[10px]">● runs locally after load</span>
         </div>
         <div className="flex gap-1 flex-wrap">
           <button
             onClick={() => setShowInput(v => !v)}
             className="text-xs px-2 py-1 rounded border border-border bg-background hover:bg-muted transition-colors"
           >
-            {showInput ? "Hide Input" : "＋ Input"}
+            {showInput ? "Hide Input Panel" : "＋ Open Input Panel"}
           </button>
           <button
             onClick={copyCode}
@@ -249,6 +313,40 @@ function CodeBlock({ code: initialCode, language, codeInput }: { code: string; l
             {copied ? <Check size={11} className="text-green-500" /> : <Copy size={11} />}
             {copied ? "Copied!" : "Copy"}
           </button>
+          <button
+            onClick={saveCode}
+            className="flex items-center gap-1 text-xs px-2 py-1 rounded border border-border bg-background hover:bg-muted transition-colors"
+            title="Save code and input in this browser"
+          >
+            {saved ? <Check size={11} className="text-green-500" /> : <Save size={11} />}
+            {saved ? "Saved" : "Save"}
+          </button>
+          <button
+            onClick={downloadCode}
+            className="flex items-center gap-1 text-xs px-2 py-1 rounded border border-border bg-background hover:bg-muted transition-colors"
+            title="Download the whole C file"
+          >
+            <Download size={11} />
+            .c File
+          </button>
+          <button
+            onClick={() => fileInputRef.current?.click()}
+            className="flex items-center gap-1 text-xs px-2 py-1 rounded border border-border bg-background hover:bg-muted transition-colors"
+            title="Load a saved C file"
+          >
+            <Upload size={11} />
+            Load
+          </button>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept=".c,.h,.cpp,.txt,text/plain"
+            className="hidden"
+            onChange={e => {
+              loadCodeFile(e.target.files?.[0]);
+              e.currentTarget.value = "";
+            }}
+          />
           <button
             onClick={reset}
             className="flex items-center gap-1 text-xs px-2 py-1 rounded border border-border bg-background hover:bg-muted transition-colors"
@@ -268,11 +366,15 @@ function CodeBlock({ code: initialCode, language, codeInput }: { code: string; l
         </div>
       </div>
 
+      <div className="px-3 py-2 bg-green-50 text-green-900 dark:bg-green-950/30 dark:text-green-200 border-b border-border text-xs leading-5">
+        Works inside the browser for CC1202 practice programs. Use the Input panel for <code className="font-mono">scanf</code> values, one value per line. If the code is wrong, the compiler will show the error below.
+      </div>
+
       <textarea
         value={code}
         onChange={e => setCode(e.target.value)}
-        className="w-full bg-gray-950 text-green-300 p-4 font-mono text-xs leading-5 outline-none resize-y border-none"
-        rows={Math.max(lineCount, 10)}
+        className="w-full min-h-[340px] bg-gray-950 text-green-300 p-4 font-mono text-sm leading-6 outline-none resize-y border-none"
+        rows={Math.max(lineCount + 2, 16)}
         spellCheck={false}
         autoComplete="off"
         autoCorrect="off"
@@ -281,15 +383,15 @@ function CodeBlock({ code: initialCode, language, codeInput }: { code: string; l
 
       {showInput && (
         <div className="border-t border-border">
-          <div className="px-3 py-1 bg-muted/40 text-xs font-mono text-muted-foreground border-b border-border">
-            stdin — type input values (one per line):
+          <div className="px-3 py-2 bg-yellow-50 text-yellow-900 dark:bg-yellow-950/30 dark:text-yellow-200 text-xs font-mono border-b border-border">
+            Input panel for scanf / stdin — type the exact values your program asks for, one value per line:
           </div>
           <textarea
             value={stdinVal}
             onChange={e => setStdinVal(e.target.value)}
-            className="w-full bg-gray-900 text-yellow-200 p-3 font-mono text-xs leading-5 outline-none resize-y border-none"
-            rows={5}
-            placeholder={"e.g.\n10\n20\n30"}
+            className="w-full min-h-[180px] bg-gray-900 text-yellow-200 p-4 font-mono text-sm leading-6 outline-none resize-y border-none"
+            rows={8}
+            placeholder={"Example for scanf(\"%d %d\", &a, &b):\n10\n20\n\nExample for scanf(\"%s\", name):\nJuan"}
             spellCheck={false}
           />
         </div>
@@ -297,11 +399,11 @@ function CodeBlock({ code: initialCode, language, codeInput }: { code: string; l
 
       {output !== null && (
         <div className="border-t border-border">
-          <div className="px-3 py-1.5 bg-muted/30 border-b border-border text-xs font-mono text-muted-foreground flex items-center gap-1.5">
+          <div className="px-3 py-2 bg-muted/30 border-b border-border text-xs font-mono text-muted-foreground flex items-center gap-1.5">
             <Terminal size={11} />
-            Output:
+            Output / errors:
           </div>
-          <pre className={`p-3 text-xs font-mono whitespace-pre-wrap m-0 ${isError ? "bg-red-950 text-red-300" : "bg-gray-900 text-white"}`}>
+          <pre className={`min-h-[160px] p-4 text-sm leading-6 font-mono whitespace-pre-wrap m-0 ${isError ? "bg-red-950 text-red-200" : "bg-gray-900 text-white"}`}>
             {output}
           </pre>
         </div>

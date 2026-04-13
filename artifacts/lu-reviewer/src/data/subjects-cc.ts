@@ -355,6 +355,45 @@ export const CC_SUBJECTS: Subject[] = [
             id: "cc1202-m5", title: "Module 5: Arrays",
             topics: [
               {
+                id: "cc1202-compiler-guide", title: "C Compiler Practice Guide",
+                content: {
+                  heading: "CC1202 C Compiler Practice Guide", term: "MIDTERM", module: "Module 5–7 Practice Compiler",
+                  objectives: ["Run CC1202 C examples directly in the reviewer", "Use the input panel correctly for scanf programs", "Save, download, and reload full C files for practice", "Read compiler and runtime errors when code is incorrect"],
+                  sections: [
+                    { type: "note", content: "The practice compiler runs in the browser after the reviewer is loaded. It is intended for CC1202 module examples: arrays, passing arrays to functions, and strings. It does not need a separate server just to run the sample code." },
+                    { type: "h2", content: "How to Use the Compiler" },
+                    { type: "list", content: "Recommended workflow:", items: ["Edit the C code in the large black code editor.", "If the program uses scanf(), open the Input Panel and type the values there, one value per line.", "Click Run to execute the program.", "Check Output / errors below the editor.", "Use Save to keep your edited code in the browser.", "Use .c File to download the whole C file, then Load to bring a saved file back into the editor."] },
+                    { type: "table", content: "Compiler Buttons", headers: ["Button", "Use"], rows: [["Open Input Panel", "Shows the large stdin/input area for scanf values."], ["Copy", "Copies the whole code."], ["Save", "Saves code and input in the same browser/device."], [".c File", "Downloads the whole code as a C file."], ["Load", "Loads a saved .c/.h/.cpp/.txt file into the editor."], ["Reset", "Returns the example to the original module code."], ["Run", "Executes the code and shows output or errors."]] },
+                    { type: "h2", content: "Input Panel Rule for scanf" },
+                    { type: "text", content: "When the C program has scanf(), the program is waiting for user input. Since this reviewer uses a browser compiler, you must type the needed input values in the Input Panel before pressing Run." },
+                    { type: "table", content: "Input Examples", headers: ["C Code", "What to Type in Input Panel"], rows: [["scanf(\"%d\", &age);", "18"], ["scanf(\"%d%d\", &a, &b);", "10\n20"], ["scanf(\"%s\", name);", "Juan"], ["for(i=0; i<5; i++) scanf(\"%d\", &arr[i]);", "11\n22\n33\n44\n55"]] },
+                    { type: "h2", content: "Working Example with Input" },
+                    { type: "code", language: "c", codeInput: "10\n20", content: `#include<stdio.h>
+
+int main()
+{
+    int a, b;
+
+    printf("Enter two numbers: ");
+    scanf("%d%d", &a, &b);
+
+    printf("Sum = %d\\n", a + b);
+
+    return 0;
+}` },
+                    { type: "h2", content: "Common Errors You Should Recognize" },
+                    { type: "table", content: "Error Guide", headers: ["Problem", "Usual Cause", "Fix"], rows: [["Parsing / syntax error", "Missing semicolon, quote, brace, or parenthesis.", "Check the exact line shown in the error."], ["No or wrong output", "Input panel is empty or values do not match scanf().", "Add enough input values, one per line."], ["Unexpected array result", "Array index out of bounds or uninitialized variable.", "Remember index starts at 0 and initialize sums/counters."], ["String reads only first word", "scanf(\"%s\") stops at spaces.", "Use one-word input for module examples, or use fgets in advanced practice."], ["Unsupported feature", "The browser compiler supports CC1202 basics, but not every advanced C library/system feature.", "Use standard module code: stdio.h, string.h, arrays, loops, functions, and strings."]] },
+                    { type: "note", content: "Goal: if the code is valid CC1202-level C, it should run. If the code is written incorrectly, the compiler should show an error so you can debug it like in laboratory practice." },
+                  ],
+                  quiz: [
+                    { question: "Where should you type values needed by scanf()?", options: ["Input Panel", "Search bar", "Subject tab", "Dark mode button"], answer: 0, explanation: "scanf reads from stdin, so values must be placed in the Input Panel before running." },
+                    { question: "For scanf(\"%d%d\", &a, &b), which input is correct?", options: ["10 then 20 in the Input Panel", "Only one value", "No input needed", "Put values in the code title"], answer: 0, explanation: "Two %d specifiers need two integer inputs." },
+                    { question: "What does the .c File button do?", options: ["Downloads the whole code as a C file", "Deletes the code", "Opens quiz mode", "Changes the subject"], answer: 0, explanation: "The .c File button saves the current full code editor content as a C file." },
+                    { question: "If code is invalid, the compiler should:", options: ["Show an error", "Silently pass it", "Change subjects", "Erase all notes"], answer: 0, explanation: "Invalid syntax or runtime problems should produce an error message for debugging." },
+                  ],
+                },
+              },
+              {
                 id: "cc1202-m5-l1", title: "Lesson 1: What is an Array?",
                 content: {
                   heading: "Lesson 1: What is an Array?", term: "MIDTERM", module: "Module 5: Arrays",
