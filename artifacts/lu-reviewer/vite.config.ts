@@ -26,6 +26,8 @@ if (!basePath) {
   );
 }
 
+const escapedBasePath = basePath.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
 export default defineConfig({
   base: basePath,
   plugins: [
@@ -65,6 +67,13 @@ export default defineConfig({
     port,
     host: "0.0.0.0",
     allowedHosts: true,
+    proxy: {
+      [`${basePath}api`]: {
+        target: process.env.API_SERVER_URL ?? "http://localhost:8080",
+        changeOrigin: true,
+        rewrite: (requestPath) => requestPath.replace(new RegExp(`^${escapedBasePath}api`), "/api"),
+      },
+    },
     fs: {
       strict: true,
       deny: ["**/.*"],

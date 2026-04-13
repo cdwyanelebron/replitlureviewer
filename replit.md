@@ -70,7 +70,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
   - CC 1202 (Intermediate C Programming): MIDTERM ONLY. Modules 5-7 restructured with lesson-numbered topics from PDF TOC. Module 5: 9 lessons + Assessment Task. Module 6: 2 lessons + Assessment Task. Module 7: Lessons 1-4 + Lessons 5.1-5.6 string library functions + Assessment Task. W3Schools-style chunked C code examples.
   - IT 1201 (Discrete Mathematics): MIDTERM ONLY. Modules 5-7 with lesson-numbered topics. Module 5 Counting (L1-2 + Assessment Task), Module 6 Pigeonhole (L1-2 + Assessment Task), Module 7 Permutations/Combinations (L1-3 + Assessment Task).
   - All Assessment Task topics have 10-20 comprehensive exam questions per module.
-  - CC1202 code compiler UI: browser/local JSCPP runner with larger editable code area, large stdin/input panel below code, clearer runtime/compiler errors, local browser save, whole-file `.c` download, and load saved `.c/.h/.cpp/.txt` files back into the editor. Added a CC1202 Compiler Practice Guide topic before Module 5 lessons.
+  - CC1202 code compiler UI: primary run path now uses the API server's real GCC C compiler endpoint, with browser JSCPP retained only as fallback. The UI focuses on the editable example code, uses compact Program Input only for `scanf`/stdin examples, shows compiler/runtime output below the editor, supports local browser save, whole-file `.c` download, and loading saved `.c/.h/.cpp/.txt` files back into the editor. Added a CC1202 Compiler Practice Guide topic before Module 5 lessons.
 
 ## Key Commands
 

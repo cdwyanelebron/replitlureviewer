@@ -179,6 +179,16 @@ function ReviewContent({ sections }: { sections: ContentSection[] }) {
   );
 }
 
+type CompilerResponse = {
+  ok: boolean;
+  stage?: "request" | "compile" | "run" | "server";
+  exitCode?: number | null;
+  timedOut?: boolean;
+  stdout?: string;
+  stderr?: string;
+  error?: string;
+};
+
 function CodeBlock({ code: initialCode, language, codeInput }: { code: string; language: string; codeInput?: string }) {
   const storageKey = useMemo(() => {
     let hash = 0;
@@ -189,12 +199,12 @@ function CodeBlock({ code: initialCode, language, codeInput }: { code: string; l
 
   const [code, setCode] = useState(() => localStorage.getItem(`${storageKey}:code`) ?? initialCode);
   const [stdinVal, setStdinVal] = useState(() => localStorage.getItem(`${storageKey}:input`) ?? codeInput ?? "");
-  const [showInput, setShowInput] = useState(!!codeInput);
   const [output, setOutput] = useState<string | null>(null);
   const [running, setRunning] = useState(false);
   const [copied, setCopied] = useState(false);
   const [saved, setSaved] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [runnerLabel, setRunnerLabel] = useState("GCC C compiler");
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const jscppRef = useRef<null | { run: (code: string, input: string, cfg: object) => void }>(null);
 
@@ -218,27 +228,99 @@ function CodeBlock({ code: initialCode, language, codeInput }: { code: string; l
     return jscppRef.current;
   };
 
+  const runWithGcc = async (): Promise<CompilerResponse> => {
+    const baseUrl = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+    const endpoints = [
+      `${baseUrl}api/c/run`,
+      "/api/c/run",
+    ];
+
+    let lastError = "";
+
+    for (const endpoint of endpoints) {
+      try {
+        const controller = new AbortController();
+        const timeout = window.setTimeout(() => controller.abort(), 12_000);
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ code, input: stdinVal }),
+          signal: controller.signal,
+        });
+        window.clearTimeout(timeout);
+
+        if (!response.ok && response.status !== 400 && response.status !== 408 && response.status !== 413) {
+          lastError = `Compiler server returned HTTP ${response.status}.`;
+          continue;
+        }
+
+        return await response.json() as CompilerResponse;
+      } catch (error: unknown) {
+        lastError = error && typeof error === "object" && "message" in error ? String(error.message) : String(error);
+      }
+    }
+
+    throw new Error(lastError || "Compiler server is not reachable.");
+  };
+
+  const formatGccResult = (result: CompilerResponse) => {
+    const stdout = (result.stdout ?? "").trimEnd();
+    const stderr = (result.stderr ?? "").trimEnd();
+
+    if (result.stage === "compile") {
+      return `Compilation failed:\n${stderr || stdout || result.error || "Unknown compile error."}`;
+    }
+
+    if (result.timedOut) {
+      return `${stdout ? `${stdout}\n\n` : ""}${stderr ? `${stderr}\n\n` : ""}${result.error || "Program stopped because it ran too long."}`;
+    }
+
+    if (result.error && result.stage !== "run") {
+      return result.error;
+    }
+
+    const parts = [];
+    if (stdout) parts.push(stdout);
+    if (stderr) parts.push(`Warnings/errors:\n${stderr}`);
+    if (!stdout && !stderr) parts.push("(no output)");
+    parts.push(`Program finished with exit code ${result.exitCode ?? 0}.`);
+    return parts.join("\n\n");
+  };
+
+  const runWithBrowserFallback = async () => {
+    let out = "";
+    const JSCPP = await getJSCPP();
+    const exitCode = JSCPP.run(code, stdinVal, {
+      stdio: { write: (s: string) => { out += s; } },
+      unsigned_overflow: "warn",
+    });
+    const finalOutput = out.trimEnd();
+    return `${finalOutput || "(no output)"}\n\nProgram finished with exit code ${exitCode ?? 0}.\n\nRunner: browser fallback.`;
+  };
+
   const runCode = async () => {
     setRunning(true);
     setOutput(null);
     setIsError(false);
-    let out = "";
     try {
-      const JSCPP = await getJSCPP();
-      const exitCode = JSCPP.run(code, stdinVal, {
-        stdio: { write: (s: string) => { out += s; } },
-        unsigned_overflow: "warn",
-      });
-      const finalOutput = out.trimEnd();
-      setOutput(`${finalOutput || "(no output)"}\n\nProgram finished with exit code ${exitCode ?? 0}.`);
+      const result = await runWithGcc();
+      setRunnerLabel("GCC C compiler");
+      setOutput(formatGccResult(result));
+      setIsError(!result.ok);
     } catch (e: unknown) {
-      const msg = e instanceof Error ? e.message : String(e);
-      const cleaned = msg
-        .replace(/^ERROR:\s*/i, "")
-        .replace(/\n{3,}/g, "\n\n")
-        .trim();
-      setOutput(`Compiler/runtime error:\n${cleaned}\n\nCheck syntax, missing semicolons/braces, #include lines, scanf format, and whether your Input panel has enough values.`);
-      setIsError(true);
+      try {
+        const fallbackOutput = await runWithBrowserFallback();
+        setRunnerLabel("browser fallback");
+        setOutput(fallbackOutput);
+      } catch (fallbackError: unknown) {
+        const msg = fallbackError && typeof fallbackError === "object" && "message" in fallbackError ? String(fallbackError.message) : String(fallbackError);
+        const cleaned = msg
+          .replace(/^ERROR:\s*/i, "")
+          .replace(/\n{3,}/g, "\n\n")
+          .trim();
+        setOutput(`Compiler/runtime error:\n${cleaned}\n\nCheck syntax, missing semicolons/braces, #include lines, scanf format, and input values.`);
+        setIsError(true);
+      }
     }
     setRunning(false);
   };
@@ -290,32 +372,27 @@ function CodeBlock({ code: initialCode, language, codeInput }: { code: string; l
   };
 
   const lineCount = code.split("\n").length;
+  const hasInput = /scanf\s*\(|getchar\s*\(|gets\s*\(|fgets\s*\(/.test(code);
 
   return (
-    <div className="my-5 rounded-xl border border-border overflow-hidden text-sm shadow-sm">
-      <div className="flex items-center justify-between px-3 py-2 bg-muted/50 border-b border-border flex-wrap gap-2">
-        <div className="flex items-center gap-1.5 text-xs font-mono text-muted-foreground">
+    <div className="my-5 rounded-xl border border-border overflow-hidden text-sm shadow-sm bg-background">
+      <div className="flex items-center justify-between px-3 py-2 bg-slate-950 text-slate-100 border-b border-slate-800 flex-wrap gap-2">
+        <div className="flex items-center gap-1.5 text-xs font-mono">
           <Terminal size={12} />
-          <span className="font-semibold">{language.toUpperCase()} browser compiler</span>
-          <span className="text-green-600 dark:text-green-400 text-[10px]">● runs locally after load</span>
+          <span className="font-semibold">{language.toUpperCase()} compiler</span>
+          <span className="text-green-400 text-[10px]">● {runnerLabel}</span>
         </div>
         <div className="flex gap-1 flex-wrap">
           <button
-            onClick={() => setShowInput(v => !v)}
-            className="text-xs px-2 py-1 rounded border border-border bg-background hover:bg-muted transition-colors"
-          >
-            {showInput ? "Hide Input Panel" : "＋ Open Input Panel"}
-          </button>
-          <button
             onClick={copyCode}
-            className="flex items-center gap-1 text-xs px-2 py-1 rounded border border-border bg-background hover:bg-muted transition-colors"
+            className="flex items-center gap-1 text-xs px-2 py-1 rounded border border-slate-700 bg-slate-900 hover:bg-slate-800 transition-colors"
           >
             {copied ? <Check size={11} className="text-green-500" /> : <Copy size={11} />}
             {copied ? "Copied!" : "Copy"}
           </button>
           <button
             onClick={saveCode}
-            className="flex items-center gap-1 text-xs px-2 py-1 rounded border border-border bg-background hover:bg-muted transition-colors"
+            className="flex items-center gap-1 text-xs px-2 py-1 rounded border border-slate-700 bg-slate-900 hover:bg-slate-800 transition-colors"
             title="Save code and input in this browser"
           >
             {saved ? <Check size={11} className="text-green-500" /> : <Save size={11} />}
@@ -323,7 +400,7 @@ function CodeBlock({ code: initialCode, language, codeInput }: { code: string; l
           </button>
           <button
             onClick={downloadCode}
-            className="flex items-center gap-1 text-xs px-2 py-1 rounded border border-border bg-background hover:bg-muted transition-colors"
+            className="flex items-center gap-1 text-xs px-2 py-1 rounded border border-slate-700 bg-slate-900 hover:bg-slate-800 transition-colors"
             title="Download the whole C file"
           >
             <Download size={11} />
@@ -331,7 +408,7 @@ function CodeBlock({ code: initialCode, language, codeInput }: { code: string; l
           </button>
           <button
             onClick={() => fileInputRef.current?.click()}
-            className="flex items-center gap-1 text-xs px-2 py-1 rounded border border-border bg-background hover:bg-muted transition-colors"
+            className="flex items-center gap-1 text-xs px-2 py-1 rounded border border-slate-700 bg-slate-900 hover:bg-slate-800 transition-colors"
             title="Load a saved C file"
           >
             <Upload size={11} />
@@ -349,7 +426,7 @@ function CodeBlock({ code: initialCode, language, codeInput }: { code: string; l
           />
           <button
             onClick={reset}
-            className="flex items-center gap-1 text-xs px-2 py-1 rounded border border-border bg-background hover:bg-muted transition-colors"
+            className="flex items-center gap-1 text-xs px-2 py-1 rounded border border-slate-700 bg-slate-900 hover:bg-slate-800 transition-colors"
             title="Reset to original"
           >
             <RotateCcw size={11} />
@@ -367,13 +444,13 @@ function CodeBlock({ code: initialCode, language, codeInput }: { code: string; l
       </div>
 
       <div className="px-3 py-2 bg-green-50 text-green-900 dark:bg-green-950/30 dark:text-green-200 border-b border-border text-xs leading-5">
-        Works inside the browser for CC1202 practice programs. Use the Input panel for <code className="font-mono">scanf</code> values, one value per line. If the code is wrong, the compiler will show the error below.
+        Edit the example directly, then press Run. This uses real C compilation when online; input is only needed for programs with <code className="font-mono">scanf</code>.
       </div>
 
       <textarea
         value={code}
         onChange={e => setCode(e.target.value)}
-        className="w-full min-h-[340px] bg-gray-950 text-green-300 p-4 font-mono text-sm leading-6 outline-none resize-y border-none"
+        className="w-full min-h-[390px] bg-gray-950 text-green-300 p-4 font-mono text-sm leading-6 outline-none resize-y border-none"
         rows={Math.max(lineCount + 2, 16)}
         spellCheck={false}
         autoComplete="off"
@@ -381,19 +458,21 @@ function CodeBlock({ code: initialCode, language, codeInput }: { code: string; l
         autoCapitalize="off"
       />
 
-      {showInput && (
-        <div className="border-t border-border">
-          <div className="px-3 py-2 bg-yellow-50 text-yellow-900 dark:bg-yellow-950/30 dark:text-yellow-200 text-xs font-mono border-b border-border">
-            Input panel for scanf / stdin — type the exact values your program asks for, one value per line:
+      {hasInput && (
+        <div className="border-t border-border bg-slate-50 dark:bg-slate-950/40">
+          <div className="px-3 py-2 grid gap-2 sm:grid-cols-[minmax(0,1fr)_220px] sm:items-center">
+            <div className="text-xs text-muted-foreground">
+              <span className="font-semibold text-foreground">Program input for scanf:</span> optional compact stdin values, one per line.
+            </div>
+            <textarea
+              value={stdinVal}
+              onChange={e => setStdinVal(e.target.value)}
+              className="w-full min-h-[54px] max-h-[120px] bg-gray-900 text-yellow-100 p-2 font-mono text-xs leading-5 outline-none resize-y rounded-md border border-slate-700"
+              rows={2}
+              placeholder={"10\n20"}
+              spellCheck={false}
+            />
           </div>
-          <textarea
-            value={stdinVal}
-            onChange={e => setStdinVal(e.target.value)}
-            className="w-full min-h-[180px] bg-gray-900 text-yellow-200 p-4 font-mono text-sm leading-6 outline-none resize-y border-none"
-            rows={8}
-            placeholder={"Example for scanf(\"%d %d\", &a, &b):\n10\n20\n\nExample for scanf(\"%s\", name):\nJuan"}
-            spellCheck={false}
-          />
         </div>
       )}
 
