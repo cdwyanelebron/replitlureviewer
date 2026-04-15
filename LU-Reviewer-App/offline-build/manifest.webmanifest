@@ -1,0 +1,10 @@
+{
+  "name": "LU Reviewer — BSIT 1st Year",
+  "short_name": "LU Reviewer",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#04AA6D",
+  "description": "Reviewer for Laguna University BSIT 1st Year subjects."
+}
